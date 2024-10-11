@@ -2,7 +2,7 @@
 header {
   width: 100%;
   height: auto;
-  padding: 2.1vw 2.8vw;
+  padding: 2.1vw 3.4vw;
 }
 header .nav {
   display: grid;
@@ -98,12 +98,12 @@ header .nav-others i {
 
 footer {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
   color: #595959;
-  font-size: 1.5vw;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 2vw 5vw;
+  padding: 2vw 3.4vw;
 }
 footer a {
   text-decoration: none;
@@ -132,4 +132,32 @@ body {
   overflow-x: hidden;
   font-size: 1.2vw;
   background-color: #f8f4f0;
+}
+
+.testimonials {
+  padding: 3.4vw;
+}
+
+.testimonials-content {
+  background-color: #fff;
+  margin: auto;
+  border-radius: 2.5vw;
+  padding: 3vw 2.5vw;
+}
+
+.testimonials-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.testimonials-section h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 6vh;
+}
+
+.line {
+  width: 10%;
+  height: 1px;
+  background-color: #34a0a4;
+  margin: 20px 0;
 }/*# sourceMappingURL=main.css.map */

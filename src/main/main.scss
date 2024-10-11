@@ -19,3 +19,29 @@ body {
   font-size: 1.2vw;
   background-color: map-get($map: v.$color, $key: "cream");
 }
+.testimonials {
+  padding: v.$padding-horizontal-main;
+}
+.testimonials-content {
+  background-color: map-get($map: v.$color, $key: "white");
+  margin: auto;
+  border-radius: 2.5vw;
+  padding: 3vw 2.5vw;
+}
+.testimonials-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  
+  h2{
+    font-family: v.$poppins;
+    font-weight: 500;
+    font-size: 6vh;
+  }
+}
+
+.line{
+  width: 10%;
+  height: 1px;
+  background-color: map-get($map: v.$color, $key: "light-cyan" );
+  margin: 20px 0;
+}

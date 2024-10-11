@@ -2,13 +2,10 @@
 @use "./../helpers/variables" as v;
 
 footer{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include m.flex($justify: space-between);
     color: map-get($map: v.$color, $key: "dark-gray");
-    font-size: 1.5vw;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 2vw 5vw;
+    padding: 2vw v.$padding-horizontal-main;
   
     a{
       text-decoration: none;

@@ -4,7 +4,7 @@
 header {
   width: 100%;
   height: auto;
-  padding: 2.1vw 2.8vw;
+  padding: 2.1vw v.$padding-horizontal-main;
 
   .nav {
     display: grid;
