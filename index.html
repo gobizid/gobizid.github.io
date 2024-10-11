@@ -41,24 +41,38 @@
 
     <!-- <link rel="stylesheet" href="styles.css" /> -->
     <link rel="stylesheet" href="src/main/main.css" />
+
+    <!-- Package -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
   </head>
   <body>
     <header>
-      <div class="logo">
-        <img src="assets/img/logo/logo-fix.png" alt="GoBiz Logo" />
-      </div>
-      <nav>
-        <!-- <div class="socials-media">test</div> -->
-        <div class="nav-links">
-          <a class="active" href="#">Layanan</a>
-          <a href="#">Bantuan</a>
-          <a href="#">BizTips</a>
-          <a href="#">Komunitas</a>
+      <nav class="nav">
+        <div class="nav-socials">
+          <span class="icon"><i class="fa-brands fa-facebook-f"></i></span>
+          <span class="icon"><i class="fa-brands fa-instagram"></i></span>
+          <span class="icon"><i class="fa-brands fa-twitter"></i></span>
+          <span class="icon"><i class="fa-brands fa-youtube"></i></span>
         </div>
-        <!-- <div class="auth-buttons">
-          <button>Daftar</button>
-          <button>Masuk</button>
-        </div> -->
+        <div class="nav-main">
+          <div class="logo">
+            <img src="assets/img/logo/logo-fix.png" alt="GoBiz Logo" />
+            <span>GoBiz</span>
+          </div>
+          <div class="links">
+            <a class="active" href="#">Layanan</a>
+            <a href="#">Bantuan</a>
+            <a href="#">BizTips</a>
+            <a href="#">Komunitas</a>
+          </div>
+        </div>
+        <div class="nav-others">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <i class="fa-solid fa-user"></i>
+        </div>
       </nav>
     </header>
 
