@@ -149,10 +149,56 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
-.testimonials-section h2 {
+.testimonials-section .testimonials-text {
+  width: 89%;
+}
+.testimonials-section .testimonials-text h2 {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
-  font-size: 6vh;
+  font-size: 2.8vw;
+}
+.testimonials-section .testimonials-text p {
+  font-size: 1vw;
+  color: #595959;
+}
+.testimonials-section .testimonials-text button {
+  padding: 1vw;
+  background-color: #34a0a4;
+  border-radius: 100px;
+  color: #fff;
+  border: 0 solid transparent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 1vw;
+}
+.testimonials-section .testimonials-text button:hover {
+  background-color: #0b787c;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+.testimonials-section .testimonials-list {
+  display: grid;
+  align-items: center;
+}
+.testimonials-section .testimonials-list .testimonial-card {
+  border: 1px solid rgba(0, 0, 0, 0.1019607843);
+  border-radius: 20px;
+  padding: 2vw;
+}
+.testimonials-section .testimonials-list .testimonial-card .stars {
+  color: #F0AD4E;
+  padding-bottom: 0.5vw;
+}
+.testimonials-section .testimonials-list .testimonial-card .testimonial-text {
+  margin-bottom: 20px;
+  font-size: 1.1vw;
+}
+.testimonials-section .testimonials-list .testimonial-card .testimonial-author {
+  text-transform: uppercase;
+  color: #34a0a4;
+  font-size: 0.8vw;
+  font-weight: 500;
+  letter-spacing: 0.1vw;
 }
 
 .line {
