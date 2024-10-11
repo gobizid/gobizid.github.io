@@ -8,10 +8,48 @@ header .nav {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+header .nav-start {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.6vw;
+}
+header .nav-start .search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  border: #595959 solid 0.15vw;
+  border-radius: 0.34vw;
+}
+header .nav-start .search .icon {
+  padding: 0 0.7vw;
+  height: 5.2vh;
+  background-color: #34a0a4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  border-top-left-radius: 0.18vw;
+  border-bottom-left-radius: 0.18vw;
+}
+header .nav-start .search .icon i {
+  color: #fff;
+}
+header .nav-start .search input {
+  width: 18vw;
+  height: 5.2vh;
+  border: none;
+  outline: none;
+  padding: 0 0.5vw;
+  border-top-right-radius: 0.18vw;
+  border-bottom-right-radius: 0.18vw;
+}
 header .nav-start .socials {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: row;
   gap: 0.5vw;
 }

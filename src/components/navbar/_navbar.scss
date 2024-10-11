@@ -11,8 +11,40 @@ header {
     grid-template-columns: repeat(3, 1fr);
 
     &-start {
+      @include m.flex($align: flex-start, $direction: column);
+      gap: .6vw;
+
+      .search {
+        @include m.flex();
+        border: map-get($map: v.$color, $key: "dark-gray") solid .15vw;
+        border-radius: .34vw;
+        
+        .icon {
+          padding: 0 0.7vw;
+          height: 5.2vh;
+          background-color: map-get($map: v.$color, $key: "light-cyan");
+          @include m.flex();
+          border-top-left-radius: .18vw;
+          border-bottom-left-radius: .18vw;
+          
+          i {
+            color: #fff;
+          }
+        }
+        
+        input {
+          width: 18vw;
+          height: 5.2vh;
+          border: none;
+          outline: none;
+          padding: 0 .5vw;
+          border-top-right-radius: .18vw;
+          border-bottom-right-radius: .18vw;
+        }
+      }
+
       .socials {
-        @include m.flex($justify: flex-start);
+        @include m.flex();
         gap: 0.5vw;
 
         .icon {
