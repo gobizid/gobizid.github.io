@@ -10,18 +10,20 @@ header {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
-    &-socials {
-      @include m.flex($justify: flex-start);
-      gap: 0.5vw;
+    &-start {
+      .socials {
+        @include m.flex($justify: flex-start);
+        gap: 0.5vw;
 
-      .icon {
-        @include m.flex();
-        @include m.circle($size: 2.1vw);
-        background-color: map-get($map: v.$color, $key: "light-cyan");
+        .icon {
+          @include m.flex();
+          @include m.circle($size: 2.1vw);
+          background-color: map-get($map: v.$color, $key: "light-cyan");
 
-        i {
-          font-size: 1vw;
-          color: #fff;
+          i {
+            font-size: 1vw;
+            color: #fff;
+          }
         }
       }
     }
@@ -76,9 +78,9 @@ header {
       }
     }
 
-    &-others {
+    &-end {
       @include m.flex($justify: flex-end);
-      gap: 0.8vw;
+      gap: 1.2vw;
 
       i {
         font-size: 1.6vw;
