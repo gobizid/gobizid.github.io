@@ -1,7 +1,8 @@
 @use "./../helpers/mixins" as m;
 @use "./../helpers/variables" as v;
 
-@use "./../components/navbar/navbar";
+@use "./../components/navbar";
+@use "./../components/footer";
 
 *,
 *::before,
