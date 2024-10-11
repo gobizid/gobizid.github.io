@@ -11,6 +11,8 @@ header {
     grid-template-columns: repeat(3, 1fr);
 
     &-start {
+      @include m.flex($justify: flex-start);
+        
       .socials {
         @include m.flex($justify: flex-start);
         gap: 0.5vw;

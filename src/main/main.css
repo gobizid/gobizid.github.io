@@ -8,6 +8,12 @@ header .nav {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+header .nav-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+}
 header .nav-start .socials {
   display: flex;
   align-items: center;
