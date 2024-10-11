@@ -1,0 +1,22 @@
+@use "./../helpers/mixins" as m;
+@use "./../helpers/variables" as v;
+
+footer{
+    @include m.flex($justify: space-between);
+    color: map-get($map: v.$color, $key: "dark-gray");
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 2vw v.$padding-horizontal-main;
+  
+    a{
+      text-decoration: none;
+      color: map-get($map: v.$color, $key: "light-cyan");
+      margin: 0 10px;
+      &:hover{
+        color: map-get($map: v.$color, $key: "dark-cyan");
+        transition: 0.5s;
+      }
+      i{
+        font-size: 1.5vw;
+      }
+    }
+  }
