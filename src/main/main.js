@@ -1,4 +1,4 @@
-let list = document.querySelectorAll("header nav .nav-links a");
+let list = document.querySelectorAll("header .nav .nav-main .links a");
 function handleNavItemClick(anu) {
   for (let i = 0; i < anu.length; i++) {
     anu[i].onclick = function () {

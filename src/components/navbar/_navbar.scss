@@ -2,78 +2,87 @@
 @use "./../../helpers/variables" as v;
 
 header {
-  @include m.flex($direction: column);
-  padding: 2vw 2.8vw;
-  gap: 0.4vw;
+  width: 100%;
+  height: auto;
+  padding: 2.1vw 2.8vw;
 
-  .logo {
-    width: 7vw;
-    height: auto;
+  .nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
+    &-socials {
+      @include m.flex($justify: flex-start);
+      gap: 0.5vw;
 
-  nav {
-    // background-color: #fff;
-    @include m.flex($justify: center);
-    width: 100%;
-
-    .nav-links {
-      @include m.flex();
-      gap: 1.05vw;
-
-      a {
+      .icon {
         @include m.flex();
-        color: map-get($map: v.$color, $key: "dark-gray");
-        text-decoration: none;
-        line-height: 100%;
-        transition: all 0.4s ease-out;
+        @include m.circle($size: 2.1vw);
+        background-color: map-get($map: v.$color, $key: "light-cyan");
 
-        &:hover {
-          color: map-get($map: v.$color, $key: "light-cyan");
-        }
-
-        &.active {
+        i {
+          font-size: 1vw;
           color: #fff;
-          background-color: map-get($map: v.$color, $key: "light-cyan");
-          padding: 0.3vw 0.9vw 0.4vw;
-          border-radius: 10vw;
         }
       }
     }
 
-    .auth-buttons {
-      @include m.flex();
-      gap: 0.6vw;
+    &-main {
+      @include m.flex($direction: column);
+      gap: 0.5vw;
 
-      button {
-        padding: 0.45vw 0.9vw;
-        border-radius: 0.4vw;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-        transition: all 0.4s ease-out;
-        border: 0.2vw solid map-get($map: v.$color, $key: "light-cyan");
-        letter-spacing: 0.03vw;
+      .logo {
+        width: 4vw;
+        height: auto;
+        @include m.flex($direction: column);
+        gap: 0.3vw;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        span {
+          font-family: v.$grandstander;
+          font-size: 2.4vw;
+          font-weight: 200;
+          color: map-get($map: v.$color, $key: "dark-gray");
+          text-transform: uppercase;
+        }
+      }
+
+      .links {
         @include m.flex();
+        gap: 1.05vw;
 
-        &:hover {
-          background-color: map-get($map: v.$color, $key: "light-cyan");
-        }
+        a {
+          @include m.flex();
+          color: map-get($map: v.$color, $key: "dark-gray");
+          text-decoration: none;
+          line-height: 100%;
+          transition: all 0.4s ease-out;
 
-        &:first-child {
-          background-color: map-get($map: v.$color, $key: "light-cyan");
-        }
+          &:hover {
+            color: map-get($map: v.$color, $key: "light-cyan");
+          }
 
-        &:last-child {
-          border: 0.15vw solid map-get($map: v.$color, $key: "light-cyan");
-          background-color: transparent;
-          color: map-get($map: v.$color, $key: "light-cyan");
+          &.active {
+            color: #fff;
+            background-color: map-get($map: v.$color, $key: "light-cyan");
+            padding: 0.4vw 0.9vw;
+            border-radius: 10vw;
+          }
         }
+      }
+    }
+
+    &-others {
+      @include m.flex($justify: flex-end);
+      gap: 0.8vw;
+
+      i {
+        font-size: 1.6vw;
+        color: map-get($map: v.$color, $key: "light-cyan");
       }
     }
   }
