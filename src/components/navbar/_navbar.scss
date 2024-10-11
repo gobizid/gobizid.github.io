@@ -1,0 +1,80 @@
+@use "./../../helpers/mixins" as m;
+@use "./../../helpers/variables" as v;
+
+header {
+  @include m.flex($direction: column);
+  padding: 2vw 2.8vw;
+  gap: 0.4vw;
+
+  .logo {
+    width: 7vw;
+    height: auto;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  nav {
+    // background-color: #fff;
+    @include m.flex($justify: center);
+    width: 100%;
+
+    .nav-links {
+      @include m.flex();
+      gap: 1.05vw;
+
+      a {
+        @include m.flex();
+        color: map-get($map: v.$color, $key: "dark-gray");
+        text-decoration: none;
+        line-height: 100%;
+        transition: all 0.4s ease-out;
+
+        &:hover {
+          color: map-get($map: v.$color, $key: "light-cyan");
+        }
+
+        &.active {
+          color: #fff;
+          background-color: map-get($map: v.$color, $key: "light-cyan");
+          padding: 0.3vw 0.9vw 0.4vw;
+          border-radius: 10vw;
+        }
+      }
+    }
+
+    .auth-buttons {
+      @include m.flex();
+      gap: 0.6vw;
+
+      button {
+        padding: 0.45vw 0.9vw;
+        border-radius: 0.4vw;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: all 0.4s ease-out;
+        border: 0.2vw solid map-get($map: v.$color, $key: "light-cyan");
+        letter-spacing: 0.03vw;
+        @include m.flex();
+
+        &:hover {
+          background-color: map-get($map: v.$color, $key: "light-cyan");
+        }
+
+        &:first-child {
+          background-color: map-get($map: v.$color, $key: "light-cyan");
+        }
+
+        &:last-child {
+          border: 0.15vw solid map-get($map: v.$color, $key: "light-cyan");
+          background-color: transparent;
+          color: map-get($map: v.$color, $key: "light-cyan");
+        }
+      }
+    }
+  }
+}
