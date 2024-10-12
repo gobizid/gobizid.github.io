@@ -332,6 +332,97 @@ footer a i {
     transform: translateX(-100%);
   }
 }
+.card1-container {
+  width: 90vw;
+  margin: 60px auto;
+}
+.card1-container .card1-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3em;
+}
+.card1-container .card1-content .card1 {
+  background-color: #ef8451;
+  border-radius: 20px;
+  padding: 2em;
+}
+.card1-container .card1-content .card1 p {
+  color: #093532;
+}
+.card1-container .card1-content .card1 h1 {
+  color: #fff;
+  font-size: 45px;
+  margin: 1vw 0;
+}
+.card1-container .card1-content .card1 button {
+  border: 1px solid #093532;
+  background-color: transparent;
+  color: #093532;
+  padding: 15px;
+  border-radius: 90px;
+  cursor: pointer;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.card1-container .card1-content .card1 button:hover {
+  background-color: #093532;
+  color: #fff;
+  transition: 0.5s;
+}
+.card1-container .card1-content .card2 {
+  background-color: #124c51;
+  border-radius: 20px;
+  padding: 2em;
+}
+.card1-container .card1-content .card2 p {
+  color: #ef8451;
+}
+.card1-container .card1-content .card2 h1 {
+  color: #fff;
+  font-size: 45px;
+  margin: 1vw 0;
+}
+.card1-container .card1-content .card2 button {
+  border: 1px solid #ef8451;
+  background-color: transparent;
+  color: #ef8451;
+  padding: 15px;
+  border-radius: 90px;
+  cursor: pointer;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.card1-container .card1-content .card2 button:hover {
+  background-color: #ef8451;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.info-container {
+  margin: auto;
+}
+.info-container .content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.info-container div {
+  text-align: center;
+  font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
+}
+.info-container div h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  color: #0f393b;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.info-container div p {
+  color: #ef8451;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+}
+
 *,
 *::before,
 *::after {

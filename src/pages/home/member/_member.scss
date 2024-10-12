@@ -1,0 +1,31 @@
+@use "./../../../helpers/mixins" as m;
+@use "./../../../helpers/variables" as v;
+
+.info-container {
+    margin: auto;
+
+    .content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    div {
+      text-align: center;
+      font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
+
+      h1 {
+        font-size: 3.5rem;
+        margin-bottom: 10px;
+        color: #0f393b;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      p {
+        color: #ef8451;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 700;
+      }
+    }
+  }
