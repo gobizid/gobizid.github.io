@@ -433,18 +433,17 @@ footer a i {
   margin: auto;
 }
 .contact-container .contact-content .contact-text {
-  margin: 1vw;
   position: relative;
 }
 .contact-container .contact-content .contact-text p {
-  color: #ef8451;
+  color: #0b787c;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1vw;
 }
 .contact-container .contact-content .contact-text h1 {
   font-size: 3vw;
-  color: #093532;
+  color: #000;
   margin: 1vw 0;
 }
 .contact-container .contact-content .contact-text h5 {
@@ -455,52 +454,35 @@ footer a i {
 }
 .contact-container .contact-content .contact-form {
   background-color: white;
-  margin: 10px;
-  padding: 30px 50px 100px 30px;
-  border-radius: 20px;
+  padding: 2vw;
+  border-radius: 1.5vw;
   position: relative;
 }
 .contact-container .contact-content .contact-form .form-group {
-  margin-bottom: 10px;
+  margin-bottom: 1vw;
   width: 100%;
 }
-.contact-container .contact-content .contact-form .form-group input {
-  color: #6b8483;
-  background-color: #f5f3ee;
-  border: 1px solid #f5f3ee;
-  padding: 20px;
-  width: 95%;
-  border-radius: 10px;
+.contact-container .contact-content .contact-form .form-group input, .contact-container .contact-content .contact-form .form-group textarea {
+  color: #595959;
+  background-color: #f8f4f0;
+  border: 0.1vw solid #f8f4f0;
+  padding: 1vw;
+  width: 100%;
+  border-radius: 1vw;
   outline: none;
-}
-.contact-container .contact-content .contact-form .form-group input:focus {
-  background-color: white;
-  border: 1px solid #ef8451;
-}
-.contact-container .contact-content .contact-form .form-group textarea {
-  color: #6b8483;
-  background-color: #f5f3ee;
-  border: 1px solid #f5f3ee;
-  padding: 20px;
-  width: 95%;
-  border-radius: 10px;
-  outline: none;
-  font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
+  font-family: "Poppins", sans-serif;
   resize: none;
 }
-.contact-container .contact-content .contact-form .form-group textarea:focus {
+.contact-container .contact-content .contact-form .form-group input:focus, .contact-container .contact-content .contact-form .form-group textarea:focus {
   background-color: white;
-  border: 1px solid #ef8451;
+  border: 0.1vw solid #0b787c;
 }
 .contact-container .contact-content .contact-form button {
-  position: absolute;
-  right: 30px;
-  bottom: 30px;
-  border: 1px solid #ef8451;
-  background-color: #ef8451;
+  border: 1px solid #34a0a4;
+  background-color: #34a0a4;
   color: #fff;
-  margin: 5px 20px;
-  padding: 10px;
+  float: right;
+  padding: 0.8vw;
   border-radius: 90px;
   cursor: pointer;
   font-size: 15px;
@@ -508,7 +490,8 @@ footer a i {
 }
 .contact-container .contact-content .contact-form button:hover {
   background-color: transparent;
-  color: #ef8451;
+  background-color: #0b787c;
+  border: 1px solid #0b787c;
   transition: 0.5s;
 }
 
