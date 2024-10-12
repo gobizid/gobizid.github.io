@@ -1,0 +1,56 @@
+@use "./../../../helpers/mixins" as m;
+@use "./../../../helpers/variables" as v;
+
+.hero {
+  padding: 0 v.$padding-horizontal-main v.$padding-vertical-main;
+  border-radius: 1.6vw;
+
+  .swiper {
+    --swiper-pagination-color: #34a0a4;
+
+    @include m.flex();
+    width: 100%;
+    height: 60vh;
+    border-radius: 1.6vw;
+    position: relative;
+
+    &-wrapper {
+      width: 100%;
+      height: auto;
+
+      .swiper-slide {
+        @include m.flex();
+        width: 100%;
+        height: auto;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .swiper-nav-prev,
+    .swiper-nav-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      z-index: 1000 !important;
+
+      i {
+        color: #34a0a4;
+        font-size: 2.6vw;
+      }
+    }
+
+    .swiper-nav-prev {
+      left: 1.2vw;
+    }
+
+    .swiper-nav-next {
+      right: 1.2vw;
+    }
+  }
+}

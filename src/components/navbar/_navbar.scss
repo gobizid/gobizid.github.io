@@ -1,0 +1,124 @@
+@use "./../../helpers/mixins" as m;
+@use "./../../helpers/variables" as v;
+
+header {
+  .nav {
+    width: 100%;
+    height: auto;
+    padding: v.$padding-vertical-main v.$padding-horizontal-main;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+
+    &-logo {
+      display: grid;
+      gap: 0.3vw;
+      text-decoration: none;
+
+      img {
+        width: 6vw;
+        height: auto;
+        object-fit: cover;
+      }
+
+      span {
+        font-family: v.$grandstander;
+        font-size: 2.15vw;
+        font-weight: 200;
+        color: map-get($map: v.$color, $key: "dark-gray");
+        text-transform: uppercase;
+      }
+    }
+
+    &-main {
+      @include m.flex($direction: column);
+      gap: 1vw;
+
+      .search {
+        @include m.flex();
+        border-radius: 10vw;
+        border: 0.15vw solid map-get($map: v.$color, $key: "light-cyan");
+        padding: 0.3vw;
+
+        button {
+          @include m.flex();
+          border-radius: 50%;
+          background-color: map-get($map: v.$color, $key: "light-cyan");
+          color: map-get($map: v.$color, $key: "white");
+          font-size: 1.1vw;
+          transition: all 0.4s ease-out;
+          border: none;
+          outline: none;
+          padding: 0.7vw;
+          cursor: pointer;
+
+          &:hover {
+            background-color: map-get($map: v.$color, $key: "dark-cyan");
+          }
+        }
+
+        input {
+          width: 34vw;
+          padding: 0 0.5vw;
+          border-top-right-radius: 10vw;
+          border-bottom-right-radius: 10vw;
+          font-size: 1.1vw;
+          color: map-get($map: v.$color, $key: "dark-gray");
+          transition: all 0.4s ease-out;
+          border: none;
+          outline: none;
+          background-color: transparent;
+        }
+      }
+
+      .links {
+        @include m.flex();
+        gap: 1.05vw;
+
+        a {
+          @include m.flex();
+          color: map-get($map: v.$color, $key: "dark-gray");
+          text-decoration: none;
+          line-height: 100%;
+          transition: all 0.4s ease-out;
+
+          &:hover {
+            color: map-get($map: v.$color, $key: "dark-cyan");
+          }
+
+          &.active {
+            color: #fff;
+            background-color: map-get($map: v.$color, $key: "light-cyan");
+            padding: 0.4vw 0.9vw;
+            border-radius: 10vw;
+          }
+        }
+      }
+    }
+
+    &-others {
+      @include m.flex($justify: flex-end);
+      gap: 0.9vw;
+
+      i {
+        font-size: 1.7vw;
+        color: map-get($map: v.$color, $key: "light-cyan");
+      }
+    }
+  }
+}
+
+// &-socials {
+//   @include m.flex($justify: flex-end);
+//   gap: 0.5vw;
+
+//   .icon {
+//     @include m.flex();
+//     @include m.circle($size: 1.9vw);
+//     background-color: map-get($map: v.$color, $key: "light-cyan");
+
+//     i {
+//       font-size: 0.95vw;
+//       color: #fff;
+//     }
+//   }
+// }
