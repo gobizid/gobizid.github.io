@@ -1,0 +1,129 @@
+@use "./../helpers/mixins" as m;
+@use "./../helpers/variables" as v;
+
+@use "./../components/navbar/navbar";
+@use "./../components/footer";
+
+@use "./../pages/home/hero/hero";
+@use "./../pages/home/categories/categories";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: v.$lato;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-size: 1.2vw;
+  background-color: map-get($map: v.$color, $key: "cream");
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+.testimonials {
+  padding: v.$padding-horizontal-main;
+}
+
+.testimonials-content {
+  background-color: map-get($map: v.$color, $key: "white");
+  margin: auto;
+  border-radius: 2.5vw;
+  padding: 3vw 2.5vw;
+}
+
+.testimonials-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  .testimonials-text {
+    width: 89%;
+
+    h2 {
+      font-family: v.$poppins;
+      font-weight: 500;
+      font-size: 2.8vw;
+    }
+
+    p {
+      font-size: 1vw;
+      color: map-get($map: v.$color, $key: "dark-gray");
+    }
+
+    button {
+      padding: 1vw;
+      background-color: map-get($map: v.$color, $key: "light-cyan");
+      border-radius: 100px;
+      color: map-get($map: v.$color, $key: "white");
+      border: 0 solid transparent;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-top: 1vw;
+
+      &:hover {
+        background-color: map-get($map: v.$color, $key: "dark-cyan");
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .testimonials-list {
+    display: grid;
+    align-items: center;
+
+    .testimonial-card {
+      border: 1px solid #0000001a;
+      border-radius: 20px;
+      padding: 2vw;
+
+      .stars {
+        color: #f0ad4e;
+        padding-bottom: 0.5vw;
+      }
+
+      .testimonial-text {
+        margin-bottom: 20px;
+        font-size: 1.1vw;
+      }
+
+      .testimonial-author {
+        text-transform: uppercase;
+        color: map-get($map: v.$color, $key: "light-cyan");
+        font-size: 0.8vw;
+        font-weight: 500;
+        letter-spacing: 0.1vw;
+      }
+    }
+  }
+}
+
+.line {
+  width: 10%;
+  height: 1px;
+  background-color: map-get($map: v.$color, $key: "light-cyan");
+  margin: 20px 0;
+}
