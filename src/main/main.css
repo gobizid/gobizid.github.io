@@ -106,6 +106,7 @@ header .nav-others {
 header .nav-others i {
   font-size: 1.7vw;
   color: #34a0a4;
+  cursor: pointer;
 }
 
 footer {
@@ -204,6 +205,7 @@ footer a i {
   justify-content: flex-start;
   flex-direction: column;
   border: 0.15vw solid #34a0a4;
+  background-color: transparent;
   border-radius: 0.4vw;
   gap: 0.5vw;
 }
@@ -214,6 +216,43 @@ footer a i {
 .categories .swiper-wrapper .swiper-slide .text {
   text-align: center;
   color: #34a0a4;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-size: 1.2vw;
+  background-color: #f8f4f0;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
 }
 
 .testimonials {
