@@ -1,9 +1,11 @@
-import SmoothScroll from "../helpers/smoothscroll.js";
-import Navbar from "../components/navbar/navbar.js";
-import Hero from "../pages/home/hero/hero.js";
-import Categories from "../pages/home/categories/categories.js";
+import smoothScroll from "../helpers/smoothscroll.js";
+import navbar from "../components/navbar/navbar.js";
+import hero from "../pages/home/hero/hero.js";
+import categories from "../pages/home/categories/categories.js";
+import catalog from "../pages/home/catalog/catalog.js";
 
-SmoothScroll();
-Navbar();
-Hero();
-Categories();
+smoothScroll();
+navbar();
+hero();
+categories();
+catalog();

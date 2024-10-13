@@ -106,6 +106,7 @@ header .nav-others {
 header .nav-others i {
   font-size: 1.7vw;
   color: #34a0a4;
+  cursor: pointer;
 }
 
 footer {
@@ -204,6 +205,7 @@ footer a i {
   justify-content: flex-start;
   flex-direction: column;
   border: 0.15vw solid #34a0a4;
+  background-color: transparent;
   border-radius: 0.4vw;
   gap: 0.5vw;
 }
@@ -214,6 +216,56 @@ footer a i {
 .categories .swiper-wrapper .swiper-slide .text {
   text-align: center;
   color: #34a0a4;
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15vw, 1fr));
+  padding: 0 3.4vw 2.4vw;
+  gap: 1.1vw;
+  grid-auto-rows: 1fr;
+}
+.catalog-wrapper {
+  background-color: #fff;
+  border-radius: 0.7vw;
+  box-shadow: 1px -1px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.catalog-wrapper .image {
+  height: 30vh;
+}
+.catalog-wrapper .image img {
+  border-top-left-radius: 0.7vw;
+  border-top-right-radius: 0.7vw;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.catalog-wrapper .name {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Maksimal 2 baris */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0.6vw 0.8vw 0;
+  font-size: 98%;
+}
+.catalog-wrapper .price {
+  font-weight: 800;
+  padding: 0.3vw 0.8vw 0;
+}
+.catalog-wrapper .discount {
+  padding: 0.3vw 0.8vw 0;
+  font-size: 85%;
+  color: rgba(89, 89, 89, 0.6);
+  text-decoration: line-through;
+}
+.catalog-wrapper .rating-sold {
+  font-size: 95%;
+  padding: 0.3vw 0.8vw 1.1vw;
 }
 
 *,

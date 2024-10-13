@@ -1,4 +1,4 @@
-export default function Hero() {
+export default function hero() {
   const swiper = new Swiper("section.hero .swiper", {
     loop: true,
     autoplay: {

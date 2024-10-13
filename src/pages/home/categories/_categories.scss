@@ -13,22 +13,28 @@
     &-wrapper {
       display: grid;
       grid-auto-flow: column;
-      grid-auto-rows: 1fr; 
+      grid-auto-rows: 1fr;
+      // @include m.flex();
 
       .swiper-slide {
         padding: 1.6vw;
         @include m.flex($direction: column, $justify: flex-start);
         border: 0.15vw solid map-get($map: v.$color, $key: "light-cyan");
+        // background-color: #fff;
+        // background-color: map-get($map: v.$color, $key: "light-cyan");
+        background-color: transparent;
         border-radius: 0.4vw;
         gap: 0.5vw;
 
         i {
           font-size: 1.9vw;
+          // color: #fff;
           color: map-get($map: v.$color, $key: "light-cyan");
         }
 
         .text {
           text-align: center;
+          // color: #fff;
           color: map-get($map: v.$color, $key: "light-cyan");
         }
       }
