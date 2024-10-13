@@ -102,6 +102,7 @@ header {
       i {
         font-size: 1.7vw;
         color: map-get($map: v.$color, $key: "light-cyan");
+        cursor: pointer;
       }
     }
   }

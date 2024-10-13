@@ -106,6 +106,7 @@ header .nav-others {
 header .nav-others i {
   font-size: 1.7vw;
   color: #34a0a4;
+  cursor: pointer;
 }
 
 footer {
@@ -204,6 +205,7 @@ footer a i {
   justify-content: flex-start;
   flex-direction: column;
   border: 0.15vw solid #34a0a4;
+  background-color: transparent;
   border-radius: 0.4vw;
   gap: 0.5vw;
 }
@@ -216,11 +218,16 @@ footer a i {
   color: #34a0a4;
 }
 
-.testimonials {
-  padding: 3.4vw;
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15vw, 1fr));
+  padding: 0 3.4vw 2.4vw;
+  gap: 1.1vw;
+  grid-auto-rows: 1fr;
 }
 
 .testimonials-content {
+  background-color: #fff;
   margin: auto;
   border-radius: 2.5vw;
   padding: 3vw 2.5vw;
@@ -257,80 +264,43 @@ footer a i {
   transition: 0.3s ease-in-out;
   cursor: pointer;
 }
-.testimonials-section .testimonials-list {
-  display: grid;
-  align-items: center;
+.catalog-wrapper .image {
+  height: 30vh;
 }
-.testimonials-section .testimonials-list .testimonial-card {
-  border: 1px solid rgba(0, 0, 0, 0.1019607843);
-  border-radius: 20px;
-  padding: 2vw;
-}
-.testimonials-section .testimonials-list .testimonial-card .stars {
-  color: #f0ad4e;
-  padding-bottom: 0.5vw;
-}
-.testimonials-section .testimonials-list .testimonial-card .testimonial-text {
-  margin-bottom: 20px;
-  font-size: 1.1vw;
-}
-.testimonials-section .testimonials-list .testimonial-card .testimonial-author {
-  text-transform: uppercase;
-  color: #34a0a4;
-  font-size: 0.8vw;
-  font-weight: 500;
-  letter-spacing: 0.1vw;
-}
-
-.line {
-  width: 10%;
-  height: 1px;
-  background-color: #34a0a4;
-  margin: 20px 0;
-}
-
-.partners-section {
-  text-align: center;
-  padding: 50px 0;
-}
-.partners-section h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: #595959;
-}
-.partners-section .scrolling-logos {
+.catalog-wrapper .image img {
+  border-top-left-radius: 0.7vw;
+  border-top-right-radius: 0.7vw;
   width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.catalog-wrapper .name {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Maksimal 2 baris */
+  -webkit-box-orient: vertical;
   overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0.6vw 0.8vw 0;
+  font-size: 98%;
 }
-.partners-section .scrolling-logos .logo-container {
-  display: flex;
-  align-items: center;
+.catalog-wrapper .price {
+  font-weight: 800;
+  padding: 0.3vw 0.8vw 0;
 }
-.partners-section .scrolling-logos .logo-container .logo-slide {
-  display: flex;
-  animation: scroll 3s linear infinite;
-  gap: 3vw;
+.catalog-wrapper .discount {
+  padding: 0.3vw 0.8vw 0;
+  font-size: 85%;
+  color: rgba(89, 89, 89, 0.6);
+  text-decoration: line-through;
 }
-.partners-section .scrolling-logos .logo-container .logo-slide img {
-  width: 10vw;
-  height: 8vw;
-  -o-object-fit: contain;
-     object-fit: contain;
-  margin: 0 20px;
-  filter: grayscale(1);
-}
-.partners-section .scrolling-logos .logo-container .logo-slide img:hover {
-  filter: grayscale(0);
+.catalog-wrapper .rating-sold {
+  font-size: 95%;
+  padding: 0.3vw 0.8vw 1.1vw;
 }
 
-@keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
 .card1-container {
   width: 90vw;
   margin: 60px auto;
@@ -422,79 +392,6 @@ footer a i {
   font-weight: 700;
 }
 
-.contact-container {
-  width: 100%;
-}
-.contact-container .contact-content {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 5vw;
-  padding: 3.4vw;
-  margin: auto;
-}
-.contact-container .contact-content .contact-text {
-  position: relative;
-}
-.contact-container .contact-content .contact-text p {
-  color: #0b787c;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 1vw;
-}
-.contact-container .contact-content .contact-text h1 {
-  font-size: 3vw;
-  color: #000;
-  margin: 1vw 0;
-}
-.contact-container .contact-content .contact-text h5 {
-  color: #0f393b;
-  line-height: 1.8vw;
-  font-size: 100%;
-  text-align: justify;
-}
-.contact-container .contact-content .contact-form {
-  background-color: white;
-  padding: 2vw;
-  border-radius: 1.5vw;
-  position: relative;
-}
-.contact-container .contact-content .contact-form .form-group {
-  margin-bottom: 1vw;
-  width: 100%;
-}
-.contact-container .contact-content .contact-form .form-group input, .contact-container .contact-content .contact-form .form-group textarea {
-  color: #595959;
-  background-color: #f8f4f0;
-  border: 0.1vw solid #f8f4f0;
-  padding: 1vw;
-  width: 100%;
-  border-radius: 1vw;
-  outline: none;
-  font-family: "Poppins", sans-serif;
-  resize: none;
-}
-.contact-container .contact-content .contact-form .form-group input:focus, .contact-container .contact-content .contact-form .form-group textarea:focus {
-  background-color: white;
-  border: 0.1vw solid #0b787c;
-}
-.contact-container .contact-content .contact-form button {
-  border: 1px solid #34a0a4;
-  background-color: #34a0a4;
-  color: #fff;
-  float: right;
-  padding: 0.8vw;
-  border-radius: 90px;
-  cursor: pointer;
-  font-size: 15px;
-  text-transform: uppercase;
-}
-.contact-container .contact-content .contact-form button:hover {
-  background-color: transparent;
-  background-color: #0b787c;
-  border: 1px solid #0b787c;
-  transition: 0.5s;
-}
-
 *,
 *::before,
 *::after {
@@ -530,4 +427,4 @@ html.lenis body {
 
 .lenis.lenis-smooth iframe {
   pointer-events: none;
-}/*# sourceMappingURL=main.css.map */
+}
