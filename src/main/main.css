@@ -225,43 +225,10 @@ footer a i {
   gap: 1.1vw;
   grid-auto-rows: 1fr;
 }
-
-.testimonials-content {
+.catalog-wrapper {
   background-color: #fff;
-  margin: auto;
-  border-radius: 2.5vw;
-  padding: 3vw 2.5vw;
-}
-
-.testimonials-section {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-.testimonials-section .testimonials-text {
-  width: 89%;
-}
-.testimonials-section .testimonials-text h2 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-size: 2.8vw;
-}
-.testimonials-section .testimonials-text p {
-  font-size: 1vw;
-  color: #595959;
-}
-.testimonials-section .testimonials-text button {
-  padding: 1vw;
-  background-color: #34a0a4;
-  border-radius: 100px;
-  color: #fff;
-  border: 0 solid transparent;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-top: 1vw;
-}
-.testimonials-section .testimonials-text button:hover {
-  background-color: #0b787c;
-  transition: 0.3s ease-in-out;
+  border-radius: 0.7vw;
+  box-shadow: 1px -1px 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
 .catalog-wrapper .image {
@@ -392,6 +359,79 @@ footer a i {
   font-weight: 700;
 }
 
+.contact-container {
+  width: 100%;
+}
+.contact-container .contact-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5vw;
+  padding: 3.4vw;
+  margin: auto;
+}
+.contact-container .contact-content .contact-text {
+  position: relative;
+}
+.contact-container .contact-content .contact-text p {
+  color: #0b787c;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1vw;
+}
+.contact-container .contact-content .contact-text h1 {
+  font-size: 3vw;
+  color: #000;
+  margin: 1vw 0;
+}
+.contact-container .contact-content .contact-text h5 {
+  color: #0f393b;
+  line-height: 1.8vw;
+  font-size: 100%;
+  text-align: justify;
+}
+.contact-container .contact-content .contact-form {
+  background-color: white;
+  padding: 2vw;
+  border-radius: 1.5vw;
+  position: relative;
+}
+.contact-container .contact-content .contact-form .form-group {
+  margin-bottom: 1vw;
+  width: 100%;
+}
+.contact-container .contact-content .contact-form .form-group input, .contact-container .contact-content .contact-form .form-group textarea {
+  color: #595959;
+  background-color: #f8f4f0;
+  border: 0.1vw solid #f8f4f0;
+  padding: 1vw;
+  width: 100%;
+  border-radius: 1vw;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  resize: none;
+}
+.contact-container .contact-content .contact-form .form-group input:focus, .contact-container .contact-content .contact-form .form-group textarea:focus {
+  background-color: white;
+  border: 0.1vw solid #0b787c;
+}
+.contact-container .contact-content .contact-form button {
+  border: 1px solid #34a0a4;
+  background-color: #34a0a4;
+  color: #fff;
+  float: right;
+  padding: 0.8vw;
+  border-radius: 90px;
+  cursor: pointer;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.contact-container .contact-content .contact-form button:hover {
+  background-color: transparent;
+  background-color: #0b787c;
+  border: 1px solid #0b787c;
+  transition: 0.5s;
+}
+
 *,
 *::before,
 *::after {
@@ -427,4 +467,4 @@ html.lenis body {
 
 .lenis.lenis-smooth iframe {
   pointer-events: none;
-}
+}/*# sourceMappingURL=main.css.map */
