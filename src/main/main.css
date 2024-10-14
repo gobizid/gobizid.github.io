@@ -269,8 +269,7 @@ footer a i {
 }
 
 .card1-container {
-  width: 90vw;
-  margin: 60px auto;
+  padding: 0 3.4vw 2.4vw;
 }
 .card1-container .card1-content {
   display: grid;
@@ -278,12 +277,12 @@ footer a i {
   gap: 3em;
 }
 .card1-container .card1-content .card1 {
-  background-color: #ef8451;
+  background-color: #070F2B;
   border-radius: 20px;
   padding: 2em;
 }
 .card1-container .card1-content .card1 p {
-  color: #093532;
+  color: #34a0a4;
 }
 .card1-container .card1-content .card1 h1 {
   color: #fff;
@@ -291,9 +290,9 @@ footer a i {
   margin: 1vw 0;
 }
 .card1-container .card1-content .card1 button {
-  border: 1px solid #093532;
+  border: 1px solid #34a0a4;
   background-color: transparent;
-  color: #093532;
+  color: #34a0a4;
   padding: 15px;
   border-radius: 90px;
   cursor: pointer;
@@ -301,17 +300,17 @@ footer a i {
   text-transform: uppercase;
 }
 .card1-container .card1-content .card1 button:hover {
-  background-color: #093532;
+  background-color: #34a0a4;
   color: #fff;
   transition: 0.5s;
 }
 .card1-container .card1-content .card2 {
-  background-color: #124c51;
+  background-color: #34a0a4;
   border-radius: 20px;
   padding: 2em;
 }
 .card1-container .card1-content .card2 p {
-  color: #ef8451;
+  color: #070F2B;
 }
 .card1-container .card1-content .card2 h1 {
   color: #fff;
@@ -319,9 +318,9 @@ footer a i {
   margin: 1vw 0;
 }
 .card1-container .card1-content .card2 button {
-  border: 1px solid #ef8451;
+  border: 1px solid #070F2B;
   background-color: transparent;
-  color: #ef8451;
+  color: #070F2B;
   padding: 15px;
   border-radius: 90px;
   cursor: pointer;
@@ -329,13 +328,13 @@ footer a i {
   text-transform: uppercase;
 }
 .card1-container .card1-content .card2 button:hover {
-  background-color: #ef8451;
+  background-color: #070F2B;
   color: #fff;
   transition: 0.5s;
 }
 
 .info-container {
-  margin: auto;
+  padding: 0 3.4vw 2.4vw;
 }
 .info-container .content {
   display: grid;
@@ -348,12 +347,12 @@ footer a i {
 .info-container div h1 {
   font-size: 3.5rem;
   margin-bottom: 10px;
-  color: #0f393b;
+  color: #595959;
   font-weight: 700;
   text-transform: uppercase;
 }
 .info-container div p {
-  color: #ef8451;
+  color: #0b787c;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 700;
@@ -433,13 +432,12 @@ footer a i {
 }
 
 .testimonials {
-  padding: 3.4vw;
+  padding: 0 3.4vw 2.4vw;
 }
 
 .testimonials-content {
   margin: auto;
   border-radius: 2.5vw;
-  padding: 3vw 2.5vw;
 }
 
 .testimonials-section {
