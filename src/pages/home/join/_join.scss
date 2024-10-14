@@ -2,8 +2,7 @@
 @use "./../../../helpers/variables" as v;
 
 .card1-container {
-    width: 90vw;
-    margin: 60px auto;
+    padding: 0 v.$padding-horizontal-main v.$padding-vertical-main;
 
       .card1-content {
         display: grid;
@@ -11,12 +10,12 @@
         gap: 3em;
 
         .card1 {
-          background-color: #ef8451;
+          background-color: map-get($map: v.$color, $key: "light-black");
           border-radius: 20px;
           padding: 2em;
 
           p {
-            color: #093532;
+            color: map-get($map: v.$color, $key: "light-cyan");
           }
 
           h1 {
@@ -26,9 +25,9 @@
           }
 
           button {
-            border: 1px solid #093532;
+            border: 1px solid map-get($map: v.$color, $key: "light-cyan");
             background-color: transparent;
-            color: #093532;
+            color: map-get($map: v.$color, $key: "light-cyan");
             padding: 15px;
             border-radius: 90px;
             cursor: pointer;
@@ -36,7 +35,7 @@
             text-transform: uppercase;
 
             &:hover {
-              background-color: #093532;
+              background-color: map-get($map: v.$color, $key: "light-cyan" );
               color: #fff;
               transition: 0.5s;
             }
@@ -44,12 +43,12 @@
         }
 
         .card2 {
-          background-color: #124c51;
+          background-color: map-get($map: v.$color, $key: "light-cyan");
           border-radius: 20px;
           padding: 2em;
 
           p {
-            color: #ef8451;
+            color: map-get($map: v.$color, $key: "light-black" );
           }
 
           h1 {
@@ -59,9 +58,9 @@
           }
 
           button {
-            border: 1px solid #ef8451;
+            border: 1px solid map-get($map: v.$color, $key: "light-black" );
             background-color: transparent;
-            color: #ef8451;
+            color: map-get($map: v.$color, $key: "light-black" );
             padding: 15px;
             border-radius: 90px;
             cursor: pointer;
@@ -69,7 +68,7 @@
             text-transform: uppercase;
 
             &:hover {
-              background-color: #ef8451;
+              background-color: map-get($map: v.$color, $key: "light-black" );
               color: #fff;
               transition: 0.5s;
             }

@@ -2,13 +2,12 @@
 @use "./../../../helpers/variables" as v;
 
 .testimonials {
-  padding: v.$padding-horizontal-main;
+  padding: 0 v.$padding-horizontal-main v.$padding-vertical-main;
 }
 
 .testimonials-content {
   margin: auto;
   border-radius: 2.5vw;
-  padding: 3vw 2.5vw;
 }
 
 .testimonials-section {
