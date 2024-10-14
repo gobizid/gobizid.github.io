@@ -3,35 +3,36 @@
 
 .partners-section {
   text-align: center;
-  padding: 50px 0;
+  // padding: 50px 0;
+  padding: 0 v.$padding-horizontal-main v.$padding-vertical-main;
 
   h2 {
     font-size: 2rem;
-    margin-bottom: 30px;
-    color: map-get($map: v.$color, $key: dark-gray);
+    margin-bottom: 1.6vh;
+    color: map-get($map: v.$color, $key: "dark-gray");
   }
 
-  .scrolling-logos{
+  .scrolling-logos {
     width: 100%;
     overflow: hidden;
 
-    .logo-container{
+    .logo-container {
       display: flex;
       align-items: center;
 
-      .logo-slide{
+      .logo-slide {
         display: flex;
         animation: scroll 3s linear infinite;
         gap: 3vw;
 
-        img{
+        img {
           width: 10vw;
           height: 8vw;
           object-fit: contain;
           margin: 0 20px;
           filter: grayscale(1);
 
-          &:hover{
+          &:hover {
             filter: grayscale(0);
           }
         }
