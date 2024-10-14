@@ -115,20 +115,26 @@ footer {
   justify-content: space-between;
   flex-direction: row;
   color: #595959;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 2vw 3.4vw;
+  border-top: 0.1vw solid rgba(0, 0, 0, 0.1);
+  padding: 2.4vw 3.4vw;
 }
-footer a {
+footer .social-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1.6vw;
+}
+footer .social-media a {
   text-decoration: none;
   color: #34a0a4;
-  margin: 0 10px;
 }
-footer a:hover {
+footer .social-media a i {
+  font-size: 1.5vw;
+}
+footer .social-media a:hover {
   color: #0b787c;
   transition: 0.5s;
-}
-footer a i {
-  font-size: 1.5vw;
 }
 
 .hero {
@@ -283,59 +289,99 @@ footer a i {
 }
 .card1-container .card1-content .card1 {
   background-color: #070F2B;
-  border-radius: 20px;
-  padding: 2em;
+  border-radius: 1.6vw;
+  padding: 2.4vw;
 }
 .card1-container .card1-content .card1 p {
   color: #34a0a4;
 }
 .card1-container .card1-content .card1 h1 {
   color: #fff;
-  font-size: 45px;
+  font-size: 3.525vw;
   margin: 1vw 0;
 }
 .card1-container .card1-content .card1 button {
-  border: 1px solid #34a0a4;
+  border: 0.1vw solid #34a0a4;
   background-color: transparent;
   color: #34a0a4;
-  padding: 15px;
-  border-radius: 90px;
+  padding: 1.15vw;
+  border-radius: 10vw;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 97%;
   text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  transition: all 0.4s ease-in-out;
 }
-.card1-container .card1-content .card1 button:hover {
+.card1-container .card1-content .card1 button::after {
+  content: "";
   background-color: #34a0a4;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  display: block;
+  transform: scaleY(0);
+  transform-origin: bottom center;
+  transition: transform 0.4s ease-in-out;
+}
+.card1-container .card1-content .card1 button:hover, .card1-container .card1-content .card1 button:focus {
   color: #fff;
-  transition: 0.5s;
+}
+.card1-container .card1-content .card1 button:hover::after, .card1-container .card1-content .card1 button:focus::after {
+  transform-origin: top center;
+  transform: scaleY(1);
 }
 .card1-container .card1-content .card2 {
   background-color: #34a0a4;
-  border-radius: 20px;
-  padding: 2em;
+  border-radius: 1.6vw;
+  padding: 2.4vw;
 }
 .card1-container .card1-content .card2 p {
   color: #070F2B;
 }
 .card1-container .card1-content .card2 h1 {
   color: #fff;
-  font-size: 45px;
+  font-size: 3.525vw;
   margin: 1vw 0;
 }
 .card1-container .card1-content .card2 button {
-  border: 1px solid #070F2B;
+  border: 0.1vw solid #070F2B;
   background-color: transparent;
   color: #070F2B;
-  padding: 15px;
-  border-radius: 90px;
+  padding: 1.15vw;
+  border-radius: 10vw;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 97%;
   text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  transition: all 0.4s ease-in-out;
 }
-.card1-container .card1-content .card2 button:hover {
+.card1-container .card1-content .card2 button::after {
+  content: "";
   background-color: #070F2B;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  display: block;
+  transform: scaleY(0);
+  transform-origin: bottom center;
+  transition: transform 0.4s ease-in-out;
+}
+.card1-container .card1-content .card2 button:hover, .card1-container .card1-content .card2 button:focus {
   color: #fff;
-  transition: 0.5s;
+}
+.card1-container .card1-content .card2 button:hover::after, .card1-container .card1-content .card2 button:focus::after {
+  transform-origin: top center;
+  transform: scaleY(1);
 }
 
 .info-container {
@@ -350,8 +396,7 @@ footer a i {
   font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
 }
 .info-container div h1 {
-  font-size: 3.5rem;
-  margin-bottom: 10px;
+  font-size: 4.3vw;
   color: #595959;
   font-weight: 700;
   text-transform: uppercase;
@@ -359,7 +404,7 @@ footer a i {
 .info-container div p {
   color: #0b787c;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 93%;
   font-weight: 700;
 }
 
@@ -435,7 +480,7 @@ footer a i {
 }
 
 .testimonials {
-  padding: 0 3.4vw 2.4vw;
+  padding: 0 3.4vw 5.4vw;
 }
 
 .testimonials-content {
@@ -446,9 +491,7 @@ footer a i {
 .testimonials-section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-}
-.testimonials-section .testimonials-text {
-  width: 89%;
+  gap: 7.2vw;
 }
 .testimonials-section .testimonials-text h2 {
   font-family: "Poppins", sans-serif;
@@ -460,14 +503,15 @@ footer a i {
   color: #595959;
 }
 .testimonials-section .testimonials-text button {
-  padding: 1vw;
+  padding: 1.1vw 1.3vw;
   background-color: #34a0a4;
-  border-radius: 100px;
+  border-radius: 10vw;
   color: #fff;
   border: 0 solid transparent;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-top: 1vw;
+  letter-spacing: 0.15vw;
+  margin-top: 1.2vw;
+  font-size: 1vw;
 }
 .testimonials-section .testimonials-text button:hover {
   background-color: #0b787c;
@@ -477,18 +521,19 @@ footer a i {
 .testimonials-section .testimonials-list {
   display: grid;
   align-items: center;
+  gap: 0.8vw;
 }
 .testimonials-section .testimonials-list .testimonial-card {
-  border: 1px solid rgba(0, 0, 0, 0.1019607843);
-  border-radius: 20px;
+  border: 0.1vw solid rgba(0, 0, 0, 0.1019607843);
+  border-radius: 1.6vw;
   padding: 2vw;
 }
 .testimonials-section .testimonials-list .testimonial-card .stars {
   color: #f0ad4e;
-  padding-bottom: 0.5vw;
+  padding-bottom: 0.7vw;
 }
 .testimonials-section .testimonials-list .testimonial-card .testimonial-text {
-  margin-bottom: 20px;
+  margin-bottom: 1.9vw;
   font-size: 1.1vw;
 }
 .testimonials-section .testimonials-list .testimonial-card .testimonial-author {
@@ -500,10 +545,10 @@ footer a i {
 }
 
 .line {
-  width: 10%;
-  height: 1px;
+  width: 13%;
+  height: 0.1vh;
   background-color: #34a0a4;
-  margin: 20px 0;
+  margin: 3.6vh 0;
 }
 
 .partners-section {
@@ -512,7 +557,6 @@ footer a i {
 }
 .partners-section h2 {
   font-size: 2rem;
-  margin-bottom: 1.6vh;
   color: #595959;
 }
 .partners-section .scrolling-logos {
@@ -521,19 +565,17 @@ footer a i {
 }
 .partners-section .scrolling-logos .logo-container {
   display: flex;
-  align-items: center;
 }
 .partners-section .scrolling-logos .logo-container .logo-slide {
   display: flex;
-  animation: scroll 3s linear infinite;
-  gap: 3vw;
+  animation: scroll 30s linear infinite;
 }
 .partners-section .scrolling-logos .logo-container .logo-slide img {
   width: 10vw;
   height: 8vw;
   -o-object-fit: contain;
      object-fit: contain;
-  margin: 0 20px;
+  margin-left: 3.2vw;
   filter: grayscale(1);
 }
 .partners-section .scrolling-logos .logo-container .logo-slide img:hover {

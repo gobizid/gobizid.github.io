@@ -2,77 +2,80 @@
 @use "./../../../helpers/variables" as v;
 
 .card1-container {
-    padding: 0 v.$padding-horizontal-main v.$padding-vertical-main;
+  padding: 0 v.$padding-horizontal-main v.$padding-vertical-main;
 
-      .card1-content {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.2vw;
+  .card1-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2vw;
 
-        .card1 {
-          background-color: map-get($map: v.$color, $key: "light-black");
-          border-radius: 20px;
-          padding: 2em;
+    @mixin card($bg-color, $color) {
+      background-color: $bg-color;
+      border-radius: 1.6vw;
+      padding: 2.4vw;
 
-          p {
-            color: map-get($map: v.$color, $key: "light-cyan");
-          }
+      p {
+        color: $color;
+      }
 
-          h1 {
-            color: #fff;
-            font-size: 45px;
-            margin: 1vw 0;
-          }
+      h1 {
+        color: #fff;
+        font-size: 3.525vw;
+        margin: 1vw 0;
+      }
 
-          button {
-            border: 1px solid map-get($map: v.$color, $key: "light-cyan");
-            background-color: transparent;
-            color: map-get($map: v.$color, $key: "light-cyan");
-            padding: 15px;
-            border-radius: 90px;
-            cursor: pointer;
-            font-size: 15px;
-            text-transform: uppercase;
+      button {
+        border: 0.1vw solid $color;
+        background-color: transparent;
+        color: $color;
+        padding: 1.15vw;
+        border-radius: 10vw;
+        cursor: pointer;
+        font-size: 97%;
+        text-transform: uppercase;
+        position: relative;
+        overflow: hidden;
+        z-index: 2;
+        transition: all 0.4s ease-in-out;
 
-            &:hover {
-              background-color: map-get($map: v.$color, $key: "light-cyan" );
-              color: #fff;
-              transition: 0.5s;
-            }
-          }
+        &::after {
+          content: "";
+          background-color: $color;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          z-index: -1;
+          left: 0;
+          top: 0;
+          display: block;
+          transform: scaleY(0);
+          transform-origin: bottom center;
+          transition: transform 0.4s ease-in-out;
         }
 
-        .card2 {
-          background-color: map-get($map: v.$color, $key: "light-cyan");
-          border-radius: 20px;
-          padding: 2em;
+        &:hover, &:focus {
+          color: #fff;
 
-          p {
-            color: map-get($map: v.$color, $key: "light-black" );
-          }
-
-          h1 {
-            color: #fff;
-            font-size: 45px;
-            margin: 1vw 0;
-          }
-
-          button {
-            border: 1px solid map-get($map: v.$color, $key: "light-black" );
-            background-color: transparent;
-            color: map-get($map: v.$color, $key: "light-black" );
-            padding: 15px;
-            border-radius: 90px;
-            cursor: pointer;
-            font-size: 15px;
-            text-transform: uppercase;
-
-            &:hover {
-              background-color: map-get($map: v.$color, $key: "light-black" );
-              color: #fff;
-              transition: 0.5s;
-            }
+          &::after {
+            transform-origin: top center;
+            transform: scaleY(1);
           }
         }
       }
     }
+
+    .card1 {
+      @include card(
+        $bg-color: map-get($map: v.$color, $key: "light-black"),
+        $color: map-get($map: v.$color, $key: "light-cyan")
+      );
+    }
+
+    .card2 {
+      @include card(
+        $bg-color: map-get($map: v.$color, $key: "light-cyan"),
+        $color: map-get($map: v.$color, $key: "light-black")
+      );
+    }
+  }
+}

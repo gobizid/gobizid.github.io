@@ -14,8 +14,7 @@
       font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
 
       h1 {
-        font-size: 3.5rem;
-        margin-bottom: 10px;
+        font-size: 4.3vw;
         color: map-get($map: v.$color, $key: "dark-gray");
         font-weight: 700;
         text-transform: uppercase;
@@ -24,7 +23,7 @@
       p {
         color: map-get($map: v.$color, $key: "dark-cyan" );
         text-transform: uppercase;
-        font-size: 14px;
+        font-size: 93%;
         font-weight: 700;
       }
     }
