@@ -1,9 +1,9 @@
 @use "./../../../helpers/mixins" as m;
 @use "./../../../helpers/variables" as v;
 
-.catalog {
+.product {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15vw, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
   padding: 0 v.$padding-horizontal-main v.$padding-vertical-main;
   gap: 1.1vw;
   grid-auto-rows: 1fr;

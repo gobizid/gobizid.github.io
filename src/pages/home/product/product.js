@@ -1,9 +1,9 @@
-export default function catalog() {
+export default function product() {
   const price = document.querySelectorAll(
-    "section.catalog .catalog-wrapper .price"
+    "section.product .product-wrapper .price"
   );
   const discount = document.querySelectorAll(
-    "section.catalog .catalog-wrapper .discount"
+    "section.product .product-wrapper .discount"
   );
 
   function formatCurrency(value) {
