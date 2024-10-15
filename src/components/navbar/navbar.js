@@ -4,7 +4,8 @@ export default function navbar() {
   function setActiveLinkByUrl(links) {
     const currentPath = window.location.pathname;
     for (let i = 0; i < links.length; i++) {
-      if (links[i].getAttribute("href") === currentPath) {
+      const linkPath = new URL(links[i].href).pathname;
+      if (linkPath === currentPath) {
         links[i].classList.add("active");
       } else {
         links[i].classList.remove("active");
