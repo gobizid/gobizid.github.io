@@ -37,10 +37,15 @@
     <meta name="twitter:image" content="img/square.webp" />
 
     <!-- favicon -->
-    <link rel="icon" href="https://gobiz-develope.github.io/gobizid.github.io/assets/img/logos/logo-fix.png" type="image/x-icon" />
+    <link
+      rel="icon"
+      href="/assets/img/logos/logo-fix.png"
+      type="image/x-icon"
+    />
 
     <!-- style -->
-    <link rel="stylesheet" href="https://gobiz-develope.github.io/gobizid.github.io/src/main/main.css" />
+    <!-- <link rel="stylesheet" href="https://gobiz-develope.github.io/gobizid.github.io/src/main/main.css" /> -->
+    <link rel="stylesheet" href="/src/main/main.css" />
 
     <!-- package -->
     <link
@@ -59,8 +64,8 @@
   <body>
     <header>
       <nav class="nav">
-        <a href="/" class="nav-logo">
-          <img src="https://gobiz-develope.github.io/gobizid.github.io/assets/img/logos/logo-fix.png" alt="GoBiz Logo" />
+        <a href="/index.html" class="nav-logo">
+          <img src="/assets/img/logos/logo-fix.png" alt="GoBiz Logo" />
           <span>GoBiz</span>
         </a>
         <div class="nav-main">
@@ -71,10 +76,10 @@
             <input type="text" placeholder="Search in GoBiz" />
           </div>
           <div class="links">
-            <a class="active" href="https://gobiz-develope.github.io/gobizid.github.io">Beranda</a>
-            <a href="https://gobiz-develope.github.io/gobizid.github.io/src/pages/catalog/catalog.html"
-              >Catalog</a
-            >
+            <!-- href="https://gobiz-develope.github.io/gobizid.github.io" -->
+            <a href="/">Beranda</a>
+            <!-- href="https://gobiz-develope.github.io/gobizid.github.io/src/pages/catalog/catalog.html" -->
+            <a href="/src/pages/catalog/catalog.html">Catalog</a>
             <a href="#">Layanan</a>
             <a href="#">Bantuan</a>
             <a href="#">BizTips</a>
@@ -95,6 +100,37 @@
       </nav>
     </header>
 
+    <div class="catalog">
+      <div class="catalog-filter">
+        <div class="filter-header">
+          <div class="filter-header-controll">
+            <i class="fa-solid fa-sliders"></i>
+            <span>Customize</span>
+          </div>
+          <div class="filter-header-close">
+            <i class="fa-solid fa-arrow-left-long"></i>
+            <span></span>
+          </div>
+        </div>
+        <div class="filter-categories">
+          <div class="filter-categories-title">Categories</div>
+          <div class="filter-categories-list">
+            <div class="item">Makanan Cepat Saji</div>
+            <div class="item">Kerajinan Tangan</div>
+            <div class="item">Fashion Pria</div>
+            <div class="item">Fashion Wanita</div>
+          </div>
+        </div>
+      </div>
+      <div class="catalog-display">
+        <div class="controll-filter">
+          <i class="fa-solid fa-xmark"></i>
+          <i class="fa-solid fa-sliders"></i>
+          <span>Filters</span>
+        </div>
+      </div>
+    </div>
+
     <footer>
       <p>© 2024 GoBiz. All rights reserved.</p>
       <div class="social-media">
@@ -109,6 +145,7 @@
     <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <script type="module" src="https://gobiz-develope.github.io/gobizid.github.io/src/main/main.js"></script>
+    <!-- <script type="module" src="https://gobiz-develope.github.io/gobizid.github.io/src/main/main.js"></script> -->
+    <script type="module" src="./catalog.js"></script>
   </body>
 </html>

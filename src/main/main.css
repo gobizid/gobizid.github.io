@@ -323,7 +323,6 @@ footer .social-media a:hover {
   z-index: -1;
   left: 0;
   top: 0;
-  display: block;
   transform: scaleY(0);
   transform-origin: bottom center;
   transition: transform 0.4s ease-in-out;
@@ -371,7 +370,6 @@ footer .social-media a:hover {
   z-index: -1;
   left: 0;
   top: 0;
-  display: block;
   transform: scaleY(0);
   transform-origin: bottom center;
   transition: transform 0.4s ease-in-out;
@@ -590,6 +588,178 @@ footer .social-media a:hover {
     transform: translateX(-100%);
   }
 }
+.catalog {
+  min-height: 100vh;
+  padding: 0 3.4vw 2.4vw;
+  gap: 0.9vw;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: 20vw 1fr;
+  grid-auto-flow: column;
+  grid-auto-rows: 1fr;
+}
+.catalog-filter {
+  display: grid;
+  gap: 1.6vw;
+  width: 20vw;
+  height: -moz-fit-content;
+  height: fit-content;
+  transition: transform 0.7s ease-out;
+  transform: translateX(0);
+}
+.catalog-filter .filter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.catalog-filter .filter-header-controll {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0.45vw;
+  color: #595959;
+}
+.catalog-filter .filter-header-controll i {
+  font-size: 1.25vw;
+}
+.catalog-filter .filter-header-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0.2vw;
+  cursor: pointer;
+}
+.catalog-filter .filter-header-close i {
+  font-size: 1.2vw;
+  color: #595959;
+}
+.catalog-filter .filter-header-close span {
+  width: 0.15vw;
+  height: 2.6vh;
+  border-radius: 50vw;
+  background-color: #595959;
+}
+.catalog-filter .filter-categories {
+  display: grid;
+  gap: 0.6vw;
+}
+.catalog-filter .filter-categories-title {
+  font-size: 1.15vw;
+  font-weight: 600;
+  color: #0b787c;
+}
+.catalog-filter .filter-categories-list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5vw 0.4vw;
+}
+.catalog-filter .filter-categories-list .item {
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 10vw;
+  color: #34a0a4;
+  cursor: pointer;
+  border: 0.1vw solid #34a0a4;
+  padding: 0.6vw 0.9vw;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s ease-out;
+  font-size: 0.95vw;
+}
+.catalog-filter .filter-categories-list .item::after {
+  content: "";
+  position: absolute;
+  left: -5%;
+  top: 0;
+  width: 110%;
+  height: 110%;
+  display: block;
+  z-index: -1;
+  background-color: #34a0a4;
+  transform: scaleY(0);
+  transform-origin: center bottom;
+  transition: transform 0.35s ease-out;
+}
+.catalog-filter .filter-categories-list .item:hover {
+  color: #fff;
+}
+.catalog-filter .filter-categories-list .item:hover::after {
+  transform: scaleY(1);
+  transform-origin: center top;
+}
+.catalog-filter.hidden {
+  transform: translateX(-23.4vw);
+}
+.catalog-display {
+  width: 100%;
+}
+.catalog-display .controll-filter {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.6vw 1.6vw;
+  border: 0.1vw solid #595959;
+  border-radius: 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0.4vw;
+  color: #595959;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.6s ease-out;
+  transform: translateX(0);
+}
+.catalog-display .controll-filter span {
+  font-weight: 600;
+}
+.catalog-display .controll-filter i {
+  font-size: 1.2vw;
+}
+.catalog-display .controll-filter i:nth-child(1) {
+  display: block;
+}
+.catalog-display .controll-filter i:nth-child(2) {
+  display: none;
+}
+.catalog-display .controll-filter.expanded {
+  transform: translateX(-20.9vw);
+}
+.catalog-display .controll-filter.expanded i:nth-child(1) {
+  display: none;
+}
+.catalog-display .controll-filter.expanded i:nth-child(2) {
+  display: block;
+}
+.catalog-display .controll-filter::after {
+  content: "";
+  position: absolute;
+  left: -5%;
+  top: 0;
+  width: 110%;
+  height: 110%;
+  display: block;
+  z-index: -1;
+  background-color: #595959;
+  transform: scaleY(0);
+  transform-origin: bottom center;
+  transition: transform 0.35s ease-out;
+}
+.catalog-display .controll-filter:hover {
+  color: #fff;
+}
+.catalog-display .controll-filter:hover::after {
+  transform: scaleY(1);
+  transform-origin: top center;
+}
+
 *,
 *::before,
 *::after {
