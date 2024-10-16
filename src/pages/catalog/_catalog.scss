@@ -4,6 +4,12 @@
 $gap-catalog: 0.9vw;
 $width-filter: 20vw;
 
+@mixin title-filter() {
+  font-size: 1.15vw;
+  font-weight: 600;
+  color: map-get($map: v.$color, $key: "dark-cyan");
+}
+
 .catalog {
   min-height: 100vh;
   padding: 0 v.$padding-horizontal-main v.$padding-vertical-main;
@@ -59,9 +65,7 @@ $width-filter: 20vw;
       gap: 0.6vw;
 
       &-title {
-        font-size: 1.15vw;
-        font-weight: 600;
-        color: map-get($map: v.$color, $key: "dark-cyan");
+        @include title-filter();
       }
 
       &-list {
@@ -108,6 +112,37 @@ $width-filter: 20vw;
       }
     }
 
+    .filter-address {
+      display: grid;
+      grid-template-areas:
+        "title title"
+        "province regency"
+        "district village";
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(3, auto);
+
+      &-title {
+        grid-area: title;
+        @include title-filter();
+      }
+
+      &-province {
+        grid-area: province;
+      }
+
+      &-regency {
+        grid-area: regency;
+      }
+
+      &-district {
+        grid-area: district;
+      }
+
+      &-village {
+        grid-area: village;
+      }
+    }
+
     &.hidden {
       transform: translateX(-($width-filter + v.$padding-horizontal-main));
     }
@@ -129,9 +164,9 @@ $width-filter: 20vw;
       overflow: hidden;
       transition: transform 0.6s ease-out;
       transform: translateX(0);
-      
+
       span {
-      font-weight: 600;
+        font-weight: 600;
       }
 
       i {
@@ -140,7 +175,7 @@ $width-filter: 20vw;
         &:nth-child(1) {
           display: block;
         }
-        
+
         &:nth-child(2) {
           display: none;
         }
@@ -153,7 +188,7 @@ $width-filter: 20vw;
           &:nth-child(1) {
             display: none;
           }
-          
+
           &:nth-child(2) {
             display: block;
           }

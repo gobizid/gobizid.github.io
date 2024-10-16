@@ -693,6 +693,30 @@ footer .social-media a:hover {
   transform: scaleY(1);
   transform-origin: center top;
 }
+.catalog-filter .filter-address {
+  display: grid;
+  grid-template-areas: "title title" "province regency" "district village";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, auto);
+}
+.catalog-filter .filter-address-title {
+  grid-area: title;
+  font-size: 1.15vw;
+  font-weight: 600;
+  color: #0b787c;
+}
+.catalog-filter .filter-address-province {
+  grid-area: province;
+}
+.catalog-filter .filter-address-regency {
+  grid-area: regency;
+}
+.catalog-filter .filter-address-district {
+  grid-area: district;
+}
+.catalog-filter .filter-address-village {
+  grid-area: village;
+}
 .catalog-filter.hidden {
   transform: translateX(-23.4vw);
 }
