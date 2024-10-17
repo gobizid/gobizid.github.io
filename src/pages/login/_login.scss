@@ -1,210 +1,163 @@
 @use "../../helpers/mixins" as m;
 @use "../../helpers/variables" as v;
 
-.login {
-  padding: v.$padding-vertical-main v.$padding-horizontal-main;
+.container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 30px;
+}
 
-  .container {
-    width: 80%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+.form {
+  position: absolute;
+  max-width: 30vw;
+  width: 100%;
+  padding: 2vw;
+  border-radius: 1vw;
+  background: #FFF;
 
-    .text {
-      padding-right: 5vw;
+  &.signup {
+    opacity: 0;
+    pointer-events: none;
+  }
 
-      h1 {
-        font-size: 2rem;
-      }
+  .show-signup &.signup {
+    opacity: 1;
+    pointer-events: auto;
+  }
 
-      ol {
-        padding-left: 1vw;
+  .show-signup &.login {
+    opacity: 0;
+    pointer-events: none;
+  }
 
-        li {
-          margin-bottom: 0.5vw;
+  header {
+    font-size: 28px;
+    font-weight: 600;
+    color: map-get($map: v.$color, $key: "dark-gray");
+    text-align: center;
+  }
 
-          ul {
-            list-style-type: disc;
-            padding-left: 1vw;
-          }
-        }
-      }
-    }
+  form {
+    margin-top: 30px;
+  }
 
-    .container {
-      height: 80vh;
+  .field {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 6px;
+
+    input,
+    button {
+      height: 100%;
       width: 100%;
-      display: flex;
-      // align-items: center;
-      justify-content: center;
-      column-gap: 30px;
+      border: none;
+      font-size: 16px;
+      font-weight: 400;
+      border-radius: 6px;
     }
 
-    .form {
+    input {
+      outline: none;
+      padding: 0 15px;
+      border: 1px solid #CACACA;
+
+      &:focus {
+        border-bottom-width: 2px;
+      }
+    }
+
+    button {
+      color: #fff;
+      background-color: map-get($map: v.$color, $key: "light-cyan");
+      transition: all 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        background-color: map-get($map: v.$color, $key: "dark-cyan");
+      }
+    }
+
+    .eye-icon {
       position: absolute;
-      max-width: 430px;
-      width: 100%;
-      padding: 30px;
-      border-radius: 20px;
-      background: #fff;
-
-      &.signup {
-        opacity: 0;
-        pointer-events: none;
-      }
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      font-size: 18px;
+      color: #8b8b8b;
+      cursor: pointer;
+      padding: 5px;
     }
+  }
 
-    .forms {
-      &.show-signup {
-        .form.signup {
-          opacity: 1;
-          pointer-events: auto;
-        }
+  .form-link {
+    text-align: center;
+    margin-top: 10px;
 
-        .form.login {
-          opacity: 0;
-          pointer-events: none;
-        }
-      }
-    }
-
-    header {
-      font-size: 28px;
-      font-weight: 600;
+    span,
+    a {
+      font-size: 14px;
+      font-weight: 400;
       color: #232836;
-      text-align: center;
     }
 
-    form {
-      margin-top: 30px;
-    }
+    a {
+      color: #0171d3;
+      text-decoration: none;
 
-    .form {
-      .field {
-        position: relative;
-        height: 50px;
-        width: 100%;
-        margin-top: 20px;
-        border-radius: 6px;
-
-        input,
-        button {
-          height: 100%;
-          width: 100%;
-          border: none;
-          font-size: 16px;
-          font-weight: 400;
-          border-radius: 6px;
-
-          &:focus {
-            border-bottom-width: 2px;
-          }
-        }
-
-        input {
-          outline: none;
-          padding: 0 15px;
-          border: 1px solid #cacaca;
-        }
-
-        button {
-          color: #fff;
-          background-color: #0171d3;
-          transition: all 0.3s ease;
-          cursor: pointer;
-
-          &:hover {
-            background-color: #016dcb;
-          }
-        }
-
-        .eye-icon {
-          position: absolute;
-          top: 50%;
-          right: 10px;
-          transform: translateY(-50%);
-          font-size: 18px;
-          color: #8b8b8b;
-          cursor: pointer;
-          padding: 5px;
-        }
+      &:hover {
+        text-decoration: underline;
       }
     }
+  }
 
-    .form-link {
-      text-align: center;
-      margin-top: 10px;
+  .line {
+    position: relative;
+    height: 1px;
+    width: 100%;
+    margin: 36px 0;
+    background-color: #d4d4d4;
 
-      span,
-      a {
-        font-size: 14px;
-        font-weight: 400;
-        color: #232836;
+    &::before {
+      content: 'Or';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #FFF;
+      color: #8b8b8b;
+      padding: 0 15px;
+    }
+  }
+
+  .media-options {
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+
+      &.button {
+        color: map-get($map: v.$color, $key: "dark-cyan");
+        background-color: transparent;
+        border: .1vw solid map-get($map: v.$color, $key: "dark-cyan");
       }
 
-      a {
-        color: #0171d3;
-        text-decoration: none;
-
-        &:hover {
-          text-decoration: underline;
-        }
+      &:hover{
+        background-color: map-get($map: v.$color, $key: "dark-cyan");
+        color: white;
+        transition: .3s ease-in-out ;
       }
     }
+  }
+}
 
-    .line {
-      position: relative;
-      height: 1px;
-      width: 100%;
-      margin: 36px 0;
-      background-color: #d4d4d4;
-
-      &::before {
-        content: "Or";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: #fff;
-        color: #8b8b8b;
-        padding: 0 15px;
-      }
-    }
-
-    .media-options {
-      a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-
-        &.facebook {
-          color: map-get($map: v.$color, $key: "dark-cyan");
-          background-color: transparent;
-          border: 1px solid map-get($map: v.$color, $key: "dark-cyan" );
-
-          .logo {
-            height: 28px;
-            width: 28px;
-            font-size: 20px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
-        }
-        &:hover{
-          background-color: map-get($map: v.$color, $key: "dark-cyan");
-          color: white;
-          transition: .3s;
-        }
-      }
-    }
-
-    @media screen and (max-width: 400px) {
-      .form {
-        padding: 20px 10px;
-      }
-    }
+@media screen and (max-width: 400px) {
+  .form {
+    padding: 20px 10px;
   }
 }
