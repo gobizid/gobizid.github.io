@@ -909,23 +909,175 @@ footer .social-media a:hover {
   transform-origin: top center;
 }
 
-.login .container {
+.login {
   padding: 2.4vw 3.4vw;
+}
+.login .container {
+  width: 80%;
+  margin: auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
-.login .container h1 {
+.login .container .text {
+  padding-right: 5vw;
+}
+.login .container .text h1 {
   font-size: 2rem;
 }
-.login .container ol {
+.login .container .text ol {
   padding-left: 1vw;
 }
-.login .container ol li {
+.login .container .text ol li {
   margin-bottom: 0.5vw;
 }
-.login .container ol li ul {
+.login .container .text ol li ul {
   list-style-type: disc;
   padding-left: 1vw;
+}
+.login .container .container {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+}
+.login .container .form {
+  position: absolute;
+  max-width: 430px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 20px;
+  background: #fff;
+}
+.login .container .form.signup {
+  opacity: 0;
+  pointer-events: none;
+}
+.login .container .forms.show-signup .form.signup {
+  opacity: 1;
+  pointer-events: auto;
+}
+.login .container .forms.show-signup .form.login {
+  opacity: 0;
+  pointer-events: none;
+}
+.login .container header {
+  font-size: 28px;
+  font-weight: 600;
+  color: #232836;
+  text-align: center;
+}
+.login .container form {
+  margin-top: 30px;
+}
+.login .container .form .field {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 6px;
+}
+.login .container .form .field input,
+.login .container .form .field button {
+  height: 100%;
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 6px;
+}
+.login .container .form .field input:focus,
+.login .container .form .field button:focus {
+  border-bottom-width: 2px;
+}
+.login .container .form .field input {
+  outline: none;
+  padding: 0 15px;
+  border: 1px solid #cacaca;
+}
+.login .container .form .field button {
+  color: #fff;
+  background-color: #0171d3;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.login .container .form .field button:hover {
+  background-color: #016dcb;
+}
+.login .container .form .field .eye-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #8b8b8b;
+  cursor: pointer;
+  padding: 5px;
+}
+.login .container .form-link {
+  text-align: center;
+  margin-top: 10px;
+}
+.login .container .form-link span,
+.login .container .form-link a {
+  font-size: 14px;
+  font-weight: 400;
+  color: #232836;
+}
+.login .container .form-link a {
+  color: #0171d3;
+  text-decoration: none;
+}
+.login .container .form-link a:hover {
+  text-decoration: underline;
+}
+.login .container .line {
+  position: relative;
+  height: 1px;
+  width: 100%;
+  margin: 36px 0;
+  background-color: #d4d4d4;
+}
+.login .container .line::before {
+  content: "Or";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  color: #8b8b8b;
+  padding: 0 15px;
+}
+.login .container .media-options a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.login .container .media-options a.facebook {
+  color: #0b787c;
+  background-color: transparent;
+  border: 1px solid #0b787c;
+}
+.login .container .media-options a.facebook .logo {
+  height: 28px;
+  width: 28px;
+  font-size: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login .container .media-options a:hover {
+  background-color: #0b787c;
+  color: white;
+  transition: 0.3s;
+}
+@media screen and (max-width: 400px) {
+  .login .container .form {
+    padding: 20px 10px;
+  }
 }
 
 *,
