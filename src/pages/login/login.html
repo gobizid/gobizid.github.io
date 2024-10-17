@@ -1,15 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - GoBiz</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="">
+  <link rel="stylesheet" href="/src/main/main.css" />
 </head>
 <body>
-    <section class="login">
-        <div>
-            
+  <section class="login">
+    <div class="container">
+        <div class="text">
+            <h1>Panduan Pengguna</h1>
+            <ol>
+                <li>
+                  <strong>Pilih Metode Autentikasi</strong>
+                  <ul>
+                    <li>QR code</li>
+                    <li>OAuth2 (Google)</li>
+                    <li>Short Temporary Password (STP)</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Autentikasi dengan QR Code</strong>
+                  <p>Jika memilih QR code, buka kamera pada aplikasi whatsapp anda lalu pindai kode QR yang ditampilkan di layar.</p>
+                </li>
+                <li>
+                  <strong>Autentikasi dengan OAuth2</strong>
+                  <p>Jika memilih OAuth2, klik tombol "Sign in with Google" dan ikuti instruksi untuk masuk menggunakan akun Google Anda.</p>
+                </li>
+                <li>
+                  <strong>Autentikasi dengan STP</strong>
+                  <p>Jika memilih STP, masukkan nomor handphone Anda pada kolom yang disediakan, kemudian tekan tombol "Kirim".</p>
+                </li>
+                <li>
+                  <strong>Masukkan Password Sementara</strong>
+                  <p>Anda akan menerima password sementara melalui WhatsApp. Masukkan password tersebut pada halaman autentikasi dalam waktu 4 menit.</p>
+                </li>
+              </ol>
         </div>
-    </section>
+        <div class="login">
+            <div class="card">
+                <button>Scan QR</button>
+                <p> Or Using your Email and Password</p>
+                <form action="">
+                    <input for="email" type="email"></input>
+                    <input for="password" type="password"></input>
+                </form>
+            </div>
+        </div>
+    </div>
+  </section>
 </body>
 </html>

@@ -784,6 +784,25 @@ footer .social-media a:hover {
   transform-origin: top center;
 }
 
+.login .container {
+  padding: 2.4vw 3.4vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.login .container h1 {
+  font-size: 2rem;
+}
+.login .container ol {
+  padding-left: 1vw;
+}
+.login .container ol li {
+  margin-bottom: 0.5vw;
+}
+.login .container ol li ul {
+  list-style-type: disc;
+  padding-left: 1vw;
+}
+
 *,
 *::before,
 *::after {
@@ -819,4 +838,4 @@ html.lenis body {
 
 .lenis.lenis-smooth iframe {
   pointer-events: none;
-}
+}/*# sourceMappingURL=main.css.map */

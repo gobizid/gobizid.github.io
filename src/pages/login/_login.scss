@@ -1,0 +1,29 @@
+@use "../../helpers/mixins" as m;
+@use "../../helpers/variables" as v;
+
+.login{
+    
+    
+    .container{
+        padding: v.$padding-vertical-main v.$padding-horizontal-main;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    
+        h1{
+            font-size: 2rem;
+        }
+    
+        ol {
+            padding-left: 1vw;
+          
+            li {
+              margin-bottom: .5vw;
+          
+              ul {
+                list-style-type: disc;
+                padding-left: 1vw;
+              }
+            }
+        }
+    }
+}
