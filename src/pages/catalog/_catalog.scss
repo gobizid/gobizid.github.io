@@ -3,6 +3,7 @@
 
 $gap-catalog: 0.9vw;
 $width-filter: 20vw;
+$fs-item: 0.95vw;
 
 @mixin title-filter() {
   font-size: 1.15vw;
@@ -25,7 +26,7 @@ $width-filter: 20vw;
     gap: 1.6vw;
     width: 20vw;
     height: fit-content;
-    transition: transform 0.7s ease-out;
+    transition: transform 0.65s linear;
     transform: translateX(0);
 
     .filter-header {
@@ -83,7 +84,7 @@ $width-filter: 20vw;
           position: relative;
           overflow: hidden;
           transition: all 0.25s ease-out;
-          font-size: 0.95vw;
+          font-size: $fs-item;
 
           &::after {
             content: "";
@@ -120,6 +121,46 @@ $width-filter: 20vw;
         "district village";
       grid-template-columns: 1fr 1fr;
       grid-template-rows: repeat(3, auto);
+      gap: 0.7vw 0.6vw;
+
+      @mixin address-select() {
+        border: 0.1vw solid map-get($map: v.$color, $key: "light-cyan");
+        padding: 0.5vw 0.55vw 0.5vw 0.5vw;
+        border-radius: 0.4vw;
+        display: grid;
+        grid-template-areas:
+          "label icon"
+          "list list";
+        grid-template-columns: 1fr auto;
+        font-size: $fs-item;
+        color: map-get($map: v.$color, $key: "light-cyan");
+        cursor: pointer;
+
+        i {
+          grid-area: icon;
+          margin-top: -0.1vw;
+        }
+
+        .list {
+          grid-area: list;
+          @include m.flex($direction: column, $align: flex-start);
+          max-height: 0;
+          overflow: hidden;
+          opacity: 0;
+          transition: max-height 0.9s ease-out, opacity 0.15s ease-out;
+
+          .item {
+            padding-top: 0.5vw;
+          }
+        }
+
+        &.expanded {
+          .list {
+            opacity: 1;
+            max-height: 100vh;
+          }
+        }
+      }
 
       &-title {
         grid-area: title;
@@ -128,18 +169,22 @@ $width-filter: 20vw;
 
       &-province {
         grid-area: province;
+        @include address-select();
       }
 
       &-regency {
         grid-area: regency;
+        @include address-select();
       }
 
       &-district {
         grid-area: district;
+        @include address-select();
       }
 
       &-village {
         grid-area: village;
+        @include address-select();
       }
     }
 
@@ -162,7 +207,7 @@ $width-filter: 20vw;
       cursor: pointer;
       position: relative;
       overflow: hidden;
-      transition: transform 0.6s ease-out;
+      transition: transform 0.6s linear;
       transform: translateX(0);
 
       span {
