@@ -25,7 +25,7 @@ links.forEach((link) => {
 });
 
 const getEmail = document.querySelector("input[name='Email']");
-const getUsername = document.querySelector("input[name='Username']");
+const getName = document.querySelector("input[name='Name']");
 const getPassword = document.querySelector("input[name='Password']");
 const getPhoneNumber = document.querySelector("input[name='PhoneNumber']");
 
@@ -34,7 +34,7 @@ document.getElementById("form-register").addEventListener("submit", (e) => {
 
   const datajson = {
     Email: getEmail.value,
-    Name: getUsername.value,
+    Name: getName.value,
     Password: getPassword.value,
     PhoneNumber: getPhoneNumber.value,
   };
@@ -50,6 +50,8 @@ document.getElementById("form-register").addEventListener("submit", (e) => {
     body: raw,
   };
 
+  console.log(raw);
+  
   fetch(
     "https://asia-southeast2-awangga.cloudfunctions.net/jualin/auth/regis",
     requestOptions
