@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="/src/main/main.css" />
+    <!-- favicon -->
+    <link rel="icon" href="/assets/img/logos/logo-fix.png" type="image/x-icon" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <section class="container">
+      <div class="card">
+        <section class="container forms">
+          <div class="form login">
+            <div class="form-content">
+              <header>Login</header>
+              <form id="form-login">
+                <div class="field input-field">
+                  <input
+                    type="text"
+                    name="Username"
+                    placeholder="Username"
+                    class="input"
+                  />
+                </div>
+                <div class="field input-field">
+                  <input
+                    type="password"
+                    name="Password"
+                    placeholder="Password"
+                    class="password"
+                  />
+                  <i class="bx bx-hide eye-icon"></i>
+                </div>
+                <div class="field button-field">
+                  <button>Submit</button>
+                </div>
+              </form>
+              <div class="form-link">
+                <span
+                  >Don't have an account?
+                  <a href="#" class="link signup-link">Signup</a></span
+                >
+              </div>
+            </div>
+            <div class="line"></div>
+            <div class="media-options">
+              <a href="./qr/qr.html" class="field button">
+                <p>Scan Qr</p>
+              </a>
+            </div>
+          </div>
+          <!-- Signup Form -->
+          <div class="form signup">
+            <div class="form-content">
+              <header>Signup</header>
+              <form id="form-register">
+                <div class="field input-field">
+                  <input
+                    type="email"
+                    name="Email"
+                    placeholder="Email"
+                    class="input"
+                  />
+                </div>
+                <div class="field input-field">
+                  <input
+                    type="text"
+                    name="Name"
+                    placeholder="Username"
+                    class="input"
+                  />
+                </div>
+                <div class="field input-field">
+                  <input
+                    type="number"
+                    name="PhoneNumber"
+                    placeholder="PhoneNumber"
+                    class="input"
+                  />
+                </div>
+                <div class="field input-field">
+                  <input
+                    type="password"
+                    name="Password"
+                    placeholder="Password"
+                    class="password"
+                  />
+                  <i class="bx bx-hide eye-icon"></i>
+                </div>
+                <div class="field button-field">
+                  <button>Submit</button>
+                </div>
+              </form>
+              <div class="form-link">
+                <span
+                  >Already have an account?
+                  <a href="#" class="link login-link">Login</a></span
+                >
+              </div>
+            </div>
+            <div class="line"></div>
+            <div class="media-options">
+              <a href="./qr/qr.html" class="field button">
+                <p>Scan Qr</p>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+    <script type="module" src="login.js"></script>
+  </body>
+</html>

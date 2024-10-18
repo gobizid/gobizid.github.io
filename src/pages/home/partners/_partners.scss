@@ -1,0 +1,48 @@
+@use "./../../../helpers/mixins" as m;
+@use "./../../../helpers/variables" as v;
+
+.partners-section {
+  text-align: center;
+  padding: 0 v.$padding-horizontal-main v.$padding-vertical-main;
+
+  h2 {
+    font-size: 2rem;
+    color: map-get($map: v.$color, $key: "dark-gray");
+  }
+
+  .scrolling-logos {
+    width: 100%;
+    overflow: hidden;
+
+    .logo-container {
+      display: flex;
+
+      .logo-slide {
+        display: flex;
+        animation: scroll 30s linear infinite;
+        // gap: 3vw;
+
+        img {
+          width: 10vw;
+          height: 8vw;
+          object-fit: contain;
+          margin-left: 3.2vw;
+          filter: grayscale(1);
+
+          &:hover {
+            filter: grayscale(0);
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

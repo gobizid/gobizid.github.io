@@ -1,0 +1,30 @@
+@use "./../helpers/mixins" as m;
+@use "./../helpers/variables" as v;
+
+footer {
+  @include m.flex($justify: space-between);
+  color: map-get($map: v.$color, $key: "dark-gray");
+  border-top: 0.1vw solid rgba(0, 0, 0, 0.1);
+  padding: v.$padding-vertical-main v.$padding-horizontal-main;
+
+  .social-media {
+    @include m.flex();
+    gap: 1.6vw;
+    
+    a {
+      text-decoration: none;
+      color: map-get($map: v.$color, $key: "light-cyan");
+      // margin: 0 10px;
+  
+      i {
+        font-size: 1.5vw;
+      }
+  
+      &:hover {
+        color: map-get($map: v.$color, $key: "dark-cyan");
+        transition: 0.5s;
+      }
+    }
+  }
+
+}

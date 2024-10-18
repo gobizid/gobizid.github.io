@@ -1,121 +1,509 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GoBiz - Solusi untuk Usaha Anda</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="GoBiz adalah solusi lengkap untuk mengembangkan usaha kuliner Anda, mulai dari penerimaan pembayaran digital hingga pengelolaan promosi.">
-    <meta name="keywords" content="GoBiz, usaha kuliner, icalan, komplek,arisan, komunitas, bisnis, aplikasi bisnis">
-    <meta name="author" content="GoBiz by Indibiz">
-    <meta name="robots" content="index, follow">
+    <meta
+      name="description"
+      content="GoBiz adalah solusi lengkap untuk mengembangkan usaha Anda, mulai dari penerimaan pembayaran digital hingga pengelolaan promosi."
+    />
+    <meta
+      name="keywords"
+      content="GoBiz, usaha kuliner, icalan, komplek, arisan, komunitas, bisnis, aplikasi bisnis"
+    />
+    <meta name="author" content="GoBiz by Indibiz, Gobiz Developer" />
+    <meta name="robots" content="index, follow" />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="GoBiz - Solusi untuk Usaha Anda">
-    <meta property="og:description" content="GoBiz adalah solusi lengkap untuk mengembangkan usaha kuliner Anda, mulai dari penerimaan pembayaran digital hingga pengelolaan promosi.">
-    <meta property="og:image" content="img/square.webp">
-    <meta property="og:url" content="https://go.biz.id">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="GoBiz - Solusi untuk Usaha Anda" />
+    <meta
+      property="og:description"
+      content="GoBiz adalah solusi lengkap untuk mengembangkan usaha Anda, mulai dari penerimaan pembayaran digital hingga pengelolaan promosi."
+    />
+    <meta property="og:image" content="img/square.webp" />
+    <meta property="og:url" content="https://go.biz.id" />
 
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="GoBiz - Solusi untuk Usaha Anda">
-    <meta name="twitter:description" content="GoBiz adalah solusi lengkap untuk mengembangkan usaha kuliner Anda, mulai dari penerimaan pembayaran digital hingga pengelolaan promosi.">
-    <meta name="twitter:image" content="img/square.webp">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="GoBiz - Solusi untuk Usaha Anda" />
+    <meta
+      name="twitter:description"
+      content="GoBiz adalah solusi lengkap untuk mengembangkan usaha Anda, mulai dari penerimaan pembayaran digital hingga pengelolaan promosi."
+    />
+    <meta name="twitter:image" content="img/square.webp" />
 
-    <!-- Favicon -->
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <!-- favicon -->
+    <link rel="icon" href="assets/img/logos/logo-fix.png" type="image/x-icon" />
+
+    <!-- style -->
+    <link rel="stylesheet" href="/src/main/main.css" />
+
+    <!-- package -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/lenis@1.1.14/dist/lenis.css"
+    />
+  </head>
+
+  <body>
     <header>
-        <nav>
-            <div class="logo">
-                <img src="img/logo.webp" alt="GoBiz Logo">
-            </div>
-            <ul class="nav-links">
-                <li><a href="#">Layanan</a></li>
-                <li><a href="#">Bantuan</a></li>
-                <li><a href="#">BizTips</a></li>
-                <li><a href="#">Komunitas</a></li>
-            </ul>
-            <div class="auth-buttons">
-                <button class="btn btn-signup">Daftar</button>
-                <button class="btn btn-login">Masuk</button>
-            </div>
-        </nav>
+      <nav class="nav">
+        <a href="/index.html" class="nav-logo">
+          <img src="assets/img/logos/logo-fix.png" alt="GoBiz Logo" />
+          <span>GoBiz</span>
+        </a>
+        <div class="nav-main">
+          <div class="search">
+            <button>
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <input type="text" placeholder="Search in GoBiz" />
+          </div>
+          <div class="links">
+            <!-- href="https://gobiz-develope.github.io/gobizid.github.io" -->
+            <a href="/index.html">Beranda</a>
+            <!-- href="https://gobiz-develope.github.io/gobizid.github.io/src/pages/catalog/catalog.html" -->
+            <a href="/src/pages/catalog/catalog.html">Catalog</a>
+            <a href="#">Layanan</a>
+            <a href="#">Bantuan</a>
+            <a href="#">BizTips</a>
+          </div>
+        </div>
+        <div class="nav-others">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <a href="/src/pages/login/login.html"
+            ><i class="fa-solid fa-user"></i
+          ></a>
+        </div>
+        <!-- <div class="nav-socials">
+          <span class="icon"><i class="fa-brands fa-facebook-f"></i></span>
+          <span class="icon"><i class="fa-brands fa-instagram"></i></span>
+          <span class="icon"><i class="fa-brands fa-twitter"></i></span>
+          <span class="icon"><i class="fa-brands fa-youtube"></i></span>
+        </div> -->
+      </nav>
     </header>
 
     <section class="hero">
-        <div class="hero-text">
-            <h1>Satu Aplikasi, Beragam Solusi Kembangkan Usaha Anda</h1>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img
+              src="assets/img/hero/japanese-man-woman-working-using-laptop-restaurant.jpg"
+              alt="local business 1"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="assets/img/hero/young-woman-arranging-her-cake-shop.jpg"
+              alt="local business 2"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="assets/img/hero/side-view-people-celebrating-mother-s-day.jpg"
+              alt="local business 3"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="assets/img/hero/hipster-buying-fresh-vegetables-store.jpg"
+              alt="local business 4"
+            />
+          </div>
         </div>
-        <div class="hero-image">
-            <img src="img/square.webp" alt="Hero Image">
+
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper-nav-next">
+          <i class="fa-solid fa-circle-chevron-right"></i>
         </div>
+        <div class="swiper-nav-prev">
+          <i class="fa-solid fa-circle-chevron-left"></i>
+        </div>
+      </div>
     </section>
 
-    <section class="services">
-        <div class="service">
-            <h2>Bikin Promo dan Pesanan di <span>GoBiz</span></h2>
+    <section class="categories">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <i class="fa-solid fa-burger"></i>
+            <div class="text">Makanan Cepat Saji</div>
+          </div>
+          <div class="swiper-slide">
+            <i class="fa-solid fa-hands-holding"></i>
+            <div class="text">Kerajinan Tangan</div>
+          </div>
+          <div class="swiper-slide">
+            <i class="fa-solid fa-person"></i>
+            <div class="text">Fashion Pria</div>
+          </div>
+          <div class="swiper-slide">
+            <i class="fa-solid fa-person-dress"></i>
+            <div class="text">Fashion Wanita</div>
+          </div>
+          <div class="swiper-slide">
+            <i class="fa-solid fa-spa"></i>
+            <div class="text">Kecantikan</div>
+          </div>
+          <div class="swiper-slide">
+            <i class="fa-solid fa-palette"></i>
+            <div class="text">Lukisan</div>
+          </div>
+          <div class="swiper-slide">
+            <i class="fa-solid fa-broom"></i>
+            <div class="text">Alat-alat Kebersihan</div>
+          </div>
+          <div class="swiper-slide">
+            <i class="fa-solid fa-mortar-pestle"></i>
+            <div class="text">Obat Herbal</div>
+          </div>
+          <div class="swiper-slide">
+            <i class="fa-solid fa-apple-whole"></i>
+            <div class="text">Buah-buahan</div>
+          </div>
+          <div class="swiper-slide">
+            <i class="fa-solid fa-carrot"></i>
+            <div class="text">Sayur-sayuran</div>
+          </div>
+          <div class="swiper-slide">
+            <i class="fa-solid fa-table-cells-large"></i>
+            <div class="text">Kategori-kategori Lain</div>
+          </div>
         </div>
-        <div class="service">
-            <h2>Terima Pembayaran Digital Pakai <span>GoBiz</span></h2>
-        </div>
-        <div class="service">
-            <h2>Tambah Modal Usaha di <span>GoBiz</span></h2>
-        </div>
-        <div class="service">
-            <h2>Catat Transaksi Secara Digital di <span>GoBiz</span></h2>
-        </div>
+      </div>
     </section>
 
-    <section class="partners">
-        <h2>Mitra-mitra yang Telah Percaya GoBiz</h2>
-        <div class="partner-logos">
-            <img src="img/partner1.webp" alt="Partner 1">
-            <img src="img/partner2.webp" alt="Partner 2">
-            <!-- Add more logos as needed -->
+    <section class="product">
+      <div class="product-wrapper">
+        <div class="image">
+          <img src="assets/img/products/pexels-dadanr-18284773.jpg" alt="" />
         </div>
+        <div class="name">Sayur Lodeh Gaming</div>
+        <div class="price">18000</div>
+        <div class="discount">2000</div>
+        <div class="rating-sold">⭐4.2 | 7 terjual</div>
+      </div>
+      <div class="product-wrapper">
+        <div class="image">
+          <img
+            src="assets/img/products/asian-market-bamboo-wicker-baskets.jpg"
+            alt=""
+          />
+        </div>
+        <div class="name">Kumpulan kerajinan Gaming</div>
+        <div class="price">39000</div>
+        <div class="discount">7000</div>
+        <div class="rating-sold">⭐4.6 | 50+ terjual</div>
+      </div>
+      <div class="product-wrapper">
+        <div class="image">
+          <img
+            src="assets/img/products/pexels-tyas-wahyu-p-784397930-19195392.jpg"
+            alt=""
+          />
+        </div>
+        <div class="name">Oseng Kecap Gaming</div>
+        <div class="price">12000</div>
+        <div class="discount">0</div>
+        <div class="rating-sold">⭐3.9 | 11 terjual</div>
+      </div>
+      <div class="product-wrapper">
+        <div class="image">
+          <img
+            src="assets/img/products/close-up-hands-working-pottery.jpg"
+            alt=""
+          />
+        </div>
+        <div class="name">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, sit?
+        </div>
+        <div class="price">126000</div>
+        <div class="discount">4000</div>
+        <div class="rating-sold">⭐4.6 | 100+ terjual</div>
+      </div>
+      <div class="product-wrapper">
+        <div class="image">
+          <img
+            src="assets/img/products/pexels-reynaldoyodia-13656967.jpg"
+            alt=""
+          />
+        </div>
+        <div class="name">Batik Wanita</div>
+        <div class="price">150000</div>
+        <div class="discount">15000</div>
+        <div class="rating-sold">⭐4.9 | 1000+ terjual</div>
+      </div>
+      <div class="product-wrapper">
+        <div class="image">
+          <img
+            src="assets/img/products/woman-holds-red-chilli-store-market-close-up.jpg"
+            alt=""
+          />
+        </div>
+        <div class="name">Cabai Menyala 1Kg</div>
+        <div class="price">50000</div>
+        <div class="discount">0</div>
+        <div class="rating-sold">⭐4.3 | 300+ terjual</div>
+        <div class="rating-sold"></div>
+      </div>
+      <div class="product-wrapper">
+        <div class="image">
+          <img
+            src="assets/img/products/pexels-elizabeth-tr-armstrong-128038-635705.jpg"
+            alt=""
+          />
+        </div>
+        <div class="name">Apel Segar 1Kg</div>
+        <div class="price">20000</div>
+        <div class="discount">2000</div>
+        <div class="rating-sold">⭐4.1 | 100+ terjual</div>
+      </div>
+      <div class="product-wrapper">
+        <div class="image">
+          <img
+            src="assets/img/products/pexels-teguh-dewanto-260498953-14530658.jpg"
+            alt=""
+          />
+        </div>
+        <div class="name">Angklung Gaming</div>
+        <div class="price">200000</div>
+        <div class="discount">15000</div>
+        <div class="rating-sold">⭐4.4 | 50+ terjual</div>
+      </div>
+      <div class="product-wrapper">
+        <div class="image">
+          <img
+            src="assets/img/products/pexels-nano-erdozain-120534369-28872593.jpg"
+            alt=""
+          />
+        </div>
+        <div class="name">Burger Lumer</div>
+        <div class="price">40000</div>
+        <div class="discount">10000</div>
+        <div class="rating-sold">⭐4.6 | 100+ terjual</div>
+      </div>
+      <div class="product-wrapper">
+        <div class="image">
+          <img
+            src="assets/img/products/pexels-fotios-photos-28903367.jpg"
+            alt=""
+          />
+        </div>
+        <div class="name">Labu gedhe 1Kg</div>
+        <div class="price">8000</div>
+        <div class="discount">600</div>
+        <div class="rating-sold">⭐4.7 | 29 terjual</div>
+      </div>
     </section>
 
-    <section class="registration">
-        <h2>Pendaftaran GoBiz</h2>
-        <div class="steps">
-            <div class="step">
-                <h3>Buka Aplikasi GoBiz</h3>
-            </div>
-            <div class="step">
-                <h3>Registrasi</h3>
-            </div>
-            <div class="step">
-                <h3>Aktivasi</h3>
-            </div>
+    <!-- section join -->
+    <section class="card1-container">
+      <div class="content-container">
+        <div class="card1-content">
+          <div class="card1">
+            <p>Browser Feature</p>
+            <h1>Lihat Fitur apa saja yang kami sediakan</h1>
+            <button>View Feature</button>
+          </div>
+          <div class="card2">
+            <p>Join</p>
+            <h1>Ingin menjadi pelanggan tetap?</h1>
+            <button>Get In Touch</button>
+          </div>
         </div>
+      </div>
     </section>
+    <!-- section join -->
 
+    <!-- number join -->
+    <section class="info-container">
+      <div class="content">
+        <div>
+          <h1>800K+</h1>
+          <p>DOLLARS RAISED</p>
+        </div>
+        <div>
+          <h1>89</h1>
+          <p>VOLUNTEERS</p>
+        </div>
+        <div>
+          <h1>12+</h1>
+          <p>CITIES</p>
+        </div>
+        <div>
+          <h1>250</h1>
+          <p>STAFF</p>
+        </div>
+      </div>
+    </section>
+    <!-- number join -->
+
+    <!-- section partner -->
+    <section class="partners-section">
+      <!-- <h2>Our Client</h2> -->
+      <div class="scrolling-logos">
+        <div class="logo-container">
+          <div class="logo-slide">
+            <img
+              src="https://logos-world.net/wp-content/uploads/2020/09/Microsoft-Logo.png"
+              alt="Microsoft"
+            />
+            <img
+              src="https://th.bing.com/th/id/R.11566b13ebe3fe195137ce2bd1804a69?rik=Og%2bcKTbfN4mhBA&riu=http%3a%2f%2flogos-download.com%2fwp-content%2fuploads%2f2016%2f03%2fAirbnb_logo.png&ehk=QhLUqOjF6HxBvuuxjqpvtKEeCf%2bnDOuAUWx8DInRPOo%3d&risl=&pid=ImgRaw&r=0"
+              alt="Airbnb"
+            />
+            <img
+              src="https://logos-download.com/wp-content/uploads/2020/06/Gojek_Logo.png"
+              alt="gojek"
+            />
+            <img
+              src="https://1.bp.blogspot.com/-M8L5nZiXMpk/X2H14EBayoI/AAAAAAAAAXA/yoo-qlBm224VriUmYfbW0DaJszOs0T8CgCLcBGAsYHQ/s3237/tokped%2Blogo%2B2.png"
+              alt="Tokopedia"
+            />
+            <img
+              src="https://www.gsma.com/mobilefordevelopment/wp-content/uploads/2021/07/eFishery.png"
+              alt="Efishery"
+            />
+            <!-- <img
+                  src="https://pngimg.com/uploads/netflix/netflix_PNG10.png"
+                /> -->
+            <img
+              src="https://cdn1.iconfinder.com/data/icons/logos-brands-in-colors/7500/Netflix_Logo_RGB-1024.png"
+              alt="Netflix"
+            />
+            <img
+              src="https://logos-download.com/wp-content/uploads/2016/05/Twitch_logo.png"
+              alt="twitch"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- section partner -->
+
+    <!-- section testimoni -->
     <section class="testimonials">
-        <h2>Cerita mereka yang sudah memilih GoBiz</h2>
-        <div class="testimonial">
-            <p>"Fitur dalam aplikasi GoBiz sangat mempermudah dalam mengelola usaha kuliner."</p>
-            <p>Nedi Sopian, Pemilik pasakanambu</p>
+      <div class="testimonials-content">
+        <div class="testimonials-section">
+          <div class="testimonials-text">
+            <h2>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="50"
+                width="50"
+                display="block"
+                viewBox="0 0 448 512"
+              >
+                <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path
+                  fill="#34a0a4"
+                  d="M448 296c0 66.3-53.7 120-120 120l-8 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l8 0c30.9 0 56-25.1 56-56l0-8-64 0c-35.3 0-64-28.7-64-64l0-64c0-35.3 28.7-64 64-64l64 0c35.3 0 64 28.7 64 64l0 32 0 32 0 72zm-256 0c0 66.3-53.7 120-120 120l-8 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l8 0c30.9 0 56-25.1 56-56l0-8-64 0c-35.3 0-64-28.7-64-64l0-64c0-35.3 28.7-64 64-64l64 0c35.3 0 64 28.7 64 64l0 32 0 32 0 72z"
+                />
+              </svg>
+              Read from clients who have found the perfect place where they can
+              create...
+            </h2>
+            <div class="line"></div>
+            <p>
+              Discover testimonials from satisfied clients who have found their
+              dream properties with Real Estate, the trusted experts in helping
+              you find the perfect place to call home.
+            </p>
+            <button class="more-testimonials-btn">More Testimonials</button>
+          </div>
+          <div class="testimonials-list">
+            <div class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <!-- <div class="stars">⭐⭐⭐⭐⭐</div> -->
+              <p class="testimonial-text">
+                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+                id convallis neque. Nam scelerisque placerat orci. Maecenas at
+                pulvinar dui. In fermentum, lectus sed tincidunt ornare, arcu ex
+                convallis sapien, quis vestibulum libero tellus quis nisl.”
+              </p>
+              <p class="testimonial-author">gading khairlambang</p>
+            </div>
+            <div class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <!-- <div class="stars">⭐⭐⭐⭐⭐</div> -->
+              <p class="testimonial-text">
+                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+                id convallis neque. Nam scelerisque placerat orci. Maecenas at
+                pulvinar dui. In fermentum, lectus sed tincidunt ornare, arcu ex
+                convallis sapien, quis vestibulum libero tellus quis nisl.”
+              </p>
+              <p class="testimonial-author">muhammad azka nuril islami</p>
+            </div>
+          </div>
         </div>
-        <div class="testimonial-video">
-            <video controls>
-                <source src="video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
+      </div>
     </section>
+    <!-- section testimoni -->
 
-    <footer>
-        <div class="footer-content">
-            <p>© 2024 GoBizID, PT Informatika Digital Bisnis</p>
+    <!-- contact -->
+    <!-- <section class="contact-content">
+        <div class="contact-text">
+          <p>contact</p>
+          <h1>Get In Touch</h1>
+          <h5>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis iusto delectus eligendi. Quas non consequatur voluptatem esse nobis quos distinctio, reiciendis veritatis et, repudiandae dignissimos necessitatibus ullam aliquam ipsa fugiat!
+          </h5>
         </div>
+        <div class="contact-form">
+          <form action="#">
+            <div class="form-group" for="Name">
+              <input type="text" name="Name" placeholder="Nama Lengkap" />
+            </div>
+            <div class="form-group" for="email">
+              <input type="email" name="email" placeholder="Email" />
+            </div>
+            <div class="form-group" for="message">
+              <textarea
+                id="komentar"
+                name="komentar"
+                rows="7"
+                cols="50"
+                placeholder="Message"
+              ></textarea>
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </section> -->
+    <!-- contact -->
+
+    <!-- footer section -->
+    <footer>
+      <p>© 2024 GoBiz. All rights reserved.</p>
+      <div class="social-media">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
     </footer>
-    
-    <script src="script.js"></script>
-</body>
+    <!-- footer section -->
+
+    <!-- package -->
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script type="module" src="src/main/main.js"></script>
+  </body>
 </html>
+
+<!-- testing webhook -->
