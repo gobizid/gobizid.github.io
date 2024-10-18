@@ -647,9 +647,16 @@ footer .social-media a:hover {
   gap: 0.6vw;
 }
 .catalog-filter .filter-categories-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
   font-size: 1.15vw;
   font-weight: 600;
   color: #0b787c;
+}
+.catalog-filter .filter-categories-title i {
+  cursor: pointer;
 }
 .catalog-filter .filter-categories-list {
   display: flex;
@@ -658,6 +665,12 @@ footer .social-media a:hover {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 0.5vw 0.4vw;
+  max-height: 100vh;
+  transition: max-height 0.6s ease-out;
+  overflow: hidden;
+}
+.catalog-filter .filter-categories-list.expanded {
+  max-height: 0;
 }
 .catalog-filter .filter-categories-list .item {
   width: -moz-fit-content;
@@ -695,152 +708,226 @@ footer .social-media a:hover {
 }
 .catalog-filter .filter-address {
   display: grid;
-  grid-template-areas: "title title" "province regency" "district village";
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(3, auto);
-  gap: 0.7vw 0.6vw;
+  gap: 0.6vw;
 }
 .catalog-filter .filter-address-title {
-  grid-area: title;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
   font-size: 1.15vw;
   font-weight: 600;
   color: #0b787c;
 }
-.catalog-filter .filter-address-province {
+.catalog-filter .filter-address-title i {
+  cursor: pointer;
+}
+.catalog-filter .filter-address-list {
+  display: grid;
+  grid-template-areas: "province regency" "district village";
+  gap: 0.7vw 0.6vw;
+  max-height: 100vh;
+  transition: max-height 0.6s ease-out;
+  overflow: hidden;
+}
+.catalog-filter .filter-address-list.expanded {
+  max-height: 0;
+}
+.catalog-filter .filter-address-list .province {
   grid-area: province;
   border: 0.1vw solid #34a0a4;
   padding: 0.5vw 0.55vw 0.5vw 0.5vw;
   border-radius: 0.4vw;
-  display: grid;
-  grid-template-areas: "label icon" "list list";
-  grid-template-columns: 1fr auto;
   font-size: 0.95vw;
+  display: flex;
+  flex-direction: column;
   color: #34a0a4;
   cursor: pointer;
 }
-.catalog-filter .filter-address-province i {
-  grid-area: icon;
-  margin-top: -0.1vw;
+.catalog-filter .filter-address-list .province-default {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
 }
-.catalog-filter .filter-address-province .list {
-  grid-area: list;
+.catalog-filter .filter-address-list .province-default i {
+  margin-top: -0.3vw;
+}
+.catalog-filter .filter-address-list .province-container {
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   max-height: 0;
   overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.9s ease-out, opacity 0.15s ease-out;
+  transition: max-height 0.6s ease-out;
 }
-.catalog-filter .filter-address-province .list .item {
+.catalog-filter .filter-address-list .province-container .item {
   padding-top: 0.5vw;
 }
-.catalog-filter .filter-address-province.expanded .list {
-  opacity: 1;
+.catalog-filter .filter-address-list .province.expanded .province-container,
+.catalog-filter .filter-address-list .province.expanded .regency-container,
+.catalog-filter .filter-address-list .province.expanded .district-container,
+.catalog-filter .filter-address-list .province.expanded .village-container {
   max-height: 100vh;
 }
-.catalog-filter .filter-address-regency {
+.catalog-filter .filter-address-list .regency {
   grid-area: regency;
   border: 0.1vw solid #34a0a4;
   padding: 0.5vw 0.55vw 0.5vw 0.5vw;
   border-radius: 0.4vw;
-  display: grid;
-  grid-template-areas: "label icon" "list list";
-  grid-template-columns: 1fr auto;
   font-size: 0.95vw;
+  display: flex;
+  flex-direction: column;
   color: #34a0a4;
   cursor: pointer;
 }
-.catalog-filter .filter-address-regency i {
-  grid-area: icon;
-  margin-top: -0.1vw;
+.catalog-filter .filter-address-list .regency-default {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
 }
-.catalog-filter .filter-address-regency .list {
-  grid-area: list;
+.catalog-filter .filter-address-list .regency-default i {
+  margin-top: -0.3vw;
+}
+.catalog-filter .filter-address-list .regency-container {
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   max-height: 0;
   overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.9s ease-out, opacity 0.15s ease-out;
+  transition: max-height 0.6s ease-out;
 }
-.catalog-filter .filter-address-regency .list .item {
+.catalog-filter .filter-address-list .regency-container .item {
   padding-top: 0.5vw;
 }
-.catalog-filter .filter-address-regency.expanded .list {
-  opacity: 1;
+.catalog-filter .filter-address-list .regency.expanded .province-container,
+.catalog-filter .filter-address-list .regency.expanded .regency-container,
+.catalog-filter .filter-address-list .regency.expanded .district-container,
+.catalog-filter .filter-address-list .regency.expanded .village-container {
   max-height: 100vh;
 }
-.catalog-filter .filter-address-district {
+.catalog-filter .filter-address-list .district {
   grid-area: district;
   border: 0.1vw solid #34a0a4;
   padding: 0.5vw 0.55vw 0.5vw 0.5vw;
   border-radius: 0.4vw;
-  display: grid;
-  grid-template-areas: "label icon" "list list";
-  grid-template-columns: 1fr auto;
   font-size: 0.95vw;
+  display: flex;
+  flex-direction: column;
   color: #34a0a4;
   cursor: pointer;
 }
-.catalog-filter .filter-address-district i {
-  grid-area: icon;
-  margin-top: -0.1vw;
+.catalog-filter .filter-address-list .district-default {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
 }
-.catalog-filter .filter-address-district .list {
-  grid-area: list;
+.catalog-filter .filter-address-list .district-default i {
+  margin-top: -0.3vw;
+}
+.catalog-filter .filter-address-list .district-container {
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   max-height: 0;
   overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.9s ease-out, opacity 0.15s ease-out;
+  transition: max-height 0.6s ease-out;
 }
-.catalog-filter .filter-address-district .list .item {
+.catalog-filter .filter-address-list .district-container .item {
   padding-top: 0.5vw;
 }
-.catalog-filter .filter-address-district.expanded .list {
-  opacity: 1;
+.catalog-filter .filter-address-list .district.expanded .province-container,
+.catalog-filter .filter-address-list .district.expanded .regency-container,
+.catalog-filter .filter-address-list .district.expanded .district-container,
+.catalog-filter .filter-address-list .district.expanded .village-container {
   max-height: 100vh;
 }
-.catalog-filter .filter-address-village {
+.catalog-filter .filter-address-list .village {
   grid-area: village;
   border: 0.1vw solid #34a0a4;
   padding: 0.5vw 0.55vw 0.5vw 0.5vw;
   border-radius: 0.4vw;
-  display: grid;
-  grid-template-areas: "label icon" "list list";
-  grid-template-columns: 1fr auto;
   font-size: 0.95vw;
+  display: flex;
+  flex-direction: column;
   color: #34a0a4;
   cursor: pointer;
 }
-.catalog-filter .filter-address-village i {
-  grid-area: icon;
-  margin-top: -0.1vw;
+.catalog-filter .filter-address-list .village-default {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
 }
-.catalog-filter .filter-address-village .list {
-  grid-area: list;
+.catalog-filter .filter-address-list .village-default i {
+  margin-top: -0.3vw;
+}
+.catalog-filter .filter-address-list .village-container {
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   max-height: 0;
   overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.9s ease-out, opacity 0.15s ease-out;
+  transition: max-height 0.6s ease-out;
 }
-.catalog-filter .filter-address-village .list .item {
+.catalog-filter .filter-address-list .village-container .item {
   padding-top: 0.5vw;
 }
-.catalog-filter .filter-address-village.expanded .list {
-  opacity: 1;
+.catalog-filter .filter-address-list .village.expanded .province-container,
+.catalog-filter .filter-address-list .village.expanded .regency-container,
+.catalog-filter .filter-address-list .village.expanded .district-container,
+.catalog-filter .filter-address-list .village.expanded .village-container {
   max-height: 100vh;
+}
+.catalog-filter .filter-price {
+  display: grid;
+  gap: 0.6vw;
+}
+.catalog-filter .filter-price-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  font-size: 1.15vw;
+  font-weight: 600;
+  color: #0b787c;
+}
+.catalog-filter .filter-price-title i {
+  cursor: pointer;
+}
+.catalog-filter .filter-price-list {
+  max-height: 0;
+  max-height: 100vh;
+  transition: max-height 0.6s ease-out;
+  overflow: hidden;
+}
+.catalog-filter .filter-price-list.expanded {
+  max-height: 0;
+}
+.catalog-filter .filter-price-list.expended {
+  max-height: 0;
+}
+.catalog-filter .filter-price-list .price-inputs {
+  display: flex;
+  justify-content: space-between;
+}
+.catalog-filter .filter-price-list .price-inputs input {
+  width: 48%;
+  padding: 10px;
+  font-size: 16px;
+}
+.catalog-filter .filter-price-list .price-range {
+  margin: 20px 0;
 }
 .catalog-filter.hidden {
   transform: translateX(-23.4vw);
@@ -1082,4 +1169,4 @@ html.lenis body {
 
 .lenis.lenis-smooth iframe {
   pointer-events: none;
-}/*# sourceMappingURL=main.css.map */
+}

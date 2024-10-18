@@ -64,7 +64,7 @@
   <body>
     <header>
       <nav class="nav">
-        <a href="/index.html" class="nav-logo">
+        <a href="/" class="nav-logo">
           <img src="/assets/img/logos/logo-fix.png" alt="GoBiz Logo" />
           <span>GoBiz</span>
         </a>
@@ -77,7 +77,7 @@
           </div>
           <div class="links">
             <!-- href="https://gobiz-develope.github.io/gobizid.github.io" -->
-            <a href="/index.html">Beranda</a>
+            <a href="/">Beranda</a>
             <!-- href="https://gobiz-develope.github.io/gobizid.github.io/src/pages/catalog/catalog.html" -->
             <a href="/src/pages/catalog/catalog.html">Catalog</a>
             <a href="#">Layanan</a>
@@ -113,7 +113,10 @@
           </div>
         </div>
         <div class="filter-categories">
-          <div class="filter-categories-title">Categories</div>
+          <div class="filter-categories-title">
+            <span> Categories </span>
+            <i class="fa-regular fa-square-minus close-filter-part"></i>
+          </div>
           <div class="filter-categories-list">
             <div class="item">Makanan Cepat Saji</div>
             <div class="item">Kerajinan Tangan</div>
@@ -143,43 +146,116 @@
           </div>
         </div>
         <div class="filter-address">
-          <div class="filter-address-title">Address</div>
-          <div class="filter-address-province">
-            <div class="label">Provinsi</div>
-            <i class="fa-solid fa-sort-down"></i>
-            <div class="list">
-              <div class="item">Jawa Barat</div>
-              <div class="item">Jawa Timur</div>
+          <div class="filter-address-title">
+            <span>Address</span>
+            <i class="fa-regular fa-square-minus close-filter-part"></i>
+          </div>
+          <div class="filter-address-list">
+            <div class="province">
+              <div class="province-default">
+                <span>Provinsi</span>
+                <i class="fa-solid fa-sort-down"></i>
+              </div>
+              <div class="province-container">
+                <div class="item">Jawa Barat</div>
+                <div class="item">Jawa Timur</div>
+              </div>
+            </div>
+            <div class="regency">
+              <div class="regency-default">
+                <span>Kabupaten</span>
+                <i class="fa-solid fa-sort-down"></i>
+              </div>
+              <div class="regency-container">
+                <div class="item">Bandung</div>
+                <div class="item">Bandung Barat</div>
+                <div class="item">Lumajang</div>
+                <div class="item">Malang</div>
+              </div>
+            </div>
+            <div class="district">
+              <div class="district-default">
+                <span>Kecamatan</span>
+                <i class="fa-solid fa-sort-down"></i>
+              </div>
+              <div class="district-container">
+                <div class="item">Sukajadi</div>
+                <div class="item">Cikarang</div>
+                <div class="item">Sukodono</div>
+                <div class="item">Lumajang</div>
+              </div>
+            </div>
+            <div class="village">
+              <div class="village-default">
+                <span>Desa</span>
+                <i class="fa-solid fa-sort-down"></i>
+              </div>
+              <div class="village-container">
+                <div class="item">Sukasari</div>
+                <div class="item">Karangsari</div>
+                <div class="item">Dawuhan</div>
+              </div>
             </div>
           </div>
-          <div class="filter-address-regency">
-            <div class="label">Kabupaten</div>
-            <i class="fa-solid fa-sort-down"></i>
-            <div class="list">
-              <div class="item">Bandung</div>
-              <div class="item">Bandung Barat</div>
-              <div class="item">Lumajang</div>
-              <div class="item">Malang</div>
-            </div>
+        </div>
+        <div class="filter-price">
+          <div class="filter-price-title">
+            <span>Price</span>
+            <i class="fa-regular fa-square-minus close-filter-part"></i>
           </div>
-          <div class="filter-address-district">
-            <div class="label">Kecamatan</div>
-            <i class="fa-solid fa-sort-down"></i>
-            <div class="list">
-              <div class="item">Sukajadi</div>
-              <div class="item">Cikarang</div>
-              <div class="item">Sukodono</div>
-              <div class="item">Lumajang</div>
+          <div class="filter-address-list">
+            <h3>Filter by Price</h3>
+
+            <!-- Input number untuk harga minimum dan maksimum -->
+            <div class="price-inputs">
+              <label>
+                Minimum Price:
+                <input
+                  type="number"
+                  id="minPriceInput"
+                  min="0"
+                  max="5000000"
+                  step="5000"
+                  value="100000"
+                />
+              </label>
+              <label>
+                Maximum Price:
+                <input
+                  type="number"
+                  id="maxPriceInput"
+                  min="0"
+                  max="5000000"
+                  step="5000"
+                  value="1000000"
+                />
+              </label>
             </div>
-          </div>
-          <div class="filter-address-village">
-            <div class="label">Desa</div>
-            <i class="fa-solid fa-sort-down"></i>
-            <div class="list">
-              <div class="item">Sukasari</div>
-              <div class="item">Karangsari</div>
-              <div class="item">Dawuhan</div>
+
+            <!-- Slider Range untuk memilih rentang harga -->
+            <div class="price-range">
+              <input
+                type="range"
+                id="minPriceRange"
+                min="0"
+                max="5000000"
+                step="5000"
+                value="100000"
+              />
+              <input
+                type="range"
+                id="maxPriceRange"
+                min="0"
+                max="5000000"
+                step="5000"
+                value="1000000"
+              />
             </div>
+
+            <p>
+              Selected Price Range: Rp<span id="minPriceDisplay">100000</span> -
+              Rp<span id="maxPriceDisplay">1000000</span>
+            </p>
           </div>
         </div>
       </div>

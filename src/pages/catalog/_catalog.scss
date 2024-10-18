@@ -6,9 +6,20 @@ $width-filter: 20vw;
 $fs-item: 0.95vw;
 
 @mixin title-filter() {
+  @include m.flex($justify: space-between);
   font-size: 1.15vw;
   font-weight: 600;
   color: map-get($map: v.$color, $key: "dark-cyan");
+
+  i {
+    cursor: pointer;
+  }
+}
+
+@mixin list-expanded() {
+  &.expanded {
+    max-height: 0;
+  }
 }
 
 .catalog {
@@ -73,6 +84,10 @@ $fs-item: 0.95vw;
         @include m.flex($justify: flex-start);
         flex-wrap: wrap;
         gap: 0.5vw 0.4vw;
+        max-height: 100vh;
+        transition: max-height 0.6s ease-out;
+        @include list-expanded();
+        overflow: hidden;
 
         .item {
           width: fit-content;
@@ -115,39 +130,32 @@ $fs-item: 0.95vw;
 
     .filter-address {
       display: grid;
-      grid-template-areas:
-        "title title"
-        "province regency"
-        "district village";
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: repeat(3, auto);
-      gap: 0.7vw 0.6vw;
+      gap: 0.6vw;
 
       @mixin address-select() {
         border: 0.1vw solid map-get($map: v.$color, $key: "light-cyan");
         padding: 0.5vw 0.55vw 0.5vw 0.5vw;
         border-radius: 0.4vw;
-        display: grid;
-        grid-template-areas:
-          "label icon"
-          "list list";
-        grid-template-columns: 1fr auto;
         font-size: $fs-item;
+        display: flex;
+        flex-direction: column;
         color: map-get($map: v.$color, $key: "light-cyan");
         cursor: pointer;
 
-        i {
-          grid-area: icon;
-          margin-top: -0.1vw;
+        &-default {
+          @include m.flex($justify: space-between);
+          width: 100%;
+
+          i {
+            margin-top: -0.3vw;
+          }
         }
 
-        .list {
-          grid-area: list;
+        &-container {
           @include m.flex($direction: column, $align: flex-start);
           max-height: 0;
           overflow: hidden;
-          opacity: 0;
-          transition: max-height 0.9s ease-out, opacity 0.15s ease-out;
+          transition: max-height 0.6s ease-out;
 
           .item {
             padding-top: 0.5vw;
@@ -155,36 +163,82 @@ $fs-item: 0.95vw;
         }
 
         &.expanded {
-          .list {
-            opacity: 1;
+          .province-container,
+          .regency-container,
+          .district-container,
+          .village-container {
             max-height: 100vh;
           }
         }
       }
 
       &-title {
-        grid-area: title;
         @include title-filter();
       }
 
-      &-province {
-        grid-area: province;
-        @include address-select();
+      &-list {
+        display: grid;
+        grid-template-areas:
+          "province regency"
+          "district village";
+        gap: 0.7vw 0.6vw;
+        max-height: 100vh;
+        transition: max-height 0.6s ease-out;
+        @include list-expanded();
+        overflow: hidden;
+
+        .province {
+          grid-area: province;
+          @include address-select();
+        }
+
+        .regency {
+          grid-area: regency;
+          @include address-select();
+        }
+
+        .district {
+          grid-area: district;
+          @include address-select();
+        }
+
+        .village {
+          grid-area: village;
+          @include address-select();
+        }
+      }
+    }
+
+    .filter-price {
+      display: grid;
+      gap: 0.6vw;
+
+      &-title {
+        @include title-filter();
       }
 
-      &-regency {
-        grid-area: regency;
-        @include address-select();
-      }
+      &-list {
+        max-height: 0;
+        max-height: 100vh;
+        transition: max-height 0.6s ease-out;
+        @include list-expanded();
+        overflow: hidden;
 
-      &-district {
-        grid-area: district;
-        @include address-select();
-      }
-
-      &-village {
-        grid-area: village;
-        @include address-select();
+        &.expended {
+          max-height: 0;
+        }
+        .price-inputs {
+          display: flex;
+          justify-content: space-between;
+        }
+        .price-inputs input {
+          width: 48%;
+          padding: 10px;
+          font-size: 16px;
+        }
+        .price-range {
+          margin: 20px 0;
+        }
       }
     }
 
