@@ -1,5 +1,6 @@
 @use "../../helpers/mixins" as m;
 @use "../../helpers/variables" as v;
+@use "./filter/price";
 
 $gap-catalog: 0.9vw;
 $width-filter: 20vw;

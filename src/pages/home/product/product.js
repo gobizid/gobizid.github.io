@@ -1,27 +1,24 @@
+import formatRupiah from "../../../helpers/formatrupiah.js";
+
 export default function product() {
-  const price = document.querySelectorAll(
+  const prices = document.querySelectorAll(
     "section.product .product-wrapper .price"
   );
-  const discount = document.querySelectorAll(
+  const discounts = document.querySelectorAll(
     "section.product .product-wrapper .discount"
   );
 
-  function formatCurrency(value) {
-    return value.toLocaleString("id-ID", {
-      style: "currency",
-      currency: "IDR",
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    });
-  }
-
-  price.forEach((el) => {
+  prices.forEach((el) => {
     const value = parseFloat(el.textContent);
-    el.textContent = formatCurrency(value);
+    if (!isNaN(value)) {
+      el.textContent = formatRupiah(value);
+    }
   });
 
-  discount.forEach((el) => {
+  discounts.forEach((el) => {
     const value = parseFloat(el.textContent);
-    el.textContent = formatCurrency(value);
+    if (!isNaN(value)) {
+      el.textContent = formatRupiah(value);
+    }
   });
 }

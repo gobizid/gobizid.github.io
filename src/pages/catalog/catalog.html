@@ -200,62 +200,35 @@
         </div>
         <div class="filter-price">
           <div class="filter-price-title">
-            <span>Price</span>
+            <span>Price Estimate</span>
             <i class="fa-regular fa-square-minus close-filter-part"></i>
           </div>
           <div class="filter-address-list">
-            <h3>Filter by Price</h3>
-
-            <!-- Input number untuk harga minimum dan maksimum -->
-            <div class="price-inputs">
-              <label>
-                Minimum Price:
-                <input
-                  type="number"
-                  id="minPriceInput"
-                  min="0"
-                  max="5000000"
-                  step="5000"
-                  value="100000"
-                />
-              </label>
-              <label>
-                Maximum Price:
-                <input
-                  type="number"
-                  id="maxPriceInput"
-                  min="0"
-                  max="5000000"
-                  step="5000"
-                  value="1000000"
-                />
-              </label>
-            </div>
-
-            <!-- Slider Range untuk memilih rentang harga -->
-            <div class="price-range">
+            <label>
+              Minimum Price:
               <input
-                type="range"
-                id="minPriceRange"
+                type="number"
                 min="0"
                 max="5000000"
                 step="5000"
                 value="100000"
+                class="min-price-input"
               />
+            </label>
+            <label>
+              Maximum Price:
               <input
-                type="range"
-                id="maxPriceRange"
+                type="number"
                 min="0"
                 max="5000000"
                 step="5000"
                 value="1000000"
+                class="max-price-input"
               />
-            </div>
+            </label>
 
-            <p>
-              Selected Price Range: Rp<span id="minPriceDisplay">100000</span> -
-              Rp<span id="maxPriceDisplay">1000000</span>
-            </p>
+            <!-- <span id="minPriceDisplay">100000</span> -->
+            <!-- <span id="maxPriceDisplay">1000000</span> -->
           </div>
         </div>
       </div>

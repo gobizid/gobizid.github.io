@@ -1,4 +1,8 @@
+import price from "./price.js";
+
 export default function filter() {
+  price();
+
   // ----- Filter Controll ----- //
   const filter = document.querySelector(".catalog .catalog-filter");
   const controlFilter = document.querySelector(
@@ -54,51 +58,5 @@ export default function filter() {
       });
       this.classList.toggle("expanded");
     });
-  });
-
-  const minPriceInput = document.getElementById("minPriceInput");
-  const maxPriceInput = document.getElementById("maxPriceInput");
-  const minPriceRange = document.getElementById("minPriceRange");
-  const maxPriceRange = document.getElementById("maxPriceRange");
-  const minPriceDisplay = document.getElementById("minPriceDisplay");
-  const maxPriceDisplay = document.getElementById("maxPriceDisplay");
-
-  // Fungsi untuk memperbarui harga di input number dan display saat slider digerakkan
-  function updatePriceFromRange() {
-    minPriceInput.value = minPriceRange.value;
-    maxPriceInput.value = maxPriceRange.value;
-    minPriceDisplay.textContent = minPriceRange.value;
-    maxPriceDisplay.textContent = maxPriceRange.value;
-  }
-
-  // Fungsi untuk memperbarui slider saat input number diubah
-  function updateRangeFromInput() {
-    minPriceRange.value = minPriceInput.value;
-    maxPriceRange.value = maxPriceInput.value;
-    minPriceDisplay.textContent = minPriceInput.value;
-    maxPriceDisplay.textContent = maxPriceInput.value;
-  }
-
-  // Event listener untuk slider
-  minPriceRange.addEventListener("input", updatePriceFromRange);
-  maxPriceRange.addEventListener("input", updatePriceFromRange);
-
-  // Event listener untuk input number
-  minPriceInput.addEventListener("input", updateRangeFromInput);
-  maxPriceInput.addEventListener("input", updateRangeFromInput);
-
-  // Mencegah overlap harga minimum dan maksimum
-  minPriceRange.addEventListener("input", function () {
-    if (parseInt(minPriceRange.value) >= parseInt(maxPriceRange.value)) {
-      maxPriceRange.value = minPriceRange.value;
-      maxPriceInput.value = maxPriceRange.value;
-    }
-  });
-
-  maxPriceRange.addEventListener("input", function () {
-    if (parseInt(maxPriceRange.value) <= parseInt(minPriceRange.value)) {
-      minPriceRange.value = maxPriceRange.value;
-      minPriceInput.value = minPriceRange.value;
-    }
   });
 }
