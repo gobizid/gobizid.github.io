@@ -44,7 +44,6 @@
     />
 
     <!-- style -->
-    <!-- <link rel="stylesheet" href="https://gobiz-develope.github.io/gobizid.github.io/src/main/main.css" /> -->
     <link rel="stylesheet" href="/src/main/main.css" />
 
     <!-- package -->
@@ -76,9 +75,7 @@
             <input type="text" placeholder="Search in GoBiz" />
           </div>
           <div class="links">
-            <!-- href="https://gobiz-develope.github.io/gobizid.github.io" -->
             <a href="/">Beranda</a>
-            <!-- href="https://gobiz-develope.github.io/gobizid.github.io/src/pages/catalog/catalog.html" -->
             <a href="/src/pages/catalog/catalog.html">Catalog</a>
             <a href="#">Layanan</a>
             <a href="#">Bantuan</a>
@@ -91,12 +88,6 @@
             ><i class="fa-solid fa-user"></i
           ></a>
         </div>
-        <!-- <div class="nav-socials">
-            <span class="icon"><i class="fa-brands fa-facebook-f"></i></span>
-            <span class="icon"><i class="fa-brands fa-instagram"></i></span>
-            <span class="icon"><i class="fa-brands fa-twitter"></i></span>
-            <span class="icon"><i class="fa-brands fa-youtube"></i></span>
-          </div> -->
       </nav>
     </header>
 
@@ -203,32 +194,32 @@
             <span>Price Estimate</span>
             <i class="fa-regular fa-square-minus close-filter-part"></i>
           </div>
-          <div class="filter-address-list">
-            <label>
-              Minimum Price:
+          <div class="filter-price-list">
+            <div class="min-price-input">
+              <label> min : </label>
               <input
                 type="number"
                 min="0"
                 max="5000000"
                 step="5000"
                 value="100000"
-                class="min-price-input"
               />
-            </label>
-            <label>
-              Maximum Price:
+            </div>
+            <div class="max-price-input">
+              <label> max : </label>
               <input
                 type="number"
                 min="0"
                 max="5000000"
                 step="5000"
                 value="1000000"
-                class="max-price-input"
               />
-            </label>
-
-            <!-- <span id="minPriceDisplay">100000</span> -->
-            <!-- <span id="maxPriceDisplay">1000000</span> -->
+            </div>
+            <div class="container-price-display">
+              <span class="min-price-display"> 100000 </span>
+              <span> — </span>
+              <span class="max-price-display">1000000</span>
+            </div>
           </div>
         </div>
       </div>
@@ -255,7 +246,6 @@
     <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- <script type="module" src="https://gobiz-develope.github.io/gobizid.github.io/src/main/main.js"></script> -->
     <script type="module" src="./catalog.js"></script>
   </body>
 </html>

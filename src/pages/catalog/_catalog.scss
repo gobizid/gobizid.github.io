@@ -1,6 +1,5 @@
 @use "../../helpers/mixins" as m;
 @use "../../helpers/variables" as v;
-@use "./filter/price";
 
 $gap-catalog: 0.9vw;
 $width-filter: 20vw;
@@ -43,6 +42,7 @@ $fs-item: 0.95vw;
 
     .filter-header {
       @include m.flex($justify: space-between);
+      padding-bottom: 1vw;
 
       &-controll {
         @include m.flex();
@@ -51,6 +51,10 @@ $fs-item: 0.95vw;
 
         i {
           font-size: 1.25vw;
+        }
+
+        span {
+          font-weight: 600
         }
       }
 
@@ -138,9 +142,9 @@ $fs-item: 0.95vw;
         padding: 0.5vw 0.55vw 0.5vw 0.5vw;
         border-radius: 0.4vw;
         font-size: $fs-item;
+        color: map-get($map: v.$color, $key: "light-cyan");
         display: flex;
         flex-direction: column;
-        color: map-get($map: v.$color, $key: "light-cyan");
         cursor: pointer;
 
         &-default {
@@ -187,6 +191,7 @@ $fs-item: 0.95vw;
         transition: max-height 0.6s ease-out;
         @include list-expanded();
         overflow: hidden;
+        height: auto;
 
         .province {
           grid-area: province;
@@ -219,26 +224,61 @@ $fs-item: 0.95vw;
       }
 
       &-list {
-        max-height: 0;
         max-height: 100vh;
         transition: max-height 0.6s ease-out;
         @include list-expanded();
         overflow: hidden;
+        display: grid;
+        grid-template-areas:
+          "min-input max-input"
+          "display display";
+        gap: 0.4vw 0.6vw;
+        grid-template-columns: 1fr 1fr;
+
+        @mixin input-container($area) {
+          grid-area: $area;
+          display: grid;
+          gap: 0.5vw;
+
+          label {
+            font-size: 1.1vw;
+            color: map-get($map: v.$color, $key: "dark-gray");
+          }
+
+          input {
+            border: 0.1vw solid map-get($map: v.$color, $key: "light-cyan");
+            padding: 0.5vw 0.55vw 0.5vw 0.5vw;
+            border-radius: 0.4vw;
+            font-size: $fs-item;
+            color: map-get($map: v.$color, $key: "light-cyan");
+            background-color: transparent;
+            width: 100%;
+            outline: none;
+          }
+        }
+
+        .min-price-input {
+          @include input-container($area: min-input);
+        }
+
+        .max-price-input {
+          @include input-container($area: max-input);
+        }
+
+        .container-price-display {
+          grid-area: display;
+          color: map-get($map: v.$color, $key: "light-black");
+          font-size: 1vw;
+          
+          .min-price-display,
+          .max-price-display {
+            font-size: 1.15vw;
+            color: map-get($map: v.$color, $key: "dark-gray");
+          }
+        }
 
         &.expended {
           max-height: 0;
-        }
-        .price-inputs {
-          display: flex;
-          justify-content: space-between;
-        }
-        .price-inputs input {
-          width: 48%;
-          padding: 10px;
-          font-size: 16px;
-        }
-        .price-range {
-          margin: 20px 0;
         }
       }
     }

@@ -10,8 +10,6 @@ export default function navbar() {
         links[i].classList.remove("active");
       }
     }
-
-    console.log(currentPath);
   }
 
   setActiveLinkByUrl(list);

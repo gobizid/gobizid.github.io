@@ -14,6 +14,7 @@
       display: grid;
       grid-auto-flow: column;
       grid-auto-rows: 1fr;
+      cursor: grab;
       // @include m.flex();
 
       .swiper-slide {

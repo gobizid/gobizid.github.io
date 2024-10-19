@@ -208,6 +208,7 @@ footer .social-media a:hover {
   display: grid;
   grid-auto-flow: column;
   grid-auto-rows: 1fr;
+  cursor: grab;
 }
 .categories .swiper-wrapper .swiper-slide {
   padding: 1.6vw;
@@ -588,62 +589,6 @@ footer .social-media a:hover {
     transform: translateX(-100%);
   }
 }
-.price-range {
-  /*********** Baseline, reset styles ***********/
-  /* Removes default focus */
-  /******** Chrome, Safari, Opera and Edge Chromium styles ********/
-  /* slider track */
-  /* slider thumb */
-  /*********** Firefox styles ***********/
-  /* slider track */
-  /* slider thumb */
-}
-.price-range input[type=range] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-       appearance: none;
-  background: transparent;
-  cursor: pointer;
-  width: 28rem;
-}
-.price-range input[type=range]:focus {
-  outline: none;
-}
-.price-range input[type=range]::-webkit-slider-runnable-track {
-  background-color: #595959;
-  border-radius: 4rem;
-  height: 0.5rem;
-}
-.price-range input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Override default look */
-  appearance: none;
-  margin-top: -4px; /* Centers thumb on the track */
-  background-color: #34a0a4;
-  border-radius: 11.5rem;
-  height: 1rem;
-  width: 4rem;
-}
-.price-range input[type=range]:focus::-webkit-slider-thumb {
-  outline: 3px solid #34a0a4;
-  outline-offset: 0.125rem;
-}
-.price-range input[type=range]::-moz-range-track {
-  background-color: #595959;
-  border-radius: 4rem;
-  height: 0.5rem;
-}
-.price-range input[type=range]::-moz-range-thumb {
-  background-color: #34a0a4;
-  border: none; /*Removes extra border that FF applies*/
-  border-radius: 11.5rem;
-  height: 1rem;
-  width: 4rem;
-}
-.price-range input[type=range]:focus::-moz-range-thumb {
-  outline: 3px solid #34a0a4;
-  outline-offset: 0.125rem;
-}
-
 .catalog {
   min-height: 100vh;
   padding: 0 3.4vw 2.4vw;
@@ -668,6 +613,7 @@ footer .social-media a:hover {
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
+  padding-bottom: 1vw;
 }
 .catalog-filter .filter-header-controll {
   display: flex;
@@ -679,6 +625,9 @@ footer .social-media a:hover {
 }
 .catalog-filter .filter-header-controll i {
   font-size: 1.25vw;
+}
+.catalog-filter .filter-header-controll span {
+  font-weight: 600;
 }
 .catalog-filter .filter-header-close {
   display: flex;
@@ -785,6 +734,7 @@ footer .social-media a:hover {
   max-height: 100vh;
   transition: max-height 0.6s ease-out;
   overflow: hidden;
+  height: auto;
 }
 .catalog-filter .filter-address-list.expanded {
   max-height: 0;
@@ -795,9 +745,9 @@ footer .social-media a:hover {
   padding: 0.5vw 0.55vw 0.5vw 0.5vw;
   border-radius: 0.4vw;
   font-size: 0.95vw;
+  color: #34a0a4;
   display: flex;
   flex-direction: column;
-  color: #34a0a4;
   cursor: pointer;
 }
 .catalog-filter .filter-address-list .province-default {
@@ -834,9 +784,9 @@ footer .social-media a:hover {
   padding: 0.5vw 0.55vw 0.5vw 0.5vw;
   border-radius: 0.4vw;
   font-size: 0.95vw;
+  color: #34a0a4;
   display: flex;
   flex-direction: column;
-  color: #34a0a4;
   cursor: pointer;
 }
 .catalog-filter .filter-address-list .regency-default {
@@ -873,9 +823,9 @@ footer .social-media a:hover {
   padding: 0.5vw 0.55vw 0.5vw 0.5vw;
   border-radius: 0.4vw;
   font-size: 0.95vw;
+  color: #34a0a4;
   display: flex;
   flex-direction: column;
-  color: #34a0a4;
   cursor: pointer;
 }
 .catalog-filter .filter-address-list .district-default {
@@ -912,9 +862,9 @@ footer .social-media a:hover {
   padding: 0.5vw 0.55vw 0.5vw 0.5vw;
   border-radius: 0.4vw;
   font-size: 0.95vw;
+  color: #34a0a4;
   display: flex;
   flex-direction: column;
-  color: #34a0a4;
   cursor: pointer;
 }
 .catalog-filter .filter-address-list .village-default {
@@ -962,28 +912,67 @@ footer .social-media a:hover {
   cursor: pointer;
 }
 .catalog-filter .filter-price-list {
-  max-height: 0;
   max-height: 100vh;
   transition: max-height 0.6s ease-out;
   overflow: hidden;
+  display: grid;
+  grid-template-areas: "min-input max-input" "display display";
+  gap: 0.4vw 0.6vw;
+  grid-template-columns: 1fr 1fr;
 }
 .catalog-filter .filter-price-list.expanded {
   max-height: 0;
 }
+.catalog-filter .filter-price-list .min-price-input {
+  grid-area: min-input;
+  display: grid;
+  gap: 0.5vw;
+}
+.catalog-filter .filter-price-list .min-price-input label {
+  font-size: 1.1vw;
+  color: #595959;
+}
+.catalog-filter .filter-price-list .min-price-input input {
+  border: 0.1vw solid #34a0a4;
+  padding: 0.5vw 0.55vw 0.5vw 0.5vw;
+  border-radius: 0.4vw;
+  font-size: 0.95vw;
+  color: #34a0a4;
+  background-color: transparent;
+  width: 100%;
+  outline: none;
+}
+.catalog-filter .filter-price-list .max-price-input {
+  grid-area: max-input;
+  display: grid;
+  gap: 0.5vw;
+}
+.catalog-filter .filter-price-list .max-price-input label {
+  font-size: 1.1vw;
+  color: #595959;
+}
+.catalog-filter .filter-price-list .max-price-input input {
+  border: 0.1vw solid #34a0a4;
+  padding: 0.5vw 0.55vw 0.5vw 0.5vw;
+  border-radius: 0.4vw;
+  font-size: 0.95vw;
+  color: #34a0a4;
+  background-color: transparent;
+  width: 100%;
+  outline: none;
+}
+.catalog-filter .filter-price-list .container-price-display {
+  grid-area: display;
+  color: #070F2B;
+  font-size: 1vw;
+}
+.catalog-filter .filter-price-list .container-price-display .min-price-display,
+.catalog-filter .filter-price-list .container-price-display .max-price-display {
+  font-size: 1.15vw;
+  color: #595959;
+}
 .catalog-filter .filter-price-list.expended {
   max-height: 0;
-}
-.catalog-filter .filter-price-list .price-inputs {
-  display: flex;
-  justify-content: space-between;
-}
-.catalog-filter .filter-price-list .price-inputs input {
-  width: 48%;
-  padding: 10px;
-  font-size: 16px;
-}
-.catalog-filter .filter-price-list .price-range {
-  margin: 20px 0;
 }
 .catalog-filter.hidden {
   transform: translateX(-23.4vw);
