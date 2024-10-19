@@ -1,0 +1,81 @@
+@use "./../../../helpers/mixins" as m;
+@use "./../../../helpers/variables" as v;
+
+.contact-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5vw;
+  padding: 0 v.$padding-horizontal-main 5.4vw;
+
+  .contact-text {
+    position: relative;
+
+    p {
+      color: map-get($map: v.$color, $key: "dark-cyan");
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 1vw;
+    }
+
+    h1 {
+      font-size: 3vw;
+      //   font-weight: 500;
+      color: map-get($map: v.$color, $key: "black");
+      margin: 1vw 0;
+    }
+
+    h5 {
+      color: #0f393b;
+      line-height: 1.8vw;
+      font-size: 100%;
+      text-align: justify;
+    }
+  }
+  .contact-form {
+    background-color: white;
+    padding: 2vw;
+    border-radius: 1.5vw;
+    position: relative;
+
+    .form-group {
+      margin-bottom: 1vw;
+      width: 100%;
+
+      input,
+      textarea {
+        color: map-get($map: v.$color, $key: "dark-gray");
+        background-color: map-get($map: v.$color, $key: "cream");
+        border: 0.1vw solid map-get($map: v.$color, $key: "cream");
+        padding: 1vw;
+        width: 100%;
+        border-radius: 1vw;
+        outline: none;
+        font-family: v.$poppins;
+        resize: none;
+
+        &:focus {
+          background-color: white;
+          border: 0.1vw solid map-get($map: v.$color, $key: "dark-cyan");
+        }
+      }
+    }
+    button {
+      border: 1px solid map-get($map: v.$color, $key: "light-cyan");
+      background-color: map-get($map: v.$color, $key: "light-cyan");
+      color: #fff;
+      float: right;
+      padding: 0.8vw;
+      border-radius: 90px;
+      cursor: pointer;
+      font-size: 15px;
+      text-transform: uppercase;
+
+      &:hover {
+        background-color: transparent;
+        background-color: map-get($map: v.$color, $key: "dark-cyan");
+        border: 1px solid map-get($map: v.$color, $key: "dark-cyan");
+        transition: 0.5s;
+      }
+    }
+  }
+}

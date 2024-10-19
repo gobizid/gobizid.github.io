@@ -1,0 +1,30 @@
+@use "./../../../helpers/mixins" as m;
+@use "./../../../helpers/variables" as v;
+
+.info-container {
+    padding: 0 v.$padding-horizontal-main v.$padding-vertical-main;
+
+    .content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    div {
+      text-align: center;
+      font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
+
+      h1 {
+        font-size: 4.3vw;
+        color: map-get($map: v.$color, $key: "dark-gray");
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      p {
+        color: map-get($map: v.$color, $key: "dark-cyan" );
+        text-transform: uppercase;
+        font-size: 93%;
+        font-weight: 700;
+      }
+    }
+  }

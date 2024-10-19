@@ -1,0 +1,55 @@
+@use "./../helpers/mixins" as m;
+@use "./../helpers/variables" as v;
+
+@use "./../components/navbar/navbar";
+@use "./../components/footer";
+
+@use "./../pages/home/hero/hero";
+@use "./../pages/home/categories/categories";
+@use "./../pages/home/product/product";
+@use "./../pages/home/join/join";
+@use "./../pages/home/member/member";
+@use "./../pages/home/contact/contact.scss";
+@use "./../pages/home/testimonials/testimonials";
+@use "./../pages/home/partners/partners";
+
+@use "./../pages/catalog/catalog";
+
+@use "./../pages/login/_login.scss";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: v.$lato;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-size: 1.2vw;
+  background-color: map-get($map: v.$color, $key: "cream");
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
