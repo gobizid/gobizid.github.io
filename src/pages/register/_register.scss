@@ -1,0 +1,189 @@
+@use "../../helpers/mixins" as m;
+@use "../../helpers/variables" as v;
+
+.wrapper-register {
+  @include m.flex();
+  padding: 4vw;
+
+  .register {
+    @include m.flex($direction: column);
+    padding: 2.8vw 3.6vw 3.8vw;
+    border-radius: 3vw;
+    background: #fff;
+    width: 100%;
+    max-width: 38vw;
+
+    $gap-container: 0.6vw;
+
+    @mixin input-button() {
+      width: 100%;
+      border-radius: 10vw;
+      padding: 0 1.4vw;
+      height: 8vh;
+      font-size: 1.2vw;
+    }
+
+    &-image {
+      width: 6.6vw;
+      height: auto;
+      cursor: pointer;
+      text-decoration: none;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-title {
+      font-size: 2.4vw;
+      font-weight: 600;
+      color: map-get($map: v.$color, $key: "dark-gray");
+      text-align: center;
+      line-height: 100%;
+    }
+
+    &-form {
+      @include m.flex($direction: column);
+      width: 100%;
+      gap: $gap-container;
+      margin-top: 2.1vw;
+
+      input {
+        @include input-button();
+        outline: none;
+        border: 0.1vw solid
+          rgba($color: map-get($map: v.$color, $key: "dark-gray"), $alpha: 0.5);
+        color: map-get($map: v.$color, $key: "dark-gray");
+
+        &:focus {
+          border-bottom-width: 0.2vw;
+        }
+      }
+
+      button {
+        @include input-button();
+        color: #fff;
+        background-color: map-get($map: v.$color, $key: "light-cyan");
+        border: none;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 110%;
+          height: 100%;
+          top: 0;
+          left: -5%;
+          background-color: map-get($map: v.$color, $key: "dark-cyan");
+          transform: scaleY(0);
+          transform-origin: bottom center;
+          transition: transform 0.4s ease-out;
+          z-index: -1;
+        }
+
+        &:hover {
+          &::after {
+            transform: scaleY(1);
+            transform-origin: top center;
+          }
+        }
+      }
+    }
+
+    &-to-login {
+      text-align: center;
+      margin-top: 1.1vw;
+
+      span {
+        color: map-get($map: v.$color, $key: "dark-gray");
+      }
+
+      a {
+        color: map-get($map: v.$color, $key: "light-cyan");
+        text-decoration: none;
+        transition: all 0.3s ease-out;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &-line {
+      position: relative;
+      height: 0.1vw;
+      width: 100%;
+      margin: 6vh 0;
+      background-color: #d4d4d4;
+
+      &::before {
+        content: "Or";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        color: #8b8b8b;
+        padding: 0 1.4vw;
+        padding: 0 15px;
+      }
+    }
+
+    &-media-options {
+      @include m.flex($direction: column);
+      gap: $gap-container;
+      width: 100%;
+
+      a {
+        @include m.flex();
+        text-decoration: none;
+        color: map-get($map: v.$color, $key: "light-cyan");
+        background-color: transparent;
+        border: 0.1vw solid map-get($map: v.$color, $key: "light-cyan");
+        @include input-button();
+        position: relative;
+        overflow: hidden;
+        transition: color 0.3s ease-out;
+        z-index: 1;
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 110%;
+          height: 100%;
+          top: 0;
+          left: -5%;
+          background-color: map-get($map: v.$color, $key: "light-cyan");
+          transform: scaleY(0);
+          transform-origin: bottom center;
+          transition: transform 0.4s ease-out;
+          z-index: -1;
+        }
+
+        &:hover {
+          color: white;
+
+          &::after {
+            transform: scaleY(1);
+            transform-origin: top center;
+          }
+        }
+      }
+    }
+  }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GoBiz - Solusi untuk Usaha Anda</title>
+
+    <!-- github base -->
+    <!-- <base href="/gobizid.github.io/"> -->
+
+    <!-- favicon -->
+    <link
+      rel="icon"
+      href="/assets/img/logos/logo-fix.png"
+      type="image/x-icon"
+    />
+
+    <!-- style -->
+    <link rel="stylesheet" href="/src/main/main.css" />
+
+    <!-- package -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/lenis@1.1.14/dist/lenis.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper-register">
+      <section class="register">
+        <a href="/" class="register-image">
+          <img src="/assets/img/logos/logo-fix.png" alt="logo" />
+        </a>
+        <div class="register-title">Signup</div>
+        <form class="register-form">
+          <input
+            type="text"
+            name="Name"
+            placeholder="Username"
+            class="input"
+            autocomplete="username"
+          />
+          <input
+            type="email"
+            name="Email"
+            placeholder="Email"
+            class="input"
+            autocomplete="email"
+          />
+          <input
+            type="number"
+            name="PhoneNumber"
+            placeholder="Phone Number"
+            class="input"
+            autocomplete="tel"
+          />
+          <input
+            type="password"
+            name="Password"
+            placeholder="Password"
+            class="password"
+            autocomplete="current-password"
+          />
+          <button>Submit</button>
+        </form>
+        <span class="register-to-login">
+          Already have an account?
+          <a href="/src/pages/login/login.html">Login</a>
+        </span>
+        <div class="register-line"></div>
+        <div class="register-media-options">
+          <a href="/src/pages/qr/qr.html">
+            <span> Scan Qr </span>
+          </a>
+          <a href="#">
+            <span> Google </span>
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <!-- package -->
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="register.js"></script>
+  </body>
+</html>
