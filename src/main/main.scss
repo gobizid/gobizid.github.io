@@ -15,7 +15,8 @@
 
 @use "./../pages/catalog/catalog";
 
-@use "./../pages/login/_login.scss";
+@use "./../pages/login/login";
+@use "./../pages/register/register";
 
 *,
 *::before,
