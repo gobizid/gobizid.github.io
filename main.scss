@@ -3,6 +3,8 @@
 
 @use "./src/components/navbar/navbar";
 @use "./src/components/footer/footer";
+@use "./src/components/sidebar/sidebar";
+@use "./src/components/topbar/topbar";
 
 @use "./src/pages/home/home";
 @use "./src/pages/catalog/catalog";

@@ -1,0 +1,39 @@
+@use "./../../helpers/mixins" as m;
+@use "./../../helpers/variables" as v;
+
+.navigation {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+    padding: v.$padding-vertical-main v.$padding-horizontal-main;
+
+	a {
+		display: flex;
+		align-items: center;
+		text-decoration: none;
+		transition: 0.25s ease;
+        color: map-get($map: v.$color, $key: "dark-gray" );
+        font-family: v.$vietnam;
+        margin-bottom: 1vw;
+
+		* {
+			transition: 0.25s ease;
+		}
+
+		i {
+			margin-right: 0.75rem;
+			font-size: 1.25em;
+			flex-shrink: 0;
+		}
+
+		& + a {
+			margin-top: 1.25rem;
+		}
+
+		&:hover,
+		&:focus {
+			transform: translateX(4px);
+			color: map-get($map: v.$color, $key: "light-black");
+		}
+	}
+}
