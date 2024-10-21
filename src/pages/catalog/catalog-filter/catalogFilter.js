@@ -1,4 +1,4 @@
-import formatRupiah from "../../../helpers/formatRupiah.js";
+import formatRupiah from "/src/helpers/formatRupiah.js";
 
 function filterClosePart() {
   document

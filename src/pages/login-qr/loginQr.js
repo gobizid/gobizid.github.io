@@ -3,7 +3,7 @@ import {
   deleteCookie,
 } from "https://cdn.jsdelivr.net/gh/whatsauth/js@0.2.1/whatsauth.js";
 import { wauthparam } from "https://cdn.jsdelivr.net/gh/whatsauth/js@0.2.1/config.js";
-import loadComponent from "../../helpers/loadComponent.js";
+import loadComponent from "/src/helpers/loadComponent.js";
 
 export default function loadLoginQr() {
   const promise = loadComponent("", "/src/pages/login-qr/login-qr.html");

@@ -1,10 +1,10 @@
-import loadComponent from "../../helpers/loadComponent.js";
-import smoothScroll from "../../helpers/smoothScroll.js";
-import navbar from "../../components/navbar/navbar.js";
-import hero from "./hero/hero.js";
-import categories from "./categories/categories.js";
-import slide from "./partners/slide.js";
-import products from "./products/products.js";
+import loadComponent from "/src/helpers/loadComponent.js";
+import smoothScroll from "/src/helpers/smoothScroll.js";
+import navbar from "/src/components/navbar/navbar.js";
+import hero from "/src/pages/home/hero/hero.js";
+import categories from "/src/pages/home/categories/categories.js";
+import slide from "/src/pages/home/partners/slide.js";
+import products from "/src/pages/home/products/products.js";
 
 export default function loadHome() {
   const promises = [

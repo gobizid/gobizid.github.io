@@ -1,8 +1,8 @@
-import loadHome from "./src/pages/home/home.js";
-import loadCatalog from "./src/pages/catalog/catalog.js";
-import loadLogin from "./src/pages/login/login.js";
-import loadRegister from "./src/pages/register/register.js";
-import loadLoginQr from "./src/pages/login-qr/loginQr.js";
+import loadHome from "/src/pages/home/home.js";
+import loadCatalog from "/src/pages/catalog/catalog.js";
+import loadLogin from "/src/pages/login/login.js";
+import loadRegister from "/src/pages/register/register.js";
+import loadLoginQr from "/src/pages/login-qr/loginQr.js";
 
 function loadPage(path) {
   const main = document.getElementById("main");

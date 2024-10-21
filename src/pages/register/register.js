@@ -1,6 +1,6 @@
-import smoothScroll from "../../helpers/smoothScroll.js";
-import fetchReg from "./fetchreg.js";
-import loadComponent from "../../helpers/loadComponent.js";
+import smoothScroll from "/src/helpers/smoothScroll.js";
+import fetchReg from "/src/pages/register/fetchreg.js";
+import loadComponent from "/src/helpers/loadComponent.js";
 
 export default function loadRegister() {
   const promise = loadComponent("", "/src/pages/register/register.html");
