@@ -1,5 +1,5 @@
 export default function categories() {
-  const swiper = new Swiper("section.categories .swiper", {
+  const swiper = new Swiper(".home .categories .swiper", {
     loop: true,
     spaceBetween: 4,
     slidesPerView: 6,

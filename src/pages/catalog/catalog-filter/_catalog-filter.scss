@@ -1,0 +1,262 @@
+@use "./../../../helpers/mixins" as m;
+@use "./../../../helpers/variables" as v;
+@use "./../mixin-var" as main;
+
+// ----- Address ----- //
+@mixin address-select() {
+  border: 0.1vw solid map-get($map: v.$color, $key: "light-cyan");
+  padding: 0.5vw 0.55vw 0.5vw 0.5vw;
+  border-radius: 0.4vw;
+  font-size: main.$fs-item;
+  color: map-get($map: v.$color, $key: "light-cyan");
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  &-default {
+    @include m.flex($justify: space-between);
+    width: 100%;
+
+    i {
+      margin-top: -0.3vw;
+    }
+  }
+
+  &-container {
+    @include m.flex($direction: column, $align: flex-start);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease-out;
+
+    .item {
+      padding-top: 0.5vw;
+    }
+  }
+
+  &.expanded {
+    .province-container,
+    .regency-container,
+    .district-container,
+    .village-container {
+      max-height: 100vh;
+    }
+  }
+}
+
+// ----- Price ----- //
+@mixin input-container($area) {
+  grid-area: $area;
+  display: grid;
+  gap: 0.5vw;
+
+  label {
+    font-size: 1.1vw;
+    color: map-get($map: v.$color, $key: "dark-gray");
+  }
+
+  input {
+    border: 0.1vw solid map-get($map: v.$color, $key: "light-cyan");
+    padding: 0.5vw 0.55vw 0.5vw 0.5vw;
+    border-radius: 0.4vw;
+    font-size: main.$fs-item;
+    color: map-get($map: v.$color, $key: "light-cyan");
+    background-color: transparent;
+    width: 100%;
+    outline: none;
+  }
+}
+
+// ----- Main ----- //
+@mixin catalog-filter() {
+  display: grid;
+  gap: 1.6vw;
+  width: 20vw;
+  height: fit-content;
+  transition: transform 0.65s linear;
+  transform: translateX(0);
+
+  .filter-header {
+    @include m.flex($justify: space-between);
+    padding-bottom: 1vw;
+
+    &-controll {
+      @include m.flex();
+      gap: 0.45vw;
+      color: map-get($map: v.$color, $key: "dark-gray");
+
+      i {
+        font-size: 1.25vw;
+      }
+
+      span {
+        font-weight: 600;
+      }
+    }
+
+    &-close {
+      @include m.flex();
+      gap: 0.2vw;
+      cursor: pointer;
+
+      i {
+        font-size: 1.2vw;
+        color: map-get($map: v.$color, $key: "dark-gray");
+      }
+
+      span {
+        width: 0.15vw;
+        height: 2.6vh;
+        border-radius: 50vw;
+        background-color: map-get($map: v.$color, $key: "dark-gray");
+      }
+    }
+  }
+
+  .filter-categories {
+    display: grid;
+    gap: 0.6vw;
+
+    &-title {
+      @include main.title-filter();
+    }
+
+    &-list {
+      @include m.flex($justify: flex-start);
+      flex-wrap: wrap;
+      gap: 0.5vw 0.4vw;
+      max-height: 100vh;
+      transition: max-height 0.6s ease-out;
+      @include main.list-expanded();
+      overflow: hidden;
+
+      .item {
+        width: fit-content;
+        border-radius: 10vw;
+        color: map-get($map: v.$color, $key: "light-cyan");
+        cursor: pointer;
+        border: 0.1vw solid map-get($map: v.$color, $key: "light-cyan");
+        padding: 0.6vw 0.9vw;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.25s ease-out;
+        font-size: main.$fs-item;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: -5%;
+          top: 0;
+          width: 110%;
+          height: 110%;
+          display: block;
+          z-index: -1;
+          background-color: map-get($map: v.$color, $key: "light-cyan");
+          transform: scaleY(0);
+          transform-origin: center bottom;
+          transition: transform 0.35s ease-out;
+        }
+
+        &:hover {
+          color: #fff;
+
+          &::after {
+            transform: scaleY(1);
+            transform-origin: center top;
+          }
+        }
+      }
+    }
+  }
+
+  .filter-address {
+    display: grid;
+    gap: 0.6vw;
+
+    &-title {
+      @include main.title-filter();
+    }
+
+    &-list {
+      display: grid;
+      grid-template-areas:
+        "province regency"
+        "district village";
+      gap: 0.7vw 0.6vw;
+      max-height: 100vh;
+      transition: max-height 0.6s ease-out;
+      @include main.list-expanded();
+      overflow: hidden;
+      height: auto;
+
+      .province {
+        grid-area: province;
+        @include address-select();
+      }
+
+      .regency {
+        grid-area: regency;
+        @include address-select();
+      }
+
+      .district {
+        grid-area: district;
+        @include address-select();
+      }
+
+      .village {
+        grid-area: village;
+        @include address-select();
+      }
+    }
+  }
+
+  .filter-price {
+    display: grid;
+    gap: 0.6vw;
+
+    &-title {
+      @include main.title-filter();
+    }
+
+    &-list {
+      max-height: 100vh;
+      transition: max-height 0.6s ease-out;
+      @include main.list-expanded();
+      overflow: hidden;
+      display: grid;
+      grid-template-areas:
+        "min-input max-input"
+        "display display";
+      gap: 0.4vw 0.6vw;
+      grid-template-columns: 1fr 1fr;
+
+      .min-price-input {
+        @include input-container($area: min-input);
+      }
+
+      .max-price-input {
+        @include input-container($area: max-input);
+      }
+
+      .container-price-display {
+        grid-area: display;
+        color: map-get($map: v.$color, $key: "light-black");
+        font-size: 1vw;
+
+        .min-price-display,
+        .max-price-display {
+          font-size: 1.15vw;
+          color: map-get($map: v.$color, $key: "dark-gray");
+        }
+      }
+
+      &.expended {
+        max-height: 0;
+      }
+    }
+  }
+
+  &.hidden {
+    transform: translateX(-(main.$width-filter + v.$padding-horizontal-main));
+  }
+}

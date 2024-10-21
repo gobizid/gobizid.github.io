@@ -1,8 +1,8 @@
-import formatRupiah from "../../../helpers/formatrupiah.js";
+import formatRupiah from "../../../helpers/formatRupiah.js";
 
-export default function product() {
+export default function products() {
   const pricesDiscounts = document.querySelectorAll(
-    "section.product .product-wrapper .price, section.product .product-wrapper .discount"
+    ".home .products .price, .home .products .discount"
   );
 
   pricesDiscounts.forEach((el) => {

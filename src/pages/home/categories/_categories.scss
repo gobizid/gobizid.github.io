@@ -1,7 +1,7 @@
 @use "./../../../helpers/mixins" as m;
 @use "./../../../helpers/variables" as v;
 
-.categories {
+@mixin categories() {
   padding: 0 v.$padding-horizontal-main v.$padding-vertical-main;
   width: 100%;
   height: auto;
@@ -14,7 +14,7 @@
       display: grid;
       grid-auto-flow: column;
       grid-auto-rows: 1fr;
-      cursor: grab;
+      cursor: grabbing;
       // @include m.flex();
 
       .swiper-slide {

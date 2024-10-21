@@ -1,0 +1,76 @@
+@use "./../../../helpers/mixins" as m;
+@use "./../../../helpers/variables" as v;
+@use "./../mixin-var" as main;
+
+@mixin catalog-display() {
+  width: 100%;
+
+  .display-header {
+    width: fit-content;
+    padding: 0.6vw 1.6vw;
+    border: 0.1vw solid map-get($map: v.$color, $key: "dark-gray");
+    border-radius: 10vw;
+    @include m.flex();
+    gap: 0.4vw;
+    color: map-get($map: v.$color, $key: "dark-gray");
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.6s linear;
+    transform: translateX(0);
+
+    span {
+      font-weight: 600;
+    }
+
+    i {
+      font-size: 1.2vw;
+
+      &:nth-child(1) {
+        display: block;
+      }
+
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+
+    &.expanded {
+      transform: translateX(-(main.$gap-catalog + main.$width-filter));
+
+      i {
+        &:nth-child(1) {
+          display: none;
+        }
+
+        &:nth-child(2) {
+          display: block;
+        }
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: -5%;
+      top: 0;
+      width: 110%;
+      height: 110%;
+      display: block;
+      z-index: -1;
+      background-color: map-get($map: v.$color, $key: "dark-gray");
+      transform: scaleY(0);
+      transform-origin: bottom center;
+      transition: transform 0.35s ease-out;
+    }
+
+    &:hover {
+      color: #fff;
+
+      &::after {
+        transform: scaleY(1);
+        transform-origin: top center;
+      }
+    }
+  }
+}

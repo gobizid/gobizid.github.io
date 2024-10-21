@@ -1,0 +1,23 @@
+@use "../../helpers/mixins" as m;
+@use "../../helpers/variables" as v;
+
+$gap-catalog: 0.9vw;
+$width-filter: 20vw;
+$fs-item: 0.95vw;
+
+@mixin title-filter() {
+  @include m.flex($justify: space-between);
+  font-size: 1.15vw;
+  font-weight: 600;
+  color: map-get($map: v.$color, $key: "dark-cyan");
+
+  i {
+    cursor: pointer;
+  }
+}
+
+@mixin list-expanded() {
+  &.expanded {
+    max-height: 0;
+  }
+}

@@ -1,7 +1,7 @@
 @use "./../../../helpers/mixins" as m;
 @use "./../../../helpers/variables" as v;
 
-.partners-section {
+@mixin partners() {
   text-align: center;
   padding: 0 v.$padding-horizontal-main v.$padding-vertical-main;
 
@@ -36,13 +36,13 @@
       }
     }
   }
-}
 
-@keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
   }
 }

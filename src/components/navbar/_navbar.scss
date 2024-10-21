@@ -1,7 +1,7 @@
 @use "./../../helpers/mixins" as m;
 @use "./../../helpers/variables" as v;
 
-header {
+.navbar {
   .nav {
     width: 100%;
     height: auto;

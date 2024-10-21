@@ -1,0 +1,37 @@
+@use "./hero/hero" as hero;
+@use "./categories/categories" as categories;
+@use "./products/products" as products;
+@use "./join/join" as join;
+@use "./members/members" as members;
+@use "./partners/partners" as partners;
+@use "./testimonials/testimonials" as testimonials;
+
+.home {
+  .hero {
+    @include hero.hero();
+  }
+
+  .categories {
+    @include categories.categories();
+  }
+
+  .products {
+    @include products.products();
+  }
+
+  .join {
+    @include join.join();
+  }
+
+  .members {
+    @include members.members();
+  }
+
+  .partners {
+    @include partners.partners();
+  }
+
+  .testimonials {
+    @include testimonials.testimonials();
+  }
+}

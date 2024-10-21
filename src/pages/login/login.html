@@ -1,73 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GoBiz - Solusi untuk Usaha Anda</title>
-
-    <!-- favicon -->
-    <link
-      rel="icon"
-      href="/assets/img/logos/logo-fix.png"
-      type="image/x-icon"
-    />
-
-    <!-- style -->
-    <link rel="stylesheet" href="/src/main/main.css" />
-
-    <!-- package -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/lenis@1.1.14/dist/lenis.css"
-    />
-  </head>
-  <body>
-    <div class="wrapper-login">
-      <section class="login">
-        <a href="/" class="login-image">
-          <img src="/assets/img/logos/logo-fix.png" alt="logo" />
-        </a>
-        <div class="login-title">Login</div>
-        <form class="login-form">
-          <input
-            type="email"
-            name="Email"
-            placeholder="Email"
-            class="input"
-            autocomplete="email"
-          />
-          <input
-            type="password"
-            name="Password"
-            placeholder="Password"
-            class="password"
-            autocomplete="current-password"
-          />
-          <button>Submit</button>
-        </form>
-        <span class="login-to-signup">
-          Don't have an account?
-          <a href="/src/pages/register/register.html">Signup</a>
-        </span>
-        <div class="login-line"></div>
-        <div class="login-media-options">
-          <a href="/src/pages/qr/qr.html">
-            <span> Scan Qr </span>
-          </a>
-          <a href="#">
-            <span> Google </span>
-          </a>
-        </div>
-      </section>
+<div class="wrapper-login">
+  <section class="login">
+    <a href="/" class="login-image">
+      <img src="/assets/img/logos/logo-fix.png" alt="logo" />
+    </a>
+    <div class="login-title">Login</div>
+    <form class="login-form">
+      <input
+        type="email"
+        name="Email"
+        placeholder="Email"
+        class="input"
+        autocomplete="email"
+      />
+      <input
+        type="password"
+        name="Password"
+        placeholder="Password"
+        class="password"
+        autocomplete="current-password"
+      />
+      <button>Submit</button>
+    </form>
+    <span class="login-to-signup">
+      Don't have an account?
+      <a class="to-link" href="/register">Signup</a>
+    </span>
+    <div class="login-line"></div>
+    <div class="login-media-options">
+      <a class="to-link" href="/login-qr">
+        <span> Scan Qr </span>
+      </a>
+      <a href="#">
+        <span> Google </span>
+      </a>
     </div>
-
-    <!-- package -->
-    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="module" src="login.js"></script>
-  </body>
-</html>
+  </section>
+</div>

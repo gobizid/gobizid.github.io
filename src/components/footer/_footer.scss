@@ -1,7 +1,7 @@
-@use "./../helpers/mixins" as m;
-@use "./../helpers/variables" as v;
+@use "./../../helpers/mixins" as m;
+@use "./../../helpers/variables" as v;
 
-footer {
+.footer {
   @include m.flex($justify: space-between);
   color: map-get($map: v.$color, $key: "dark-gray");
   border-top: 0.1vw solid rgba(0, 0, 0, 0.1);

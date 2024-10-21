@@ -1,27 +1,16 @@
-import smoothScroll from "../../helpers/smoothscroll.js";
+import smoothScroll from "../../helpers/smoothScroll.js";
 import fetchReg from "./fetchreg.js";
+import loadComponent from "../../helpers/loadComponent.js";
 
-export default function register() {
-  smoothScroll();
-  fetchReg();
+export default function loadRegister() {
+  const promise = loadComponent("", "/src/pages/register/register.html");
 
-  const pwShowHide = document.querySelectorAll(".eye-icon");
-
-  pwShowHide.forEach((eyeIcon) => {
-    eyeIcon.addEventListener("click", () => {
-      let pwFields =
-        eyeIcon.parentElement.parentElement.querySelectorAll(".password");
-      pwFields.forEach((password) => {
-        if (password.type === "password") {
-          password.type = "text";
-          eyeIcon.classList.replace("bx-hide", "bx-show");
-          return;
-        }
-        password.type = "password";
-        eyeIcon.classList.replace("bx-show", "bx-hide");
-      });
+  promise
+    .then(() => {
+      smoothScroll();
+      fetchReg();
+    })
+    .catch((error) => {
+      console.error("Error loading components:", error);
     });
-  });
 }
-
-register();

@@ -1,0 +1,48 @@
+@use "./src/helpers/mixins" as m;
+@use "./src/helpers/variables" as v;
+
+@use "./src/components/navbar/navbar";
+@use "./src/components/footer/footer";
+
+@use "./src/pages/home/home";
+@use "./src/pages/catalog/catalog";
+@use "./src/pages/login/login";
+@use "./src/pages/register/register";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: v.$lato;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-size: 1.2vw;
+  background-color: map-get($map: v.$color, $key: "cream");
+  color: map-get($map: v.$color, $key: "dark-gray");
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}

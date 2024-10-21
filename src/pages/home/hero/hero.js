@@ -1,5 +1,5 @@
 export default function hero() {
-  const swiper = new Swiper("section.hero .swiper", {
+  const swiper = new Swiper(".home .hero .swiper", {
     loop: true,
     autoplay: {
       delay: 4000,
