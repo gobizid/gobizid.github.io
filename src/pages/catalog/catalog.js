@@ -2,6 +2,7 @@ import loadComponent from "/src/helpers/loadComponent.js";
 import smoothScroll from "/src/helpers/smoothScroll.js";
 import navbar from "/src/components/navbar/navbar.js";
 import catalogFilter from "/src/pages/catalog/catalog-filter/catalogFilter.js";
+import catalogDisplay from "/src/pages/catalog/catalog-display/catalogDisplay.js";
 
 export default function loadCatalog() {
   const promises = [
@@ -9,10 +10,6 @@ export default function loadCatalog() {
     loadComponent(
       ".catalog .catalog-filter",
       "/src/pages/catalog/catalog-filter/catalog-filter.html"
-    ),
-    loadComponent(
-      ".catalog .catalog-display",
-      "/src/pages/catalog/catalog-display/catalog-display.html"
     ),
     loadComponent(
       ".catalog .catalog-display",
@@ -26,6 +23,7 @@ export default function loadCatalog() {
       smoothScroll();
       navbar();
       catalogFilter();
+      catalogDisplay();
     })
     .catch((error) => {
       console.error("Error loading components:", error);

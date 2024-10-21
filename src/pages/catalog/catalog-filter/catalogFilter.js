@@ -27,26 +27,6 @@ function filterClosePart() {
     });
 }
 
-function filterControll() {
-  const filter = document.querySelector(".catalog .catalog-filter");
-  const controlFilter = document.querySelector(
-    ".catalog-display .display-header"
-  );
-
-  document
-    .querySelector(".filter-header .filter-header-close")
-    .addEventListener("click", () => {
-      controlFilter.classList.toggle("expanded");
-      filter.classList.toggle("hidden");
-    });
-  document
-    .querySelector(".catalog-display .display-header")
-    .addEventListener("click", () => {
-      controlFilter.classList.toggle("expanded");
-      filter.classList.toggle("hidden");
-    });
-}
-
 function filterAddress() {
   document.querySelectorAll(".filter-address-list > div").forEach((filter) => {
     filter.addEventListener("click", function () {
@@ -87,7 +67,6 @@ function filterPrice() {
 
 export default function catalogFilter() {
   filterClosePart();
-  filterControll();
   filterAddress();
   filterPrice();
 }
