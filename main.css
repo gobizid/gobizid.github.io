@@ -546,13 +546,10 @@
   padding: 0 3.4vw 2.4vw;
 }
 .home .members .counters {
-  padding: 3em 2em;
   color: #595959;
   text-align: center;
 }
 .home .members .counters > div {
-  max-width: 900px;
-  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 4em 2em;
@@ -561,7 +558,20 @@
   position: relative;
 }
 .home .members .counters .counter h1 {
-  font-size: 3em;
+  font-size: 4.3vw;
+  color: #595959;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.home .members .counters .counter:not(:last-child)::before {
+  content: "";
+  background-color: #595959;
+  position: absolute;
+  width: 2px;
+  height: 3em;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -1em;
 }
 .home .partners {
   text-align: center;
