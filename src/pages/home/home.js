@@ -5,6 +5,7 @@ import hero from "/src/pages/home/hero/hero.js";
 import categories from "/src/pages/home/categories/categories.js";
 import slide from "/src/pages/home/partners/slide.js";
 import products from "/src/pages/home/products/products.js";
+import members from "/src/pages/home/members/members.js";
 
 export default function loadHome() {
   const promises = [
@@ -33,6 +34,7 @@ export default function loadHome() {
       categories();
       products();
       slide();
+      members();
     })
     .catch((error) => {
       console.error("Error loading components:", error);

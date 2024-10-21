@@ -4,27 +4,26 @@
 @mixin members() {
   padding: 0 v.$padding-horizontal-main v.$padding-vertical-main;
 
-  .content {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  div {
+  .counters {
+    padding: 3em 2em;
+    color: map-get($map: v.$color, $key: "dark-gray" );
     text-align: center;
-    font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
 
-    h1 {
-      font-size: 4.3vw;
-      color: map-get($map: v.$color, $key: "dark-gray");
-      font-weight: 700;
-      text-transform: uppercase;
+    & > div{
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4em 2em;
     }
 
-    p {
-      color: map-get($map: v.$color, $key: "dark-cyan");
-      text-transform: uppercase;
-      font-size: 93%;
-      font-weight: 700;
+    .counter{
+      position: relative;
+
+      h1{
+        font-size: 3em;
+        
+      }
     }
   }
 }

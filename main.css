@@ -382,25 +382,23 @@
 .home .members {
   padding: 0 3.4vw 2.4vw;
 }
-.home .members .content {
+.home .members .counters {
+  padding: 3em 2em;
+  color: #595959;
+  text-align: center;
+}
+.home .members .counters > div {
+  max-width: 900px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: 4em 2em;
 }
-.home .members div {
-  text-align: center;
-  font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
+.home .members .counters .counter {
+  position: relative;
 }
-.home .members div h1 {
-  font-size: 4.3vw;
-  color: #595959;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-.home .members div p {
-  color: #0b787c;
-  text-transform: uppercase;
-  font-size: 93%;
-  font-weight: 700;
+.home .members .counters .counter h1 {
+  font-size: 3em;
 }
 .home .partners {
   text-align: center;
@@ -416,10 +414,14 @@
 }
 .home .partners .scrolling-logos .logo-container {
   display: flex;
+  white-space: nowrap;
 }
 .home .partners .scrolling-logos .logo-container .logo-slide {
   display: flex;
   animation: scroll 30s linear infinite;
+  flex-shrink: 0; /* Agar gambar tidak mengecil */
+  width: -moz-max-content;
+  width: max-content; /* Pastikan lebar slide mengikuti kontennya */
 }
 .home .partners .scrolling-logos .logo-container .logo-slide img {
   width: 10vw;
@@ -428,6 +430,7 @@
      object-fit: contain;
   margin-left: 3.2vw;
   filter: grayscale(1);
+  transition: filter 0.3s ease;
 }
 .home .partners .scrolling-logos .logo-container .logo-slide img:hover {
   filter: grayscale(0);
@@ -1355,4 +1358,4 @@ html.lenis body {
 
 .lenis.lenis-smooth iframe {
   pointer-events: none;
-}
+}/*# sourceMappingURL=main.css.map */

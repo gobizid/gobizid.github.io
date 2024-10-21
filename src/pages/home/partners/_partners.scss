@@ -16,11 +16,13 @@
 
     .logo-container {
       display: flex;
+      white-space: nowrap;
 
       .logo-slide {
         display: flex;
         animation: scroll 30s linear infinite;
-        // gap: 3vw;
+        flex-shrink: 0; /* Agar gambar tidak mengecil */
+        width: max-content; /* Pastikan lebar slide mengikuti kontennya */
 
         img {
           width: 10vw;
@@ -28,6 +30,7 @@
           object-fit: contain;
           margin-left: 3.2vw;
           filter: grayscale(1);
+          transition: filter 0.3s ease;
 
           &:hover {
             filter: grayscale(0);
