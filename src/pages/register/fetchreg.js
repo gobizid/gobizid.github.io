@@ -45,7 +45,7 @@ export default function fetchReg() {
             icon: "success",
           }).then((result) => {
             if (result.isConfirmed) {
-              window.location.href = "/src/pages/login/login.html";
+              window.location.href = "/login";
             }
           });
         } else {

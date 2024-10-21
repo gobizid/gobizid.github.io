@@ -3,6 +3,9 @@ import loadCatalog from "/src/pages/catalog/catalog.js";
 import loadLogin from "/src/pages/login/login.js";
 import loadRegister from "/src/pages/register/register.js";
 import loadLoginQr from "/src/pages/login-qr/loginQr.js";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 function loadPage(path) {
   const main = document.getElementById("main");
