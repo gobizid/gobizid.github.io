@@ -1,3 +1,5 @@
+import Cookie from "https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js";
+
 export default function navbar() {
   let list = document.querySelectorAll("header .nav .nav-main .links a");
 

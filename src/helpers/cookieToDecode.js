@@ -1,3 +1,6 @@
+import Cookies from "https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js";
+import { jwtDecode } from "https://cdn.jsdelivr.net/npm/jwt-decode@4.0.0/build/cjs/index.min.js";
+
 export default function cookieToDecode(cookieName) {
   const token = Cookies.get(cookieName);
 
