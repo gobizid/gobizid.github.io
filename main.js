@@ -4,9 +4,9 @@ import loadLogin from "/src/pages/login/login.js";
 import loadRegister from "/src/pages/register/register.js";
 import loadLoginQr from "/src/pages/login-qr/loginQr.js";
 import loadDashboard from "./src/pages/dashboard/dashboard.js";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import "/swiper/css";
+import "/swiper/css/navigation";
+import "/swiper/css/pagination";
 
 function loadPage(path) {
   const main = document.getElementById("main");
