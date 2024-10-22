@@ -31,8 +31,6 @@ export default function fetchLog() {
         const status = response.status;
         const result = await response.json();
 
-        console.log(status);
-        console.log(result);
 
         if (status === 200) {
           Swal.fire({

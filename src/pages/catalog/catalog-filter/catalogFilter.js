@@ -27,6 +27,37 @@ function filterClosePart() {
     });
 }
 
+function getAllCateogories() {
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  const requestOptions = {
+    method: "GET",
+    headers: myHeaders,
+  };
+
+  fetch(
+    "https://asia-southeast2-awangga.cloudfunctions.net/jualin/menu/category",
+    requestOptions
+  ).then(async (res) => {
+    const status = res.status;
+    const result = await res.json();
+
+    if (status === 200) {
+      const categoriesList = document.querySelector(".filter-categories-list");
+
+      result.sort((a, b) => a.name.localeCompare(b.name));
+
+      result.forEach((category) => {
+        const categoryElement = document.createElement("div");
+        categoryElement.classList.add("item");
+        categoryElement.textContent = category.name;
+        categoriesList.appendChild(categoryElement);
+      });
+    }
+  });
+}
+
 function filterAddress() {
   document.querySelectorAll(".filter-address-list > div").forEach((filter) => {
     filter.addEventListener("click", function () {
@@ -67,6 +98,7 @@ function filterPrice() {
 
 export default function catalogFilter() {
   filterClosePart();
+  getAllCateogories();
   filterAddress();
   filterPrice();
 }
