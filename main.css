@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&family=Grandstander:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 .navbar .nav {
   width: 100%;
   height: auto;
@@ -135,6 +136,168 @@
 .footer .social-media a:hover {
   color: #0b787c;
   transition: 0.5s;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2.4vw 3.4vw;
+}
+.navigation a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: 0.25s ease;
+  color: #595959;
+  font-family: "Be Vietnam Pro", sans-serif;
+  margin-bottom: 1vw;
+}
+.navigation a * {
+  transition: 0.25s ease;
+}
+.navigation a i {
+  margin-right: 0.75rem;
+  font-size: 1.25em;
+  flex-shrink: 0;
+}
+.navigation a + a {
+  margin-top: 1.25rem;
+}
+.navigation a:hover, .navigation a:focus {
+  transform: translateX(4px);
+  color: #070F2B;
+}
+
+.app-header {
+  display: grid;
+  grid-template-columns: minmax(min-content, 175px) minmax(max-content, 1fr) minmax(max-content, 400px);
+  -moz-column-gap: 4rem;
+       column-gap: 4rem;
+  align-items: flex-end;
+  padding: 0 3.4vw;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #000;
+}
+.logo .logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 70px;
+  height: 70px;
+}
+.logo .logo-icon img {
+  width: 70%;
+}
+.logo .logo-title {
+  line-height: 1.25;
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+.logo .logo-title span {
+  color: #595959;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  color: var(--c-text-tertiary);
+  border-bottom: 1px solid #000;
+}
+.tabs a {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-decoration: none;
+  border-top: 2px solid transparent;
+  display: inline-flex;
+  transition: 0.25s ease;
+  color: #595959;
+}
+.tabs a.active, .tabs a:hover, .tabs a:focus {
+  color: #070F2B;
+  border-color: #070F2B;
+}
+
+.app-header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+.user-profile:hover, .user-profile:focus {
+  color: #000;
+}
+.user-profile:hover span:last-child, .user-profile:focus span:last-child {
+  box-shadow: 0 0 0 4px #f8f4f0, 0 0 0 5px #595959;
+}
+.user-profile span:first-child {
+  display: flex;
+  font-size: 1.125rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #000;
+  font-weight: 300;
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+.user-profile span:last-child {
+  transition: 0.25s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: 1.5rem;
+  flex-shrink: 0;
+}
+
+.app-header-actions-buttons {
+  display: flex;
+  border-left: 1px solid #000;
+  margin-left: 2rem;
+  padding-left: 2rem;
+}
+.app-header-actions-buttons > * + * {
+  margin-left: 1rem;
+}
+.app-header-actions-buttons .icon-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 0;
+  background-color: transparent;
+  border: 1px solid #595959;
+  color: #595959;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.25s ease;
+  flex-shrink: 0;
+}
+.app-header-actions-buttons .icon-button.large {
+  width: 42px;
+  height: 42px;
+  font-size: 1.25em;
+}
+.app-header-actions-buttons .icon-button i {
+  transition: 0.25s ease;
+}
+.app-header-actions-buttons .icon-button:hover, .app-header-actions-buttons .icon-button:focus {
+  background-color: #EEEEEE;
+  box-shadow: 0 0 0 4px #f8f4f0, 0 0 0 5px #595959;
 }
 
 .home .hero {
@@ -383,13 +546,10 @@
   padding: 0 3.4vw 2.4vw;
 }
 .home .members .counters {
-  padding: 3em 2em;
   color: #595959;
   text-align: center;
 }
 .home .members .counters > div {
-  max-width: 900px;
-  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 4em 2em;
@@ -398,7 +558,20 @@
   position: relative;
 }
 .home .members .counters .counter h1 {
-  font-size: 3em;
+  font-size: 4.3vw;
+  color: #595959;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.home .members .counters .counter:not(:last-child)::before {
+  content: "";
+  background-color: #595959;
+  position: absolute;
+  width: 2px;
+  height: 3em;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -1em;
 }
 .home .partners {
   text-align: center;
@@ -1358,4 +1531,4 @@ html.lenis body {
 
 .lenis.lenis-smooth iframe {
   pointer-events: none;
-}
+}/*# sourceMappingURL=main.css.map */

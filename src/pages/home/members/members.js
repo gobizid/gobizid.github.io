@@ -1,42 +1,41 @@
 export default function members() {
-  const counters = document.querySelectorAll(".content span");
-  const container = document.querySelectorAll(".counters");
+  const counters = document.querySelectorAll(".counter span");
+  const container = document.querySelector(".counters");
 
   let activated = false;
+  const animationDuration = 10000;
 
   window.addEventListener("scroll", () => {
-    if (
-      pageYOffset > container.offsetTop - container.offsetHeight - 200 &&
-      activated === false
-    ) {
+    const containerPosition = container.offsetTop;
+    const scrollPosition = window.scrollY + window.innerHeight;
+
+    if (scrollPosition > containerPosition && activated === false) {
+      const maxCount = Math.max(...Array.from(counters).map(counter => parseInt(counter.dataset.count)));
+
       counters.forEach((counter) => {
-        counter.innerText = 0;
+        const target = parseInt(counter.dataset.count);
+        const startTime = performance.now();
 
-        let count = 0;
+        function updateCount(currentTime) {
+          const elapsedTime = currentTime - startTime;
+          const progress = Math.min(elapsedTime / animationDuration, 1);
 
-        function updateCount() {
-          const target = parseInt(counter.dataset.count);
-          if (count < target) {
-            count++;
-            counter.innerText = count;
-            setTimeout(updateCount, 10);
+          const easedProgress = 1 - Math.pow(1 - progress, 3);
+          
+          const currentValue = Math.ceil(easedProgress * target);
+          counter.innerText = currentValue;
+
+          if (elapsedTime < animationDuration) {
+            requestAnimationFrame(updateCount);
           } else {
             counter.innerText = target;
           }
         }
 
-        updateCount();
+        requestAnimationFrame(updateCount);
+      });
 
-        activated = true;
-      });
-    } else if (
-      pageYOffset < container.offsetTop - container.offsetHeight - 500 ||
-      (pageYOffset === 0 && activated === true)
-    ) {
-      counters.forEach(counter => {
-        counter.innerText = 0;
-      });
-      activated = false;
+      activated = true;
     }
   });
 }

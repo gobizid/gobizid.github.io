@@ -5,24 +5,34 @@
   padding: 0 v.$padding-horizontal-main v.$padding-vertical-main;
 
   .counters {
-    padding: 3em 2em;
     color: map-get($map: v.$color, $key: "dark-gray" );
     text-align: center;
 
     & > div{
-      max-width: 900px;
-      margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 4em 2em;
+      gap: 4em 2em; 
     }
 
     .counter{
       position: relative;
 
       h1{
-        font-size: 3em;
-        
+        font-size: 4.3vw;
+        color: map-get($map: v.$color, $key: "dark-gray");
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      &:not(:last-child)::before{
+        content: '';
+        background-color: map-get($map: v.$color, $key: "dark-gray");
+        position: absolute;
+        width: 2px;
+        height: 3em;
+        top: 50%;
+        transform: translateY(-50%);
+        right:-1em;
       }
     }
   }
