@@ -1,6 +1,3 @@
-import { jwtDecode } from "jwt-decode";
-import Cookies from "js-cookie";
-
 export default function cookieToDecode(cookieName) {
   const token = Cookies.get(cookieName);
 

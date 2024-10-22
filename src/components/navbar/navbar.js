@@ -1,5 +1,3 @@
-import Cookie from "js-cookie";
-
 export default function navbar() {
   let list = document.querySelectorAll("header .nav .nav-main .links a");
 
