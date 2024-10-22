@@ -1,6 +1,5 @@
 export default function hero() {
   const swiper = new Swiper(".home .hero .swiper", {
-    modules: [Navigation, Pagination, Autoplay],
     loop: true,
     autoplay: {
       delay: 4000,
