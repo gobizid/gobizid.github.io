@@ -3,10 +3,11 @@ import loadCatalog from "/src/pages/catalog/catalog.js";
 import loadLogin from "/src/pages/login/login.js";
 import loadRegister from "/src/pages/register/register.js";
 import loadLoginQr from "/src/pages/login-qr/loginQr.js";
-import loadDashboard from "./src/pages/dashboard/dashboard.js";
-import "/swiper/css";
-import "/swiper/css/navigation";
-import "/swiper/css/pagination";
+import loadDashboard from "/src/pages/dashboard/dashboard.js";
+import "swiper/swiper-bundle.css";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 function loadPage(path) {
   const main = document.getElementById("main");
@@ -30,7 +31,7 @@ function loadPage(path) {
       pageUrl = "/src/pages/login-qr/login-qr.html";
       break;
     case "/dashboard":
-      pageUrl = "/src/pages/dashboard/dashboard.html"
+      pageUrl = "/src/pages/dashboard/dashboard.html";
       break;
     // default:
     // pageUrl = "./pages/404.html";
@@ -54,7 +55,7 @@ function loadPage(path) {
         } else if (path === "/login-qr") {
           loadLoginQr();
         } else if (path == "/dashboard") {
-          loadDashboard()
+          loadDashboard();
         }
       })
       .catch((error) => {
