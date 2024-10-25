@@ -1495,6 +1495,115 @@
   -moz-appearance: textfield;
 }
 
+.product-detail {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "header header" "image info";
+  padding: 0 3.4vw 2.4vw;
+}
+.product-detail-header {
+  grid-area: header;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.6vw;
+  padding-bottom: 1.3vw;
+  border-bottom: 0.1vw solid rgba(89, 89, 89, 0.25);
+}
+.product-detail-header .title {
+  color: #595959;
+  font-size: 2.2vw;
+  font-weight: 600;
+}
+.product-detail-header .menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0.6vw;
+}
+.product-detail-header .menu-item {
+  padding: 0.7vw 1.2vw;
+  border-radius: 0.3vw;
+  font-size: 1.05vw;
+  font-weight: 600;
+  color: #595959;
+  cursor: pointer;
+  border: 0.1vw solid #f8f4f0;
+  transition: all 0.2s ease-out;
+}
+.product-detail-header .menu-item.active {
+  border: 0.1vw solid #34a0a4;
+  color: #34a0a4;
+}
+.product-detail-image {
+  grid-area: image;
+}
+.product-detail-image .mySwiper {
+  --swiper-navigation-color: #fff;
+  --swiper-pagination-color: #fff;
+}
+.product-detail-image .swiper {
+  width: 100%;
+  height: 100%;
+}
+.product-detail-image .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product-detail-image .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.product-detail-image .swiper {
+  width: 100%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.product-detail-image .swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+.product-detail-image .mySwiper2 {
+  height: 80%;
+  width: 100%;
+}
+.product-detail-image .mySwiper {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+.product-detail-image .mySwiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+.product-detail-image .mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+.product-detail-image .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.product-detail-info {
+  grid-area: info;
+}
+
 *,
 *::before,
 *::after {

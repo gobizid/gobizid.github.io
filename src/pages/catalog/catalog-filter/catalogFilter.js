@@ -48,12 +48,16 @@ function getAllCateogories() {
 
       result.sort((a, b) => a.name.localeCompare(b.name));
 
-      result.forEach((category) => {
-        const categoryElement = document.createElement("div");
-        categoryElement.classList.add("item");
-        categoryElement.textContent = category.name;
-        categoriesList.appendChild(categoryElement);
-      });
+      if (categoriesList) {
+        result.forEach((category) => {
+          const categoryElement = document.createElement("div");
+          categoryElement.classList.add("item");
+          categoryElement.textContent = category.name;
+          categoriesList.appendChild(categoryElement);
+        });
+      } else {
+        console.error("Element .filter-categories-list tidak ditemukan.");
+      }
     }
   });
 }
