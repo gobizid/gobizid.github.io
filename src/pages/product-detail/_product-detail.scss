@@ -1,0 +1,30 @@
+@use "../../helpers/mixins" as m;
+@use "../../helpers/variables" as v;
+@use "./header/header" as product-detail-header;
+@use "./image/image" as product-detail-image;
+
+.product-detail {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "header header"
+    "image info";
+  padding: 0 v.$padding-horizontal-main v.$padding-vertical-main;
+
+  &-header {
+    grid-area: header;
+    @include product-detail-header.product-detail-header();
+  }
+
+  &-image {
+    grid-area: image;
+    @include product-detail-image.product-detail-image();
+  }
+
+  &-info {
+    grid-area: info;
+  }
+}

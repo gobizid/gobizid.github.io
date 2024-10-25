@@ -1,0 +1,37 @@
+@use "../../../helpers/mixins" as m;
+@use "../../../helpers/variables" as v;
+
+@mixin product-detail-header() {
+  @include m.flex($direction: column, $align: flex-start);
+  gap: 1.6vw;
+  padding-bottom: 1.3vw;
+  border-bottom: 0.1vw solid
+    rgba($color: map-get($map: v.$color, $key: "dark-gray"), $alpha: 0.25);
+
+  .title {
+    color: map-get($map: v.$color, $key: "dark-gray");
+    font-size: 2.2vw;
+    font-weight: 600;
+  }
+
+  .menu {
+    @include m.flex();
+    gap: 0.6vw;
+
+    &-item {
+      padding: 0.7vw 1.2vw;
+      border-radius: 0.3vw;
+      font-size: 1.05vw;
+      font-weight: 600;
+      color: map-get($map: v.$color, $key: "dark-gray");
+      cursor: pointer;
+      border: 0.1vw solid map-get($map: v.$color, $key: "cream");
+      transition: all 0.2s ease-out;
+
+      &.active {
+        border: 0.1vw solid map-get($map: v.$color, $key: "light-cyan");
+        color: map-get($map: v.$color, $key: "light-cyan");
+      }
+    }
+  }
+}

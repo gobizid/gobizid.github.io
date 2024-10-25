@@ -4,6 +4,7 @@ import loadLogin from "/src/pages/login/login.js";
 import loadRegister from "/src/pages/register/register.js";
 import loadLoginQr from "/src/pages/login-qr/loginQr.js";
 import loadDashboard from "/src/pages/dashboard/dashboard.js";
+import loadProductDetail from "/src/pages/product-detail/productDetail.js";
 
 function loadPage(path) {
   const main = document.getElementById("main");
@@ -16,6 +17,9 @@ function loadPage(path) {
       break;
     case "/catalog":
       pageUrl = "/src/pages/catalog/catalog.html";
+      break;
+    case "/product-detail":
+      pageUrl = "/src/pages/product-detail/product-detail.html";
       break;
     case "/login":
       pageUrl = "/src/pages/login/login.html";
@@ -44,6 +48,8 @@ function loadPage(path) {
           loadHome();
         } else if (path === "/catalog") {
           loadCatalog();
+        } else if (path === "/product-detail") {
+          loadProductDetail();
         } else if (path === "/login") {
           loadLogin();
         } else if (path === "/register") {
