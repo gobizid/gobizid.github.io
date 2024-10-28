@@ -1,154 +1,169 @@
-@use "./../../helpers/mixins" as m;
-@use "./../../helpers/variables" as v;
+  @use "./../../helpers/mixins" as m;
+  @use "./../../helpers/variables" as v;
 
-.app-header {
-  display: grid;
-  grid-template-columns: minmax(min-content, 175px) minmax(max-content, 1fr) minmax(
-      max-content,
-      400px
-    );
-  column-gap: 4rem;
-  align-items: flex-end;
-  padding: 0 v.$padding-horizontal-main ;
-}
+  .app-header {
+    display: grid;
+    grid-template-columns: minmax(min-content, 175px) minmax(max-content, 1fr) minmax(
+        max-content,
+        400px
+      );
+    column-gap: 4rem;
+    align-items: flex-end;
+    padding: 0 v.$padding-horizontal-main;
+  }
 
-.logo {
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid map-get($map: v.$color, $key: "black");
-
-  .logo-icon {
+  .logo {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    width: 70px;
-    height: 70px;
+    border-bottom: 1px solid map-get($map: v.$color, $key: "black");
 
-    img{
+    .logo-icon {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 70px;
+      height: 70px;
+
+      img {
         width: 70%;
-        
+      }
+    }
+
+    .logo-title {
+      line-height: 1.25;
+      font-family: v.$vietnam;
+
+      span {
+        color: map-get($map: v.$color, $key: "dark-gray");
+      }
     }
   }
 
-  .logo-title {
-    line-height: 1.25;
-    font-family: v.$vietnam;
+  .tabs {
+    display: flex;
+    justify-content: space-between;
+    color: var(--c-text-tertiary);
+    border-bottom: 1px solid map-get($map: v.$color, $key: "black");
 
-    span {
-      color: map-get($map: v.$color, $key: "dark-gray" );
+    a {
+      position: relative;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      text-decoration: none;
+      display: inline-flex;
+      color: map-get($map: v.$color, $key: "dark-gray");
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: map-get($map: v.$color, $key: "light-black");
+        transform: translateX(-100%);
+        transition: transform 0.25s ease;
+      }
+
+      &.active,
+      &:hover,
+      &:focus {
+        color: map-get($map: v.$color, $key: "light-black");
+
+        &::before {
+          transform: translateX(0);
+        }
+      }
     }
   }
-}
 
-.tabs {
-  display: flex;
-  justify-content: space-between;
-  color: var(--c-text-tertiary);
-  border-bottom: 1px solid map-get($map: v.$color, $key: "black");
+  .app-header-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-  a {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    text-decoration: none;
-    border-top: 2px solid transparent;
-    display: inline-flex;
+  .user-profile {
+    display: flex;
+    align-items: center;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
     transition: 0.25s ease;
-    color: map-get($map: v.$color, $key: "dark-gray");
 
-    &.active,
     &:hover,
     &:focus {
-      color: map-get($map: v.$color, $key: "light-black");
-      border-color: map-get($map: v.$color, $key: "light-black");
+      color: map-get($map: v.$color, $key: "black");
+      span:last-child {
+        box-shadow: 0 0 0 4px map-get($map: v.$color, $key: "cream"),
+          0 0 0 5px map-get($map: v.$color, $key: "dark-gray");
+      }
     }
-  }
-}
 
-.app-header-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    span:first-child {
+      display: flex;
+      font-size: 1.125rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid map-get($map: v.$color, $key: "black");
+      font-weight: 300;
+      font-family: v.$vietnam;
+    }
 
-.user-profile {
-  display: flex;
-  align-items: center;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  transition: 0.25s ease;
-
-  &:hover,
-  &:focus {
-    color: map-get($map: v.$color, $key: "black");
     span:last-child {
-      box-shadow: 0 0 0 4px map-get($map: v.$color, $key: "cream"), 0 0 0 5px map-get($map: v.$color, $key: "dark-gray" );
+      transition: 0.25s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-left: 1.5rem;
+      flex-shrink: 0;
     }
   }
 
-  span:first-child {
+  .app-header-actions-buttons {
     display: flex;
-    font-size: 1.125rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid map-get($map: v.$color, $key: "black");
-    font-weight: 300;
-    font-family: v.$vietnam;
+    border-left: 1px solid map-get($map: v.$color, $key: "black");
+    margin-left: 2rem;
+    padding-left: 2rem;
+
+    & > * + * {
+      margin-left: 1rem;
+    }
+
+    .icon-button {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 0;
+      background-color: transparent;
+      border: 1px solid map-get($map: v.$color, $key: "dark-gray");
+      color: map-get($map: v.$color, $key: "dark-gray");
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: 0.25s ease;
+      flex-shrink: 0;
+      &.large {
+        width: 42px;
+        height: 42px;
+        font-size: 1.25em;
+      }
+
+      i {
+        transition: 0.25s ease;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: map-get($map: v.$color, $key: "light-cream");
+        box-shadow: 0 0 0 4px map-get($map: v.$color, $key: "cream"),
+          0 0 0 5px map-get($map: v.$color, $key: "dark-gray");
+      }
+    }
   }
-
-  span:last-child {
-    transition: 0.25s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-left: 1.5rem;
-    flex-shrink: 0;
-  }
-}
-
-.app-header-actions-buttons {
-  display: flex;
-  border-left: 1px solid map-get($map: v.$color, $key: "black");
-  margin-left: 2rem;
-  padding-left: 2rem;
-
-  & > * + * {
-    margin-left: 1rem;
-  }
-
-  .icon-button {
-	width: 32px;
-	height: 32px;
-	border-radius: 50%;
-	border: 0;
-	background-color: transparent;
-	border: 1px solid map-get($map: v.$color, $key: "dark-gray");
-	color: map-get($map: v.$color, $key: "dark-gray" );
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-	transition: 0.25s ease;
-	flex-shrink: 0;
-	&.large {
-		width: 42px;
-		height: 42px;
-		font-size: 1.25em;
-	}
-
-	i {
-		transition: 0.25s ease;
-	}
-
-	&:hover,
-	&:focus {
-		background-color: map-get($map: v.$color, $key: "light-cream" );
-		box-shadow: 0 0 0 4px map-get($map: v.$color, $key: "cream"), 0 0 0 5px map-get($map: v.$color, $key: "dark-gray" );
-	}
-}
-
-}

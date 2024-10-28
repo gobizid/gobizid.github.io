@@ -170,6 +170,39 @@
   transform: translateX(4px);
   color: #070F2B;
 }
+.navigation .components-toggle {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.navigation .components-toggle .caret-icon {
+  margin-left: auto;
+  transition: transform 0.3s ease;
+}
+.navigation .components-toggle.active .caret-icon {
+  transform: rotate(-180deg);
+}
+.navigation .submenu {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+.navigation .submenu.active {
+  max-height: 200px;
+  opacity: 1;
+}
+.navigation .submenu a {
+  margin: 0.7rem 0;
+  font-size: 0.9em;
+}
+.navigation .submenu a:hover, .navigation .submenu a:focus {
+  color: #595959;
+}
 .navigation .logout {
   margin-top: auto;
 }
@@ -213,17 +246,30 @@
   border-bottom: 1px solid #000;
 }
 .tabs a {
+  position: relative;
   padding-top: 1rem;
   padding-bottom: 1rem;
   text-decoration: none;
-  border-top: 2px solid transparent;
   display: inline-flex;
-  transition: 0.25s ease;
   color: #595959;
+  overflow: hidden;
+}
+.tabs a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #070F2B;
+  transform: translateX(-100%);
+  transition: transform 0.25s ease;
 }
 .tabs a.active, .tabs a:hover, .tabs a:focus {
   color: #070F2B;
-  border-color: #070F2B;
+}
+.tabs a.active::before, .tabs a:hover::before, .tabs a:focus::before {
+  transform: translateX(0);
 }
 
 .app-header-actions {
@@ -1654,6 +1700,113 @@
   font-weight: 700;
   text-align: center;
   margin-bottom: 1rem;
+}
+
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+.dashboard-container .topbar {
+  grid-column: 1/-1;
+  height: 60px;
+}
+.dashboard-container .list .user .container {
+  width: 90%;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 8px;
+}
+.dashboard-container .list .user .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.dashboard-container .list .user .header h2 {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #333;
+}
+.dashboard-container .list .user .header .add-user-btn {
+  padding: 0.5rem 1rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.dashboard-container .list .user .header .add-user-btn:hover {
+  background-color: #2563eb;
+}
+.dashboard-container .list .user table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.dashboard-container .list .user table th,
+.dashboard-container .list .user table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
+}
+.dashboard-container .list .user table th {
+  background-color: #f3f4f6;
+  color: #555;
+  font-weight: bold;
+}
+.dashboard-container .list .user table td {
+  color: #333;
+}
+.dashboard-container .list .user table .user-info {
+  display: flex;
+  align-items: center;
+}
+.dashboard-container .list .user table .user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+.dashboard-container .list .user table .user-info strong {
+  display: block;
+  color: #333;
+}
+.dashboard-container .list .user table .user-info span {
+  color: #666;
+  font-size: 0.9rem;
+}
+.dashboard-container .list .user table .actions {
+  display: flex;
+  gap: 0.5rem;
+}
+.dashboard-container .list .user table .actions .edit-btn,
+.dashboard-container .list .user table .actions .delete-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #555;
+}
+.dashboard-container .list .user table .actions .edit-btn i,
+.dashboard-container .list .user table .actions .delete-btn i {
+  font-size: 1.2rem;
+}
+.dashboard-container .list .user table .actions .edit-btn {
+  color: #fbbf24;
+}
+.dashboard-container .list .user table .actions .delete-btn {
+  color: #ef4444;
 }
 
 *,

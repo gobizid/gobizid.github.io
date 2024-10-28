@@ -38,7 +38,50 @@
       color: map-get($map: v.$color, $key: "light-black");
     }
   }
+
+  .components-toggle {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .caret-icon {
+      margin-left: auto;
+      transition: transform 0.3s ease; // Sedikit lebih lama pada caret icon
+    }
+
+    &.active .caret-icon {
+      transform: rotate(-180deg);
+    }
+  }
+
+  .submenu {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+
+    &.active {
+      max-height: 200px;
+      opacity: 1;
+    }
+
+    a {
+      margin: .7rem 0;
+      color: map-get($map: v.$color, $key: "gray");
+      font-size: 0.9em;
+
+      &:hover,
+      &:focus {
+        color: map-get($map: v.$color, $key: "dark-gray");
+      }
+    }
+  }
+
   .logout {
-    margin-top: auto; // Memastikan logout berada di bawah
+    margin-top: auto;
   }
 }
