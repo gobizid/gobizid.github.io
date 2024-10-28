@@ -1611,6 +1611,51 @@
   grid-area: info;
 }
 
+#hasphonenumber {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+#hasphonenumber .circle {
+  width: 24rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+  transition: transform 0.3s;
+}
+#hasphonenumber .circle:hover {
+  transform: translateY(-5px);
+}
+#hasphonenumber .circle #useracclog {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+#hasphonenumber .circle #useracclog a {
+  text-decoration: none;
+  color: #595959;
+}
+#hasphonenumber .circle #whatsauthqr {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s;
+}
+#hasphonenumber .circle #whatsauthqr:hover {
+  transform: scale(1.05);
+}
+#hasphonenumber .circle #whatsauthcounter,
+#hasphonenumber .circle #logs {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
 *,
 *::before,
 *::after {
