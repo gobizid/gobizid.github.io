@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Check out the repository
         uses: actions/checkout@v2
@@ -17,10 +17,10 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '16'
-        
+
       - name: Install dependencies
         run: npm install
-        
+
       - name: Build the project
         run: npm run build
 
@@ -28,5 +28,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./docs
           publish_branch: main
+          keep_files: true
