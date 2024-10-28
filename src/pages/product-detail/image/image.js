@@ -1,6 +1,3 @@
-import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
-
 export default function productDetailImage() {
   const bigSwiper = new Swiper(".swiper-big", {
     loop: true,
@@ -12,7 +9,6 @@ export default function productDetailImage() {
   });
 
   const smallSwiper = new Swiper(".swiper-small", {
-    modules: [Navigation],
     loop: true,
     spaceBetween: 10,
     slidesPerView: 4,

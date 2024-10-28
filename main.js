@@ -5,10 +5,6 @@ import loadRegister from "/src/pages/register/register.js";
 import loadLoginQr from "/src/pages/login-qr/loginQr.js";
 import loadDashboard from "/src/pages/dashboard/dashboard.js";
 import loadProductDetail from "/src/pages/product-detail/productDetail.js";
-import "lenis/dist/lenis.css";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 
 function loadPage(path) {
   const main = document.getElementById("main");
