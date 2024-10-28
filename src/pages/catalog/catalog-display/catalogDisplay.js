@@ -7,13 +7,13 @@ function filterControll() {
   document
     .querySelector(".filter-header .filter-header-close")
     .addEventListener("click", () => {
-      controlFilter.classList.toggle("expanded");
+      controlFilter.classList.toggle("collapse");
       filter.classList.toggle("hidden");
     });
   document
     .querySelector(".catalog-display .display-header")
     .addEventListener("click", () => {
-      controlFilter.classList.toggle("expanded");
+      controlFilter.classList.toggle("collapse");
       filter.classList.toggle("hidden");
     });
 }

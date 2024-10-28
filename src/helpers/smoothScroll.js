@@ -1,3 +1,5 @@
+import Lenis from "lenis";
+
 export default function smoothScroll() {
   // Initialize Lenis
   const lenis = new Lenis({

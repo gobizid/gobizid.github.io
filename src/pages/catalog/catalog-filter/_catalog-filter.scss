@@ -257,6 +257,6 @@
   }
 
   &.hidden {
-    transform: translateX(-(main.$width-filter + v.$padding-horizontal-main));
+  transform: translateX(-(main.$width-filter + v.$padding-horizontal-main));
   }
 }

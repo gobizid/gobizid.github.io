@@ -1,3 +1,5 @@
+import Swiper from "swiper";
+
 export default function categories() {
   const swiper = new Swiper(".home .categories .swiper", {
     loop: true,

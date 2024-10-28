@@ -1,3 +1,5 @@
+import Cookies from "js-cookie";
+
 export default function navbar() {
   const list = document.querySelectorAll("header .nav .nav-main .links a");
 
@@ -15,14 +17,17 @@ export default function navbar() {
   setActiveLinkByUrl(list);
 
   // ----- Display Logout Button ----- //
-  const loginCookie = window.Cookies.get("login"); // Access Cookies from window object
+  const loginCookie = Cookies.get("login"); // Access Cookies from window object
   const logoutButton = document.querySelector(".nav-others .logout");
+  const loginButton = document.querySelector(".nav-others .to-login");
 
   if (logoutButton) {
     if (loginCookie) {
       logoutButton.style.display = "inline-block";
+      loginButton.style.display = "none";
     } else {
       logoutButton.style.display = "none";
+      loginButton.style.display = "inline-block";
     }
 
     // ----- Logout ----- //

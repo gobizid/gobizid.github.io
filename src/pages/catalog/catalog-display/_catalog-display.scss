@@ -35,7 +35,7 @@
       }
     }
 
-    &.expanded {
+    &.collapse {
       transform: translateX(-(main.$gap-catalog + main.$width-filter));
 
       i {
