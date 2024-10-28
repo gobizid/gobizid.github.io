@@ -1,0 +1,56 @@
+@use "../../../helpers/mixins" as m;
+@use "../../../helpers/variables" as v;
+
+@mixin product-detail-image() {
+  @include m.flex($direction: column);
+  gap: .4vw;
+
+  padding: v.$padding-vertical-main 0;
+
+  .swiper.swiper-big {
+    @include m.flex();
+    width: 40vw;
+    height: 60vh;
+    position: relative;
+
+    .swiper-wrapper {
+      width: 100%;
+      height: auto;
+
+      .swiper-slide {
+        @include m.flex();
+        width: 100%;
+        height: auto;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .swiper.swiper-small {
+    @include m.flex();
+    height: 10vh;
+    width: 40vw;
+
+    .swiper-wrapper {
+      width: 100%;
+      height: auto;
+
+      .swiper-slide {
+        @include m.flex();
+        width: 100%;
+        height: auto;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
