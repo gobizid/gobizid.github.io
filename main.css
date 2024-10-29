@@ -1550,7 +1550,7 @@
   width: 100%;
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto auto;
   grid-template-rows: auto 1fr;
   grid-template-areas: "header header" "image info";
   padding: 0 3.4vw 2.4vw;
@@ -1597,17 +1597,19 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 0.4vw;
+  gap: 10px;
   padding: 2.4vw 0;
+  width: 40vw;
 }
 .product-detail-image .swiper.swiper-big {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  width: 40vw;
+  width: 100%;
   height: 60vh;
   position: relative;
+  border-radius: 0.3vw;
 }
 .product-detail-image .swiper.swiper-big .swiper-wrapper {
   width: 100%;
@@ -1627,17 +1629,48 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
+.product-detail-image .swiper.swiper-big .swiper-nav-prev,
+.product-detail-image .swiper.swiper-big .swiper-nav-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 2;
+  padding: 0.6vw;
+  border-radius: 50%;
+  box-shadow: 0.5px 0.5px 5px rgba(0, 0, 0, 0.3);
+  background-color: #34a0a4;
+  transition: all ease-out 0.4s;
+}
+.product-detail-image .swiper.swiper-big .swiper-nav-prev i,
+.product-detail-image .swiper.swiper-big .swiper-nav-next i {
+  color: #f8f4f0;
+  font-size: 1.5vw;
+  transform: translateY(1.5px);
+}
+.product-detail-image .swiper.swiper-big .swiper-nav-prev:hover,
+.product-detail-image .swiper.swiper-big .swiper-nav-next:hover {
+  background-color: #0b787c;
+}
+.product-detail-image .swiper.swiper-big .swiper-nav-prev {
+  left: 1.5vw;
+}
+.product-detail-image .swiper.swiper-big .swiper-nav-next {
+  right: 1.5vw;
+}
 .product-detail-image .swiper.swiper-small {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  height: 10vh;
+  height: 15vh;
   width: 40vw;
+  border-radius: 0.3vw;
 }
 .product-detail-image .swiper.swiper-small .swiper-wrapper {
   width: 100%;
   height: auto;
+  border-radius: 0.3vw;
 }
 .product-detail-image .swiper.swiper-small .swiper-wrapper .swiper-slide {
   display: flex;
@@ -1646,6 +1679,10 @@
   flex-direction: row;
   width: 100%;
   height: auto;
+  filter: grayscale(0.92);
+}
+.product-detail-image .swiper.swiper-small .swiper-wrapper .swiper-slide-thumb-active {
+  filter: grayscale(0);
 }
 .product-detail-image .swiper.swiper-small .swiper-wrapper .swiper-slide img {
   width: 100%;
