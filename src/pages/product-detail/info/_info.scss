@@ -1,0 +1,69 @@
+@use "./../../../helpers/mixins" as m;
+@use "./../../../helpers/variables" as v;
+
+@mixin product-detail-info() {
+  @include m.flex($direction: column, $justify: flex-start, $align: flex-start);
+
+  .info-header {
+    width: 100%;
+    @include m.flex($justify: space-between, $align: flex-start);
+
+    &-prices {
+      display: grid;
+      grid-template-areas:
+        "final discount"
+        "original discount";
+      row-gap: .6vh;
+      column-gap: 1vw;
+
+      .price-final {
+        color: map-get($map: v.$color, $key: "orange");
+        font-weight: 600;
+        font-size: 2.1vw;
+        line-height: 100%;
+        grid-area: final;
+      }
+
+      .price-original {
+        grid-area: original;
+        color: rgba(
+          $color: map-get($map: v.$color, $key: "dark-gray"),
+          $alpha: 0.6
+        );
+        font-size: 1vw;
+        line-height: 100%;
+        text-decoration: line-through;
+      }
+
+      .price-discount {
+        grid-area: discount;
+        background-color: map-get($map: v.$color, $key: "orange");
+        padding: 0.6vh 0.55vw;
+        border-radius: 0.3vw;
+        color: #fff;
+        font-size: 1.1vw;
+        height: fit-content;
+        transform: rotate(25deg);
+      }
+    }
+
+    &-reviews {
+      @include m.flex(
+        $direction: column,
+        $align: flex-end,
+        $justify: flex-start
+      );
+      row-gap: 0.6vh;
+
+      .rating {
+        line-height: 100%;
+        font-size: 1.35vw;
+    }
+    
+    .review {
+        line-height: 100%;
+        font-size: 1.15vw;
+      }
+    }
+  }
+}

@@ -2,17 +2,17 @@
 @use "../../../helpers/variables" as v;
 
 @mixin product-detail-image() {
-  @include m.flex($direction: column);
+  @include m.flex($direction: column, $justify: flex-start);
   gap: 10px;
-  padding: v.$padding-vertical-main 0;
   width: 40vw;
 
   .swiper.swiper-big {
     @include m.flex();
     width: 100%;
-    height: 60vh;
+    height: 55vh;
     position: relative;
-    border-radius: 0.3vw;
+    border-top-left-radius: 1vw;
+    border-top-right-radius: 1vw;
 
     .swiper-wrapper {
       width: 100%;
@@ -68,23 +68,23 @@
     @include m.flex();
     height: 15vh;
     width: 40vw;
-    border-radius: 0.3vw;
+    border-bottom-left-radius: 1vw;
+    border-bottom-right-radius: 1vw;
 
     .swiper-wrapper {
       width: 100%;
       height: auto;
-      border-radius: 0.3vw;
-
+      
       .swiper-slide {
         @include m.flex();
         width: 100%;
         height: auto;
         filter: grayscale(0.92);
-
+        
         &-thumb-active {
           filter: grayscale(0);
         }
-
+        
         img {
           width: 100%;
           height: 100%;
