@@ -2,17 +2,19 @@
 @use "../../helpers/variables" as v;
 @use "./header/header" as product-detail-header;
 @use "./image/image" as product-detail-image;
+@use "./info/info" as product-detail-info;
 
 .product-detail {
   width: 100%;
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr;
   grid-template-areas:
     "header header"
     "image info";
   padding: 0 v.$padding-horizontal-main v.$padding-vertical-main;
+  gap: v.$padding-vertical-main (v.$padding-horizontal-main * 1.5);
 
   &-header {
     grid-area: header;
@@ -25,6 +27,7 @@
   }
 
   &-info {
+    @include product-detail-info.product-detail-info();
     grid-area: info;
   }
 }

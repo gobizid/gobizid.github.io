@@ -8,13 +8,13 @@
   border-bottom: 0.1vw solid
     rgba($color: map-get($map: v.$color, $key: "dark-gray"), $alpha: 0.25);
 
-  .title {
+  .header-title {
     color: map-get($map: v.$color, $key: "dark-gray");
     font-size: 2.2vw;
     font-weight: 600;
   }
 
-  .menu {
+  .header-menu {
     @include m.flex();
     gap: 0.6vw;
 
