@@ -5,7 +5,7 @@ export default function loadDashboard() {
     const promises = [
       loadComponent("aside.sidebar", "/src/components/sidebar/sidebar.html"),
       loadComponent("header.topbar", "/src/components/topbar/topbar.html"),
-      loadComponent("section.user", "/src/pages/dashboard/tableUser/user.html")
+      loadComponent("section.user", "/src/pages/dashboard/tableProduct/product.html")
     ];
   
     Promise.all(promises)

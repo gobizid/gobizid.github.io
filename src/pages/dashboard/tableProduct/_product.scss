@@ -1,0 +1,87 @@
+@use "./../../../helpers/mixins" as m;
+@use "./../../../helpers/variables" as v;
+
+@mixin tableProduct() {
+  $primary-color: #4caf50;
+  $text-color: #333;
+  $button-color: #007bff;
+
+  .poduct-dashboard {
+    // width: 90%;
+    margin: 2vw auto;
+    padding: 10px;
+  }
+
+  h1 {
+    color: $primary-color;
+    text-align: center;
+    font-size: 1.5em; // Mengurangi ukuran font
+  }
+
+  .tambah {
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    padding: 8px 16px; // Mengurangi padding
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto 15px auto;
+    font-size: 0.9em; // Mengurangi ukuran font
+  }
+
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; // Mengurangi jarak antar item
+  }
+
+  .product-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px; // Mengurangi padding
+    background: #fff;
+    text-align: center;
+    flex: 1 1 calc(20% - 15px); // 5 item dalam satu baris
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // Tambahkan bayangan untuk kedalaman
+  }
+
+  .product-item img {
+    max-width: 100%;
+    border-radius: 5px;
+  }
+
+  .product-item h2 {
+    font-size: 1.1em; // Mengurangi ukuran font
+    color: $text-color;
+  }
+
+  .product-item p {
+    font-size: 0.9em; // Mengurangi ukuran font
+    color: $text-color;
+  }
+
+  .product-item span {
+    font-size: 0.8em; // Mengurangi ukuran font
+    color: #777;
+  }
+
+  .button-group {
+    margin-top: 10px;
+  }
+
+  .btn {
+    background-color: $button-color;
+    color: white;
+    border: none;
+    padding: 4px 8px; // Mengurangi padding
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 3px; // Mengurangi margin
+    font-size: 0.8em; // Mengurangi ukuran font
+  }
+
+  .btn.delete {
+    background-color: #dc3545; // Warna merah untuk tombol delete
+  }
+}

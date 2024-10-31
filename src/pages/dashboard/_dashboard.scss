@@ -1,4 +1,4 @@
-@use "./tableUser/user" as tableUser;
+@use "./tableProduct/product" as tableProduct;
 
 .dashboard-container {
   display: grid;
@@ -12,7 +12,7 @@
   }
   .list {
     .user {
-      @include tableUser.tableUser();
+      @include tableProduct.tableProduct();
     }
   }
 }
