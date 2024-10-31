@@ -142,7 +142,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 2.4vw 3.4vw;
+  padding: 3.4vw 0 0 2.4vw;
   justify-content: space-between;
   height: 90vh;
 }
@@ -213,7 +213,7 @@
   -moz-column-gap: 4rem;
        column-gap: 4rem;
   align-items: flex-end;
-  padding: 0 3.4vw;
+  padding: 0 2.4vw;
 }
 
 .logo {
@@ -229,7 +229,7 @@
   height: 70px;
 }
 .logo .logo-icon img {
-  width: 70%;
+  width: 60%;
 }
 .logo .logo-title {
   line-height: 1.25;
@@ -237,6 +237,7 @@
 }
 .logo .logo-title span {
   color: #595959;
+  font-size: 2vw;
 }
 
 .tabs {
@@ -1808,61 +1809,72 @@
   grid-column: 1/-1;
   height: 60px;
 }
-.dashboard-container .list .user .poduct-dashboard {
-  margin: 2vw auto;
-  padding: 10px;
+.dashboard-container .list .user .product-dashboard {
+  margin: 1vw auto;
+  width: 90%;
+  padding: 1.5vw;
 }
-.dashboard-container .list .user h1 {
-  color: #4caf50;
-  text-align: center;
-  font-size: 1.5em;
+.dashboard-container .list .user .product-dashboard .header-product {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2vw;
 }
-.dashboard-container .list .user .tambah {
-  background-color: #4caf50;
-  color: white;
+.dashboard-container .list .user .product-dashboard .header-product h1 {
+  font-size: 2vw;
+}
+.dashboard-container .list .user .product-dashboard .header-product .tambah {
+  background-color: #34a0a4;
+  color: #fff;
   border: none;
   padding: 8px 16px;
   border-radius: 5px;
   cursor: pointer;
   display: block;
-  margin: 0 auto 15px auto;
   font-size: 0.9em;
+  transition: 0.3s ease-in-out;
 }
-.dashboard-container .list .user .product-list {
+.dashboard-container .list .user .product-dashboard .header-product .tambah:hover {
+  background-color: #0b787c;
+}
+.dashboard-container .list .user .product-dashboard .product-list {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
+  justify-content: flex-start;
+  max-height: 76vh;
+  overflow-y: auto;
+  padding-right: 10px;
 }
-.dashboard-container .list .user .product-item {
+.dashboard-container .list .user .product-dashboard .product-item {
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 8px;
-  background: #fff;
+  background-color: #EEEEEE;
   text-align: center;
-  flex: 1 1 calc(20% - 15px);
+  flex: 0 1 calc(20% - 15px);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-.dashboard-container .list .user .product-item img {
+.dashboard-container .list .user .product-dashboard .product-item img {
   max-width: 100%;
   border-radius: 5px;
 }
-.dashboard-container .list .user .product-item h2 {
+.dashboard-container .list .user .product-dashboard .product-item h2 {
   font-size: 1.1em;
-  color: #333;
+  color: #070F2B;
 }
-.dashboard-container .list .user .product-item p {
+.dashboard-container .list .user .product-dashboard .product-item p {
   font-size: 0.9em;
-  color: #333;
+  color: #070F2B;
 }
-.dashboard-container .list .user .product-item span {
+.dashboard-container .list .user .product-dashboard .product-item span {
   font-size: 0.8em;
-  color: #777;
+  color: #595959;
 }
-.dashboard-container .list .user .button-group {
+.dashboard-container .list .user .product-dashboard .product-item .button-group {
   margin-top: 10px;
 }
-.dashboard-container .list .user .btn {
-  background-color: #007bff;
+.dashboard-container .list .user .product-dashboard .product-item .button-group .btn {
+  background-color: #608BC1;
   color: white;
   border: none;
   padding: 4px 8px;
@@ -1871,8 +1883,23 @@
   margin: 0 3px;
   font-size: 0.8em;
 }
-.dashboard-container .list .user .btn.delete {
+.dashboard-container .list .user .product-dashboard .product-item .button-group .btn.delete {
   background-color: #dc3545;
+}
+.dashboard-container .list .user * {
+  scrollbar-width: none;
+  scrollbar-color: #45a049 #add8e6;
+}
+.dashboard-container .list .user *::-webkit-scrollbar {
+  width: 12px;
+}
+.dashboard-container .list .user *::-webkit-scrollbar-track {
+  background: #add8e6;
+}
+.dashboard-container .list .user *::-webkit-scrollbar-thumb {
+  background-color: #45a049;
+  border-radius: 10px;
+  border: 2px solid #ffffff;
 }
 
 *,
@@ -1911,4 +1938,4 @@ html.lenis body {
 
 .lenis.lenis-smooth iframe {
   pointer-events: none;
-}
+}/*# sourceMappingURL=main.css.map */

@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: v.$padding-vertical-main v.$padding-horizontal-main;
+  padding: v.$padding-horizontal-main 0 0 v.$padding-vertical-main;
   justify-content: space-between;
   height: 90vh;
 
@@ -47,7 +47,7 @@
 
     .caret-icon {
       margin-left: auto;
-      transition: transform 0.3s ease; // Sedikit lebih lama pada caret icon
+      transition: transform 0.3s ease;
     }
 
     &.active .caret-icon {
