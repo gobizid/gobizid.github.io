@@ -2,113 +2,180 @@
 @use "./../../helpers/variables" as v;
 
 .navigation {
+  width: 15vw;
+  padding: 20px;
+  border-right: 1px solid map-get($map: v.$color, $key: "dark-gray");
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 1vw 0 0 v.$padding-vertical-main;
-  justify-content: flex-start;
   height: 100vh;
 
   .app-header-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1vw v.$padding-vertical-main;
     .logo {
-      .logo-icon {
+      width: 100%;
+      height: auto;
+      padding: v.$padding-vertical-main v.$padding-horizontal-main;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+
+      a {
+        display: grid;
+        place-items: center;
+        gap: 0.3vw;
+        text-decoration: none;
+
         img {
-          width: 50%;
-          background-size: contain;
+          width: 6vw;
+          height: auto;
+          object-fit: cover;
+        }
+
+        span {
+          font-family: v.$grandstander;
+          font-size: 2.15vw;
+          font-weight: 200;
+          color: map-get($map: v.$color, $key: "dark-gray");
+          text-transform: uppercase;
         }
       }
-
-      .logo-title {
-        font-family: v.$grandstander;
-        font-size: 2.15vw;
-        font-weight: 200;
-        color: map-get($map: v.$color, $key: "dark-gray");
-        text-transform: uppercase;
-      }
     }
   }
 
-  &.collapsed .app-header-logo .logo-title {
-    display: none;
-  }
-
-  a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    transition: 0.25s ease;
-    color: map-get($map: v.$color, $key: "dark-gray");
-    font-family: v.$vietnam;
-    margin-bottom: 1vw;
-
-    * {
-      transition: 0.25s ease;
-    }
-
-    i {
-      margin-right: 0.75rem;
-      font-size: 1.25em;
-      flex-shrink: 0;
-    }
-
-    & + a {
-      margin-top: 1.25rem;
-    }
-
-    &:hover,
-    &:focus {
-      transform: translateX(4px);
-      color: map-get($map: v.$color, $key: "light-black");
-    }
-  }
-
-  .components-toggle {
-    cursor: pointer;
-    position: relative;
-    display: flex;
-    align-items: center;
-
-    .caret-icon {
-      margin-left: auto;
-      transition: transform 0.3s ease;
-    }
-
-    &.active .caret-icon {
-      transform: rotate(-180deg);
-    }
-  }
-
-  .submenu {
-    display: flex;
-    flex-direction: column;
-    padding: 0 1rem;
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.5s ease, opacity 0.5s ease;
-
-    &.active {
-      max-height: 200px;
-      opacity: 1;
-    }
+  .nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 
     a {
-      margin: 0.7rem 0;
-      color: map-get($map: v.$color, $key: "gray");
-      font-size: 0.9em;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      transition: 0.25s ease;
+      color: map-get($map: v.$color, $key: "dark-gray");
+      font-family: v.$vietnam;
+      margin-bottom: 1vw;
+
+      * {
+        transition: 0.25s ease;
+      }
+
+      i {
+        margin-right: 0.75rem;
+        font-size: 1.25em;
+        flex-shrink: 0;
+      }
+
+      & + a {
+        margin-top: 1.25rem;
+      }
 
       &:hover,
       &:focus {
-        color: map-get($map: v.$color, $key: "dark-gray");
+        transform: translateX(4px);
+        color: map-get($map: v.$color, $key: "light-black");
       }
     }
   }
 
-  .logout {
-    margin-top: auto;
-  }
+  // .app-header-logo {
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   padding: 1vw v.$padding-vertical-main;
+  //   .logo {
+  //     .logo-icon {
+  //       img {
+  //         width: 50%;
+  //         background-size: contain;
+  //       }
+  //     }
+
+  //     .logo-title {
+  //       font-family: v.$grandstander;
+  //       font-size: 2.15vw;
+  //       font-weight: 200;
+  //       color: map-get($map: v.$color, $key: "dark-gray");
+  //       text-transform: uppercase;
+  //     }
+  //   }
+  // }
+
+  // &.collapsed .app-header-logo .logo-title {
+  //   display: none;
+  // }
+
+  // a {
+  //   display: flex;
+  //   align-items: center;
+  //   text-decoration: none;
+  //   transition: 0.25s ease;
+  //   color: map-get($map: v.$color, $key: "dark-gray");
+  //   font-family: v.$vietnam;
+  //   margin-bottom: 1vw;
+
+  //   * {
+  //     transition: 0.25s ease;
+  //   }
+
+  //   i {
+  //     margin-right: 0.75rem;
+  //     font-size: 1.25em;
+  //     flex-shrink: 0;
+  //   }
+
+  //   & + a {
+  //     margin-top: 1.25rem;
+  //   }
+
+  //   &:hover,
+  //   &:focus {
+  //     transform: translateX(4px);
+  //     color: map-get($map: v.$color, $key: "light-black");
+  //   }
+  // }
+
+  // .components-toggle {
+  //   cursor: pointer;
+  //   position: relative;
+  //   display: flex;
+  //   align-items: center;
+
+  //   .caret-icon {
+  //     margin-left: auto;
+  //     transition: transform 0.3s ease;
+  //   }
+
+  //   &.active .caret-icon {
+  //     transform: rotate(-180deg);
+  //   }
+  // }
+
+  // .submenu {
+  //   display: flex;
+  //   flex-direction: column;
+  //   padding: 0 1rem;
+  //   max-height: 0;
+  //   overflow: hidden;
+  //   opacity: 0;
+  //   transition: max-height 0.5s ease, opacity 0.5s ease;
+
+  //   &.active {
+  //     max-height: 200px;
+  //     opacity: 1;
+  //   }
+
+  //   a {
+  //     margin: 0.7rem 0;
+  //     color: map-get($map: v.$color, $key: "gray");
+  //     font-size: 0.9em;
+
+  //     &:hover,
+  //     &:focus {
+  //       color: map-get($map: v.$color, $key: "dark-gray");
+  //     }
+  //   }
+  // }
+
+  // .logout {
+  //   margin-top: auto;
+  // }
 }

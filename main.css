@@ -230,34 +230,45 @@
   }
 }
 .navigation {
+  width: 15vw;
+  padding: 20px;
+  border-right: 1px solid #595959;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 1vw 0 0 2.4vw;
-  justify-content: flex-start;
   height: 100vh;
 }
-.navigation .app-header-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1vw 2.4vw;
+.navigation .app-header-logo .logo {
+  width: 100%;
+  height: auto;
+  padding: 2.4vw 3.4vw;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
 }
-.navigation .app-header-logo .logo .logo-icon img {
-  width: 50%;
-  background-size: contain;
+.navigation .app-header-logo .logo a {
+  display: grid;
+  place-items: center;
+  gap: 0.3vw;
+  text-decoration: none;
 }
-.navigation .app-header-logo .logo .logo-title {
+.navigation .app-header-logo .logo a img {
+  width: 6vw;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.navigation .app-header-logo .logo a span {
   font-family: "Grandstander", cursive;
   font-size: 2.15vw;
   font-weight: 200;
   color: #595959;
   text-transform: uppercase;
 }
-.navigation.collapsed .app-header-logo .logo-title {
-  display: none;
+.navigation .nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
-.navigation a {
+.navigation .nav a {
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -266,56 +277,20 @@
   font-family: "Be Vietnam Pro", sans-serif;
   margin-bottom: 1vw;
 }
-.navigation a * {
+.navigation .nav a * {
   transition: 0.25s ease;
 }
-.navigation a i {
+.navigation .nav a i {
   margin-right: 0.75rem;
   font-size: 1.25em;
   flex-shrink: 0;
 }
-.navigation a + a {
+.navigation .nav a + a {
   margin-top: 1.25rem;
 }
-.navigation a:hover, .navigation a:focus {
+.navigation .nav a:hover, .navigation .nav a:focus {
   transform: translateX(4px);
   color: #070F2B;
-}
-.navigation .components-toggle {
-  cursor: pointer;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-.navigation .components-toggle .caret-icon {
-  margin-left: auto;
-  transition: transform 0.3s ease;
-}
-.navigation .components-toggle.active .caret-icon {
-  transform: rotate(-180deg);
-}
-.navigation .submenu {
-  display: flex;
-  flex-direction: column;
-  padding: 0 1rem;
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.5s ease, opacity 0.5s ease;
-}
-.navigation .submenu.active {
-  max-height: 200px;
-  opacity: 1;
-}
-.navigation .submenu a {
-  margin: 0.7rem 0;
-  font-size: 0.9em;
-}
-.navigation .submenu a:hover, .navigation .submenu a:focus {
-  color: #595959;
-}
-.navigation .logout {
-  margin-top: auto;
 }
 
 .app-header {
