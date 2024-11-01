@@ -1566,364 +1566,6 @@
   transform-origin: top center;
 }
 
-.wrapper-login {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  padding: 4vw;
-}
-.wrapper-login .login {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 2.8vw 3.6vw 3.8vw;
-  border-radius: 3vw;
-  background: #fff;
-  width: 100%;
-  max-width: 38vw;
-}
-.wrapper-login .login-image {
-  width: 6.6vw;
-  height: auto;
-  cursor: pointer;
-  text-decoration: none;
-}
-.wrapper-login .login-image img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.wrapper-login .login-title {
-  font-size: 2.4vw;
-  font-weight: 600;
-  color: #595959;
-  text-align: center;
-  line-height: 100%;
-}
-.wrapper-login .login-form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  gap: 0.6vw;
-  margin-top: 2.1vw;
-}
-.wrapper-login .login-form input {
-  width: 100%;
-  border-radius: 10vw;
-  padding: 0 1.4vw;
-  height: 8vh;
-  font-size: 1.2vw;
-  outline: none;
-  border: 0.1vw solid rgba(89, 89, 89, 0.5);
-  color: #595959;
-}
-.wrapper-login .login-form input:focus {
-  border-bottom-width: 0.2vw;
-}
-.wrapper-login .login-form button {
-  width: 100%;
-  border-radius: 10vw;
-  padding: 0 1.4vw;
-  height: 8vh;
-  font-size: 1.2vw;
-  color: #fff;
-  background-color: #34a0a4;
-  border: none;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-.wrapper-login .login-form button::after {
-  content: "";
-  position: absolute;
-  width: 110%;
-  height: 100%;
-  top: 0;
-  left: -5%;
-  background-color: #0b787c;
-  transform: scaleY(0);
-  transform-origin: bottom center;
-  transition: transform 0.4s ease-out;
-  z-index: -1;
-}
-.wrapper-login .login-form button:hover::after {
-  transform: scaleY(1);
-  transform-origin: top center;
-}
-.wrapper-login .login-to-signup {
-  text-align: center;
-  margin-top: 1.1vw;
-}
-.wrapper-login .login-to-signup span {
-  color: #595959;
-}
-.wrapper-login .login-to-signup a {
-  color: #34a0a4;
-  text-decoration: none;
-  transition: all 0.3s ease-out;
-}
-.wrapper-login .login-to-signup a:hover {
-  text-decoration: underline;
-}
-.wrapper-login .login-line {
-  position: relative;
-  height: 0.1vw;
-  width: 100%;
-  margin: 6vh 0;
-  background-color: #d4d4d4;
-}
-.wrapper-login .login-line::before {
-  content: "Or";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  color: #8b8b8b;
-  padding: 0 1.4vw;
-  padding: 0 15px;
-}
-.wrapper-login .login-media-options {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 0.6vw;
-  width: 100%;
-}
-.wrapper-login .login-media-options a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  text-decoration: none;
-  color: #34a0a4;
-  background-color: transparent;
-  border: 0.1vw solid #34a0a4;
-  width: 100%;
-  border-radius: 10vw;
-  padding: 0 1.4vw;
-  height: 8vh;
-  font-size: 1.2vw;
-  position: relative;
-  overflow: hidden;
-  transition: color 0.3s ease-out;
-  z-index: 1;
-}
-.wrapper-login .login-media-options a::after {
-  content: "";
-  position: absolute;
-  width: 110%;
-  height: 100%;
-  top: 0;
-  left: -5%;
-  background-color: #34a0a4;
-  transform: scaleY(0);
-  transform-origin: bottom center;
-  transition: transform 0.4s ease-out;
-  z-index: -1;
-}
-.wrapper-login .login-media-options a:hover {
-  color: white;
-}
-.wrapper-login .login-media-options a:hover::after {
-  transform: scaleY(1);
-  transform-origin: top center;
-}
-.wrapper-login input[type=number]::-webkit-outer-spin-button,
-.wrapper-login input[type=number]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-.wrapper-login input[type=number] {
-  -moz-appearance: textfield;
-}
-
-.wrapper-register {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  padding: 4vw;
-}
-.wrapper-register .register {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 2.8vw 3.6vw 3.8vw;
-  border-radius: 3vw;
-  background: #fff;
-  width: 100%;
-  max-width: 38vw;
-}
-.wrapper-register .register-image {
-  width: 6.6vw;
-  height: auto;
-  cursor: pointer;
-  text-decoration: none;
-}
-.wrapper-register .register-image img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.wrapper-register .register-title {
-  font-size: 2.4vw;
-  font-weight: 600;
-  color: #595959;
-  text-align: center;
-  line-height: 100%;
-}
-.wrapper-register .register-form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  gap: 0.6vw;
-  margin-top: 2.1vw;
-}
-.wrapper-register .register-form input {
-  width: 100%;
-  border-radius: 10vw;
-  padding: 0 1.4vw;
-  height: 8vh;
-  font-size: 1.2vw;
-  outline: none;
-  border: 0.1vw solid rgba(89, 89, 89, 0.5);
-  color: #595959;
-}
-.wrapper-register .register-form input:focus {
-  border-bottom-width: 0.2vw;
-}
-.wrapper-register .register-form button {
-  width: 100%;
-  border-radius: 10vw;
-  padding: 0 1.4vw;
-  height: 8vh;
-  font-size: 1.2vw;
-  color: #fff;
-  background-color: #34a0a4;
-  border: none;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-.wrapper-register .register-form button::after {
-  content: "";
-  position: absolute;
-  width: 110%;
-  height: 100%;
-  top: 0;
-  left: -5%;
-  background-color: #0b787c;
-  transform: scaleY(0);
-  transform-origin: bottom center;
-  transition: transform 0.4s ease-out;
-  z-index: -1;
-}
-.wrapper-register .register-form button:hover::after {
-  transform: scaleY(1);
-  transform-origin: top center;
-}
-.wrapper-register .register-to-login {
-  text-align: center;
-  margin-top: 1.1vw;
-}
-.wrapper-register .register-to-login span {
-  color: #595959;
-}
-.wrapper-register .register-to-login a {
-  color: #34a0a4;
-  text-decoration: none;
-  transition: all 0.3s ease-out;
-}
-.wrapper-register .register-to-login a:hover {
-  text-decoration: underline;
-}
-.wrapper-register .register-line {
-  position: relative;
-  height: 0.1vw;
-  width: 100%;
-  margin: 6vh 0;
-  background-color: #d4d4d4;
-}
-.wrapper-register .register-line::before {
-  content: "Or";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  color: #8b8b8b;
-  padding: 0 1.4vw;
-  padding: 0 15px;
-}
-.wrapper-register .register-media-options {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 0.6vw;
-  width: 100%;
-}
-.wrapper-register .register-media-options a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  text-decoration: none;
-  color: #34a0a4;
-  background-color: transparent;
-  border: 0.1vw solid #34a0a4;
-  width: 100%;
-  border-radius: 10vw;
-  padding: 0 1.4vw;
-  height: 8vh;
-  font-size: 1.2vw;
-  position: relative;
-  overflow: hidden;
-  transition: color 0.3s ease-out;
-  z-index: 1;
-}
-.wrapper-register .register-media-options a::after {
-  content: "";
-  position: absolute;
-  width: 110%;
-  height: 100%;
-  top: 0;
-  left: -5%;
-  background-color: #34a0a4;
-  transform: scaleY(0);
-  transform-origin: bottom center;
-  transition: transform 0.4s ease-out;
-  z-index: -1;
-}
-.wrapper-register .register-media-options a:hover {
-  color: white;
-}
-.wrapper-register .register-media-options a:hover::after {
-  transform: scaleY(1);
-  transform-origin: top center;
-}
-.wrapper-register input[type=number]::-webkit-outer-spin-button,
-.wrapper-register input[type=number]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-.wrapper-register input[type=number] {
-  -moz-appearance: textfield;
-}
-
 .product-detail {
   width: 100%;
   min-height: 100vh;
@@ -2211,6 +1853,462 @@
   justify-content: center;
   flex-direction: row;
   gap: 0.5vw;
+}
+.wrapper-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 4vw;
+}
+.wrapper-login .login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2.8vw 3.6vw 3.8vw;
+  border-radius: 3vw;
+  background: #fff;
+  width: 100%;
+  max-width: 38vw;
+}
+.wrapper-login .login-image {
+  width: 6.6vw;
+  height: auto;
+  cursor: pointer;
+  text-decoration: none;
+}
+.wrapper-login .login-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.wrapper-login .login-title {
+  font-size: 2.4vw;
+  font-weight: 600;
+  color: #595959;
+  text-align: center;
+  line-height: 100%;
+}
+.wrapper-login .login-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.6vw;
+  margin-top: 2.1vw;
+}
+.wrapper-login .login-form input {
+  width: 100%;
+  border-radius: 10vw;
+  padding: 0 1.4vw;
+  height: 8vh;
+  font-size: 1.2vw;
+  outline: none;
+  border: 0.1vw solid rgba(89, 89, 89, 0.5);
+  color: #595959;
+}
+.wrapper-login .login-form input:focus {
+  border-bottom-width: 0.2vw;
+}
+.wrapper-login .login-form button {
+  width: 100%;
+  border-radius: 10vw;
+  padding: 0 1.4vw;
+  height: 8vh;
+  font-size: 1.2vw;
+  color: #fff;
+  background-color: #34a0a4;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.wrapper-login .login-form button::after {
+  content: "";
+  position: absolute;
+  width: 110%;
+  height: 100%;
+  top: 0;
+  left: -5%;
+  background-color: #0b787c;
+  transform: scaleY(0);
+  transform-origin: bottom center;
+  transition: transform 0.4s ease-out;
+  z-index: -1;
+}
+.wrapper-login .login-form button:hover::after {
+  transform: scaleY(1);
+  transform-origin: top center;
+}
+.wrapper-login .login-to-signup {
+  text-align: center;
+  margin-top: 1.1vw;
+}
+.wrapper-login .login-to-signup span {
+  color: #595959;
+}
+.wrapper-login .login-to-signup a {
+  color: #34a0a4;
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+}
+.wrapper-login .login-to-signup a:hover {
+  text-decoration: underline;
+}
+.wrapper-login .login-line {
+  position: relative;
+  height: 0.1vw;
+  width: 100%;
+  margin: 6vh 0;
+  background-color: #d4d4d4;
+}
+.wrapper-login .login-line::before {
+  content: "Or";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  color: #8b8b8b;
+  padding: 0 1.4vw;
+  padding: 0 15px;
+}
+.wrapper-login .login-media-options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.6vw;
+  width: 100%;
+}
+.wrapper-login .login-media-options a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  text-decoration: none;
+  color: #34a0a4;
+  background-color: transparent;
+  border: 0.1vw solid #34a0a4;
+  width: 100%;
+  border-radius: 10vw;
+  padding: 0 1.4vw;
+  height: 8vh;
+  font-size: 1.2vw;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease-out;
+  z-index: 1;
+}
+.wrapper-login .login-media-options a::after {
+  content: "";
+  position: absolute;
+  width: 110%;
+  height: 100%;
+  top: 0;
+  left: -5%;
+  background-color: #34a0a4;
+  transform: scaleY(0);
+  transform-origin: bottom center;
+  transition: transform 0.4s ease-out;
+  z-index: -1;
+}
+.wrapper-login .login-media-options a:hover {
+  color: white;
+}
+.wrapper-login .login-media-options a:hover::after {
+  transform: scaleY(1);
+  transform-origin: top center;
+}
+.wrapper-login input[type=number]::-webkit-outer-spin-button,
+.wrapper-login input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.wrapper-login input[type=number] {
+  -moz-appearance: textfield;
+}
+
+@media (max-width: 575.98px) {
+  .wrapper-login {
+    min-height: 100vh;
+  }
+  .wrapper-login .login {
+    padding: 6.4vw 5.2vw 7.6vw;
+    border-radius: 4vw;
+    max-width: 70vw;
+  }
+  .wrapper-login .login-image {
+    width: 16vw;
+  }
+  .wrapper-login .login-title {
+    font-size: 5.4vw;
+  }
+  .wrapper-login .login-form {
+    gap: 1.2vw;
+    margin-top: 4.4vw;
+  }
+  .wrapper-login .login-form input {
+    padding: 0 2.9vw;
+    height: 5.5vh;
+    font-size: 2.8vw;
+  }
+  .wrapper-login .login-form input:focus {
+    border-bottom-width: 0.4vw;
+  }
+  .wrapper-login .login-form button {
+    padding: 0 2.9vw;
+    height: 5.5vh;
+    font-size: 2.8vw;
+  }
+  .wrapper-login .login-to-signup {
+    margin-top: 2.2vw;
+    font-size: 2.4vw;
+  }
+  .wrapper-login .login-line {
+    font-size: 2.4vw;
+    margin: 3.6vh 0;
+  }
+  .wrapper-login .login-media-options {
+    gap: 1.2vw;
+  }
+  .wrapper-login .login-media-options a {
+    padding: 0 2.9vw;
+    height: 5.5vh;
+    font-size: 2.8vw;
+  }
+}
+.wrapper-register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 4vw;
+}
+.wrapper-register .register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2.8vw 3.6vw 3.8vw;
+  border-radius: 3vw;
+  background: #fff;
+  width: 100%;
+  max-width: 38vw;
+}
+.wrapper-register .register-image {
+  width: 6.6vw;
+  height: auto;
+  cursor: pointer;
+  text-decoration: none;
+}
+.wrapper-register .register-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.wrapper-register .register-title {
+  font-size: 2.4vw;
+  font-weight: 600;
+  color: #595959;
+  text-align: center;
+  line-height: 100%;
+}
+.wrapper-register .register-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.6vw;
+  margin-top: 2.1vw;
+}
+.wrapper-register .register-form input {
+  width: 100%;
+  border-radius: 10vw;
+  padding: 0 1.4vw;
+  height: 8vh;
+  font-size: 1.2vw;
+  outline: none;
+  border: 0.1vw solid rgba(89, 89, 89, 0.5);
+  color: #595959;
+}
+.wrapper-register .register-form input:focus {
+  border-bottom-width: 0.2vw;
+}
+.wrapper-register .register-form button {
+  width: 100%;
+  border-radius: 10vw;
+  padding: 0 1.4vw;
+  height: 8vh;
+  font-size: 1.2vw;
+  color: #fff;
+  background-color: #34a0a4;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.wrapper-register .register-form button::after {
+  content: "";
+  position: absolute;
+  width: 110%;
+  height: 100%;
+  top: 0;
+  left: -5%;
+  background-color: #0b787c;
+  transform: scaleY(0);
+  transform-origin: bottom center;
+  transition: transform 0.4s ease-out;
+  z-index: -1;
+}
+.wrapper-register .register-form button:hover::after {
+  transform: scaleY(1);
+  transform-origin: top center;
+}
+.wrapper-register .register-to-login {
+  text-align: center;
+  margin-top: 1.1vw;
+}
+.wrapper-register .register-to-login span {
+  color: #595959;
+}
+.wrapper-register .register-to-login a {
+  color: #34a0a4;
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+}
+.wrapper-register .register-to-login a:hover {
+  text-decoration: underline;
+}
+.wrapper-register .register-line {
+  position: relative;
+  height: 0.1vw;
+  width: 100%;
+  margin: 6vh 0;
+  background-color: #d4d4d4;
+}
+.wrapper-register .register-line::before {
+  content: "Or";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  color: #8b8b8b;
+  padding: 0 1.4vw;
+  padding: 0 15px;
+}
+.wrapper-register .register-media-options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.6vw;
+  width: 100%;
+}
+.wrapper-register .register-media-options a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  text-decoration: none;
+  color: #34a0a4;
+  background-color: transparent;
+  border: 0.1vw solid #34a0a4;
+  width: 100%;
+  border-radius: 10vw;
+  padding: 0 1.4vw;
+  height: 8vh;
+  font-size: 1.2vw;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease-out;
+  z-index: 1;
+}
+.wrapper-register .register-media-options a::after {
+  content: "";
+  position: absolute;
+  width: 110%;
+  height: 100%;
+  top: 0;
+  left: -5%;
+  background-color: #34a0a4;
+  transform: scaleY(0);
+  transform-origin: bottom center;
+  transition: transform 0.4s ease-out;
+  z-index: -1;
+}
+.wrapper-register .register-media-options a:hover {
+  color: white;
+}
+.wrapper-register .register-media-options a:hover::after {
+  transform: scaleY(1);
+  transform-origin: top center;
+}
+.wrapper-register input[type=number]::-webkit-outer-spin-button,
+.wrapper-register input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.wrapper-register input[type=number] {
+  -moz-appearance: textfield;
+}
+
+@media (max-width: 575.98px) {
+  .wrapper-register {
+    min-height: 100vh;
+  }
+  .wrapper-register .register {
+    padding: 6.4vw 5.2vw 7.6vw;
+    border-radius: 4vw;
+    max-width: 70vw;
+  }
+  .wrapper-register .register-image {
+    width: 16vw;
+  }
+  .wrapper-register .register-title {
+    font-size: 5.4vw;
+  }
+  .wrapper-register .register-form {
+    gap: 1.2vw;
+    margin-top: 4.4vw;
+  }
+  .wrapper-register .register-form input {
+    padding: 0 2.9vw;
+    height: 5.5vh;
+    font-size: 2.8vw;
+  }
+  .wrapper-register .register-form input:focus {
+    border-bottom-width: 0.4vw;
+  }
+  .wrapper-register .register-form button {
+    padding: 0 2.9vw;
+    height: 5.5vh;
+    font-size: 2.8vw;
+  }
+  .wrapper-register .register-to-login {
+    margin-top: 2.2vw;
+    font-size: 2.4vw;
+  }
+  .wrapper-register .register-line {
+    font-size: 2.4vw;
+    margin: 3.6vh 0;
+  }
+  .wrapper-register .register-media-options {
+    gap: 1.2vw;
+  }
+  .wrapper-register .register-media-options a {
+    padding: 0 2.9vw;
+    height: 5.5vh;
+    font-size: 2.8vw;
+  }
 }
 #hasphonenumber {
   width: 100%;

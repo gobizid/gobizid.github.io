@@ -1,0 +1,65 @@
+@use "../../helpers/mixins" as m;
+@use "../../helpers/variables" as v;
+
+@media (max-width: 575.98px) {
+  .wrapper-register {
+    min-height: 100vh;
+
+    .register {
+      padding: 6.4vw 5.2vw 7.6vw;
+      border-radius: 4vw;
+      max-width: 70vw;
+
+      $gap-container: 1.2vw;
+
+      @mixin input-button() {
+        padding: 0 2.9vw;
+        height: 5.5vh;
+        font-size: 2.8vw;
+      }
+
+      &-image {
+        width: 16vw;
+      }
+
+      &-title {
+        font-size: 5.4vw;
+      }
+
+      &-form {
+        gap: $gap-container;
+        margin-top: 4.4vw;
+
+        input {
+          @include input-button();
+
+          &:focus {
+            border-bottom-width: 0.4vw;
+          }
+        }
+
+        button {
+          @include input-button();
+        }
+      }
+
+      &-to-login {
+        margin-top: 2.2vw;
+        font-size: 2.4vw;
+      }
+
+      &-line {
+        font-size: 2.4vw;
+        margin: 3.6vh 0;
+      }
+
+      &-media-options {
+        gap: $gap-container;
+
+        a {
+          @include input-button();
+        }
+      }
+    }
+  }
+}

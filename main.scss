@@ -9,9 +9,11 @@
 
 @use "./src/pages/home/home";
 @use "./src/pages/catalog/catalog";
-@use "./src/pages/login/login";
-@use "./src/pages/register/register";
 @use "./src/pages/product-detail/product-detail";
+@use "./src/pages/login/login";
+@use "./src/pages/login/login-media";
+@use "./src/pages/register/register";
+@use "./src/pages/register/register-media";
 @use "./src/pages/login-qr/login-qr";
 @use "./src/pages/dashboard/dashboard";
 
