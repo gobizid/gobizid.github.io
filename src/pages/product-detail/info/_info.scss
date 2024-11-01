@@ -3,8 +3,9 @@
 
 @mixin product-detail-info() {
   @include m.flex($direction: column, $justify: flex-start, $align: flex-start);
+  row-gap: 5vh;
 
-  .info-header {
+  .info-headers {
     width: 100%;
     @include m.flex($justify: space-between, $align: flex-start);
 
@@ -13,7 +14,7 @@
       grid-template-areas:
         "final discount"
         "original discount";
-      row-gap: .6vh;
+      row-gap: 0.6vh;
       column-gap: 1vw;
 
       .price-final {
@@ -58,11 +59,105 @@
       .rating {
         line-height: 100%;
         font-size: 1.35vw;
-    }
-    
-    .review {
+      }
+
+      .review {
         line-height: 100%;
         font-size: 1.15vw;
+      }
+    }
+  }
+
+  .info-colors {
+    display: grid;
+    row-gap: 1.6vh;
+
+    .color-title {
+    }
+
+    .color-list {
+      @include m.flex();
+      gap: 0.6vw;
+
+      &-item {
+        @include m.circle(20px);
+        box-shadow: inset 0px 0px 0px 0.2vw
+          map-get($map: v.$color, $key: "cream");
+        border: 0.1vw solid map-get($map: v.$color, $key: "dark-gray");
+        cursor: pointer;
+      }
+
+      &-note {
+        margin-left: 0.4vw;
+        font-size: 1.1vw;
+        color: rgba($color: map-get(v.$color, "dark-gray"), $alpha: 0.6);
+      }
+    }
+  }
+
+  .info-sizes {
+    display: grid;
+    row-gap: 1.6vh;
+    width: 100%;
+
+    .size-title {
+    }
+
+    .size-list {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      column-gap: 6vw;
+
+      &-select {
+        width: 100%;
+        padding: 1.6vh 0.8vw;
+        border-radius: 0.3vw;
+        max-height: 100vh;
+        transition: max-height 0.6s ease-out;
+        overflow: hidden;
+        height: auto;
+        border: 0.1vw solid map-get($map: v.$color, $key: "dark-gray");
+        color: map-get($map: v.$color, $key: "dark-gray");
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+
+        .select-default {
+          @include m.flex($justify: space-between);
+          width: 100%;
+
+          i {
+            margin-top: -0.3vw;
+          }
+        }
+
+        .select-container {
+          @include m.flex($direction: column, $align: flex-start);
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.6s ease-out;
+
+          span {
+            padding-top: 0.5vw;
+          }
+        }
+
+        &.selected {
+          .select-container {
+            max-height: 100vh;
+          }
+        }
+      }
+
+      &-decor {
+        @include m.flex();
+        gap: 0.5vw;
+
+        .icon {
+        }
+
+        .text {
+        }
       }
     }
   }
