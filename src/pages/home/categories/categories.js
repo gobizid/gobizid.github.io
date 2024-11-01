@@ -2,7 +2,7 @@ export default function categories() {
   const swiper = new Swiper(".home .categories .swiper", {
     loop: true,
     spaceBetween: 4,
-    slidesPerView: 6,
+    slidesPerView: 5,
     breakpoints: {
       640: {
         spaceBetween: 6,

@@ -1,0 +1,26 @@
+@use "./../../../helpers/mixins" as m;
+@use "./../../../helpers/variables" as v;
+
+@mixin categories-media() {
+  @media (max-width: 575.98px) {
+    padding: 0 v.$media-padding-horizontal-main v.$media-padding-vertical-main;
+
+    .swiper {
+      &-wrapper {
+        .swiper-slide {
+          padding: 2.6vw;
+          border-radius: 0.8vw;
+          gap: 1.1vw;
+
+          i {
+            font-size: 3.2vw;
+          }
+          
+          .text {
+            font-size: 1.8vw;
+          }
+        }
+      }
+    }
+  }
+}

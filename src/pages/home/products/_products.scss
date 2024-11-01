@@ -3,7 +3,7 @@
 
 @mixin products() {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   padding: 0 v.$padding-horizontal-main v.$padding-vertical-main;
   gap: 1.1vw;
   grid-auto-rows: 1fr;
@@ -27,7 +27,7 @@
       }
     }
 
-    .name {
+    .menu {
       display: -webkit-box;
       -webkit-line-clamp: 2; /* Maksimal 2 baris */
       -webkit-box-orient: vertical;

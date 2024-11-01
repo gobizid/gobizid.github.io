@@ -2,6 +2,7 @@
 @use "./src/helpers/variables" as v;
 
 @use "./src/components/navbar/navbar";
+@use "./src/components/navbar/navbar-media";
 @use "./src/components/footer/footer";
 @use "./src/components/sidebar/sidebar";
 @use "./src/components/topbar/topbar";

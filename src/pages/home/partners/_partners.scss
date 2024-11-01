@@ -5,11 +5,6 @@
   text-align: center;
   padding: 0 v.$padding-horizontal-main v.$padding-vertical-main;
 
-  h2 {
-    font-size: 2rem;
-    color: map-get($map: v.$color, $key: "dark-gray");
-  }
-
   .scrolling-logos {
     width: 100%;
     overflow: hidden;

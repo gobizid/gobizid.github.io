@@ -1,0 +1,20 @@
+@use "./../../../helpers/mixins" as m;
+@use "./../../../helpers/variables" as v;
+
+@mixin partners-media() {
+  @media (max-width: 575.98px) {
+    padding: 0 v.$media-padding-horizontal-main;
+
+    .scrolling-logos {
+      .logo-container {
+        .logo-slide {
+          img {
+            width: 21vw;
+            height: 19vw;
+            margin-left: 6.4vw;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,7 @@
 export default function formatRupiah(value) {
-  if (isNaN(value)) return "-";
+  if (value == null || value === "" || isNaN(value) || value === undefined) {
+    value = 0;
+  }
 
   return value.toLocaleString("id-ID", {
     style: "currency",

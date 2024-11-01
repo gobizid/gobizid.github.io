@@ -1,0 +1,55 @@
+@use "./../../../helpers/mixins" as m;
+@use "./../../../helpers/variables" as v;
+
+@mixin products-media() {
+  @media (max-width: 575.98px) {
+    padding: 0 v.$media-padding-horizontal-main v.$media-padding-vertical-main;
+    row-gap: 2.5vw;
+    column-gap: 2.25vw;
+
+    &-wrapper {
+      background-color: #fff;
+      border-radius: 1.6vw;
+
+      .image {
+        height: 22vh;
+
+        img {
+          border-top-left-radius: 1.6vw;
+          border-top-right-radius: 1.6vw;
+        }
+      }
+
+      .menu {
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Maksimal 2 baris */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 1.2vw 1.6vw 0;
+        font-size: 238%;
+      }
+
+      .price {
+        font-size: 240%;
+        font-weight: 800;
+        padding: 0.6vw 1.6vw 0;
+      }
+
+      .discount {
+        padding: 0.6vw 1.6vw 0;
+        font-size: 215%;
+        color: rgba(
+          $color: map-get($map: v.$color, $key: "dark-gray"),
+          $alpha: 0.6
+        );
+        text-decoration: line-through;
+      }
+
+      .rating-sold {
+        font-size: 225%;
+        padding: 0.6vw 1.6vw 2.9vw;
+      }
+    }
+  }
+}

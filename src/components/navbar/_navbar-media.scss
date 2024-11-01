@@ -1,0 +1,74 @@
+@use "./../../helpers/mixins" as m;
+@use "./../../helpers/variables" as v;
+
+@media (max-width: 575.98px) {
+  .navbar {
+    .nav {
+      padding: v.$media-padding-vertical-main v.$media-padding-horizontal-main;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+
+      &-logo {
+        gap: 0.8vw;
+
+        img {
+          width: 8vw;
+        }
+
+        span {
+          font-size: 3.3vw;
+        }
+      }
+
+      &-main {
+        @include m.flex($direction: column);
+        gap: 1.4vw;
+
+        .search {
+          button {
+            font-size: 1.9vw;
+            padding: 1.2vw;
+          }
+
+          input {
+            width: 40vw;
+            padding: 0 0.7vw;
+            font-size: 1.7vw;
+          }
+        }
+
+        .links {
+          @include m.flex();
+          gap: 1.05vw;
+
+          a {
+            @include m.flex();
+            color: map-get($map: v.$color, $key: "dark-gray");
+            text-decoration: none;
+            line-height: 100%;
+            transition: all 0.4s ease-out;
+            font-size: 1.8vw;
+
+            &:hover {
+              color: map-get($map: v.$color, $key: "dark-cyan");
+            }
+
+            &.active {
+              color: #fff;
+              background-color: map-get($map: v.$color, $key: "light-cyan");
+              padding: 0.8vw 1.6vw;
+            }
+          }
+        }
+      }
+
+      &-others {
+        gap: 1.6vw;
+
+        i {
+          font-size: 2.9vw;
+        }
+      }
+    }
+  }
+}

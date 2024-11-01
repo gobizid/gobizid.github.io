@@ -25,7 +25,7 @@ export default function products() {
       if (status === 200) {
         const products = document.querySelector(".home .products");
 
-        result.forEach((product) => {
+        result.data.forEach((product) => {
           const productsWrapper = document.createElement("div");
           productsWrapper.classList.add("products-wrapper");
 
@@ -33,20 +33,20 @@ export default function products() {
           imageClass.classList.add("image");
           const image = document.createElement("img");
           image.src = product.image;
-          image.alt = product.name;
+          image.alt = product.menu;
           imageClass.appendChild(image);
 
           const nameClass = document.createElement("div");
-          nameClass.classList.add("name");
-          nameClass.textContent = product.name;
+          nameClass.classList.add("menu");
+          nameClass.textContent = product.menu;
 
           const priceClass = document.createElement("div");
           priceClass.classList.add("price");
-          priceClass.textContent = formatRupiah(product.final_price);
+          priceClass.textContent = formatRupiah(product.price);
 
           const discountClass = document.createElement("div");
           discountClass.classList.add("discount");
-          discountClass.textContent = formatRupiah(product.total_discount);
+          discountClass.textContent = formatRupiah(product.diskon);
 
           const ratingSoldClass = document.createElement("div");
           ratingSoldClass.classList.add("rating-sold");

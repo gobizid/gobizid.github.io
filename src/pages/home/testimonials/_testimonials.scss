@@ -7,79 +7,100 @@
   .testimonials-content {
     margin: auto;
     border-radius: 2.5vw;
-  }
 
-  .testimonials-section {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 7.2vw;
-
-    .testimonials-text {
-      h2 {
-        font-family: v.$poppins;
-        font-weight: 500;
-        font-size: 2.8vw;
-      }
-
-      p {
-        font-size: 1vw;
-        color: map-get($map: v.$color, $key: "dark-gray");
-      }
-
-      button {
-        padding: 1.1vw 1.3vw;
-        background-color: map-get($map: v.$color, $key: "light-cyan");
-        border-radius: 10vw;
-        color: map-get($map: v.$color, $key: "white");
-        border: 0 solid transparent;
-        text-transform: uppercase;
-        letter-spacing: 0.15vw;
-        margin-top: 1.2vw;
-        font-size: 1vw;
-
-        &:hover {
-          background-color: map-get($map: v.$color, $key: "dark-cyan");
-          transition: 0.3s ease-in-out;
-          cursor: pointer;
-        }
-      }
-    }
-
-    .testimonials-list {
+    .testimonials-section {
       display: grid;
-      align-items: center;
-      gap: 0.8vw;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 7.2vw;
 
-      .testimonial-card {
-        border: 0.1vw solid #0000001a;
-        border-radius: 1.6vw;
-        padding: 2vw;
-
-        .stars {
-          color: #f0ad4e;
-          padding-bottom: 0.7vw;
-        }
-
-        .testimonial-text {
-          margin-bottom: 1.9vw;
-          font-size: 1.1vw;
-        }
-
-        .testimonial-author {
-          text-transform: uppercase;
-          color: map-get($map: v.$color, $key: "light-cyan");
-          font-size: 0.8vw;
+      .testimonials-text {
+        h2 {
+          font-family: v.$poppins;
           font-weight: 500;
-          letter-spacing: 0.1vw;
+          font-size: 2.8vw;
+        }
+
+        p {
+          font-size: 1vw;
+          color: map-get($map: v.$color, $key: "dark-gray");
+        }
+
+        .line {
+          width: 13%;
+          height: 0.1vh;
+          background-color: map-get($map: v.$color, $key: "light-cyan");
+          margin: 3.6vh 0;
+        }
+
+        button {
+          padding: 1.1vw 1.3vw;
+          background-color: map-get($map: v.$color, $key: "light-cyan");
+          border-radius: 10vw;
+          color: map-get($map: v.$color, $key: "white");
+          border: 0 solid transparent;
+          text-transform: uppercase;
+          letter-spacing: 0.15vw;
+          margin-top: 1.2vw;
+          font-size: 1vw;
+          overflow: hidden;
+          position: relative;
+          z-index: 2;
+
+          &::after {
+            content: "";
+            background-color: map-get($map: v.$color, $key: "dark-cyan");
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            top: 0;
+            transform: scaleY(0);
+            transform-origin: bottom center;
+            transition: transform 0.4s ease-in-out;
+          }
+
+          &:hover,
+          &:focus {
+            color: #fff;
+
+            &::after {
+              transform-origin: top center;
+              transform: scaleY(1);
+            }
+          }
+        }
+      }
+
+      .testimonials-list {
+        display: grid;
+        align-items: center;
+        gap: 0.8vw;
+
+        .testimonial-card {
+          border: 0.1vw solid #0000001a;
+          border-radius: 1.6vw;
+          padding: 2vw;
+
+          .stars {
+            color: #f0ad4e;
+            padding-bottom: 0.7vw;
+          }
+
+          .testimonial-text {
+            margin-bottom: 1.9vw;
+            font-size: 1.1vw;
+          }
+
+          .testimonial-author {
+            text-transform: uppercase;
+            color: map-get($map: v.$color, $key: "light-cyan");
+            font-size: 0.8vw;
+            font-weight: 500;
+            letter-spacing: 0.1vw;
+          }
         }
       }
     }
-  }
-
-  .line {
-    width: 13%;
-    height: 0.1vh;
-    background-color: map-get($map: v.$color, $key: "light-cyan");
-    margin: 3.6vh 0;
   }
 }

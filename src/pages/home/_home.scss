@@ -1,37 +1,51 @@
 @use "./hero/hero" as hero;
+@use "./hero/hero-media" as hero-media;
 @use "./categories/categories" as categories;
+@use "./categories/categories-media" as categories-media;
 @use "./products/products" as products;
+@use "./products/products-media" as products-media;
 @use "./join/join" as join;
+@use "./join/join-media" as join-media;
 @use "./members/members" as members;
+@use "./members/members-media" as members-media;
 @use "./partners/partners" as partners;
+@use "./partners/partners-media" as partners-media;
 @use "./testimonials/testimonials" as testimonials;
+@use "./testimonials/testimonials-media" as testimonials-media;
 
 .home {
   .hero {
     @include hero.hero();
+    @include hero-media.hero-media();
   }
 
   .categories {
     @include categories.categories();
+    @include categories-media.categories-media();
   }
 
   .products {
     @include products.products();
+    @include products-media.products-media();
   }
 
   .join {
     @include join.join();
+    @include join-media.join-media();
   }
 
   .members {
     @include members.members();
+    @include members-media.members-media();
   }
 
   .partners {
     @include partners.partners();
+    @include partners-media.partners-media();
   }
 
   .testimonials {
     @include testimonials.testimonials();
+    @include testimonials-media.testimonials-media();
   }
 }

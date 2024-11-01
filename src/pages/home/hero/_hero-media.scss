@@ -1,0 +1,27 @@
+@use "./../../../helpers/mixins" as m;
+@use "./../../../helpers/variables" as v;
+
+@mixin hero-media() {
+  @media (max-width: 575.98px) {
+    padding: 0 v.$media-padding-horizontal-main v.$media-padding-vertical-main;
+
+    .swiper {
+      height: 40vh ;
+
+      .swiper-nav-prev,
+      .swiper-nav-next {
+        i {
+          font-size: 5.2vw ;
+        }
+      }
+
+      .swiper-nav-prev {
+        left: 2.2vw ;
+      }
+
+      .swiper-nav-next {
+        right: 2.2vw ;
+      }
+    }
+  }
+}
