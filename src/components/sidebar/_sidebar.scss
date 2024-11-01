@@ -5,9 +5,36 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: v.$padding-horizontal-main 0 0 v.$padding-vertical-main;
-  justify-content: space-between;
-  height: 90vh;
+  padding: 1vw 0 0 v.$padding-vertical-main;
+  justify-content: flex-start;
+  height: 100vh;
+
+  .app-header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1vw v.$padding-vertical-main;
+    .logo {
+      .logo-icon {
+        img {
+          width: 50%;
+          background-size: contain;
+        }
+      }
+
+      .logo-title {
+        font-family: v.$grandstander;
+        font-size: 2.15vw;
+        font-weight: 200;
+        color: map-get($map: v.$color, $key: "dark-gray");
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &.collapsed .app-header-logo .logo-title {
+    display: none;
+  }
 
   a {
     display: flex;
@@ -70,7 +97,7 @@
     }
 
     a {
-      margin: .7rem 0;
+      margin: 0.7rem 0;
       color: map-get($map: v.$color, $key: "gray");
       font-size: 0.9em;
 

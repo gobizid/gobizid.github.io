@@ -3,41 +3,15 @@
 
   .app-header {
     display: grid;
-    grid-template-columns: minmax(min-content, 175px) minmax(max-content, 1fr) minmax(
+    grid-template-columns: minmax(max-content, 1fr) minmax(
         max-content,
         400px
       );
     column-gap: 4rem;
     align-items: flex-end;
-    padding: 0 v.$padding-vertical-main;
-  }
+    padding: 1vw v.$padding-vertical-main;
 
-  .logo {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid map-get($map: v.$color, $key: "black");
-
-    .logo-icon {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      width: 70px;
-      height: 70px;
-
-      img {
-        width: 60%;
-      }
-    }
-
-    .logo-title {
-      line-height: 1.25;
-      font-family: v.$vietnam;
-
-      span {
-        color: map-get($map: v.$color, $key: "dark-gray");
-        font-size: 2vw;
-      }
-    }
+    
   }
 
   .tabs {

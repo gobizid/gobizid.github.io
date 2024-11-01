@@ -27,14 +27,8 @@
         }
 
         &:nth-child(odd)::before {
-          content: "";
-          background-color: map-get($map: v.$color, $key: "dark-gray");
-          position: absolute;
           width: 2px;
           height: 4vh;
-          top: 50%;
-          transform: translateY(-50%);
-          right: -1em;
         }
       }
     }

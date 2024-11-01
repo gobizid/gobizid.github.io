@@ -233,9 +233,29 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 3.4vw 0 0 2.4vw;
-  justify-content: space-between;
-  height: 90vh;
+  padding: 1vw 0 0 2.4vw;
+  justify-content: flex-start;
+  height: 100vh;
+}
+.navigation .app-header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1vw 2.4vw;
+}
+.navigation .app-header-logo .logo .logo-icon img {
+  width: 50%;
+  background-size: contain;
+}
+.navigation .app-header-logo .logo .logo-title {
+  font-family: "Grandstander", cursive;
+  font-size: 2.15vw;
+  font-weight: 200;
+  color: #595959;
+  text-transform: uppercase;
+}
+.navigation.collapsed .app-header-logo .logo-title {
+  display: none;
 }
 .navigation a {
   display: flex;
@@ -300,35 +320,11 @@
 
 .app-header {
   display: grid;
-  grid-template-columns: minmax(min-content, 175px) minmax(max-content, 1fr) minmax(max-content, 400px);
+  grid-template-columns: minmax(max-content, 1fr) minmax(max-content, 400px);
   -moz-column-gap: 4rem;
        column-gap: 4rem;
   align-items: flex-end;
-  padding: 0 2.4vw;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid #000;
-}
-.logo .logo-icon {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 70px;
-  height: 70px;
-}
-.logo .logo-icon img {
-  width: 60%;
-}
-.logo .logo-title {
-  line-height: 1.25;
-  font-family: "Be Vietnam Pro", sans-serif;
-}
-.logo .logo-title span {
-  color: #595959;
-  font-size: 2vw;
+  padding: 1vw 2.4vw;
 }
 
 .tabs {
@@ -919,14 +915,8 @@
     height: 0;
   }
   .home .members .counters .counter:nth-child(odd)::before {
-    content: "";
-    background-color: #595959;
-    position: absolute;
     width: 2px;
     height: 4vh;
-    top: 50%;
-    transform: translateY(-50%);
-    right: -1em;
   }
 }
 .home .partners {
@@ -2364,11 +2354,16 @@
 .dashboard-container .topbar {
   grid-column: 1/-1;
   height: 60px;
+  padding-left: 20vw;
+  box-sizing: border-box;
+}
+.dashboard-container .sidebar {
+  margin-top: -5.7vw;
 }
 .dashboard-container .list .user .product-dashboard {
   margin: 1vw auto;
   width: 90%;
-  padding: 1.5vw;
+  padding: 0.2vw;
 }
 .dashboard-container .list .user .product-dashboard .header-product {
   display: flex;
@@ -2494,4 +2489,4 @@ html.lenis body {
 
 .lenis.lenis-smooth iframe {
   pointer-events: none;
-}
+}/*# sourceMappingURL=main.css.map */
