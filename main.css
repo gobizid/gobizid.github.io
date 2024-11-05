@@ -230,12 +230,14 @@
   }
 }
 .navigation {
-  width: 15vw;
+  width: 18vw;
   padding: 20px;
-  border-right: 1px solid #595959;
+  border-right: 1px solid #ddd;
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: 100vh;
+  background-color: #f3eee9;
 }
 .navigation .app-header-logo .logo {
   width: 100%;
@@ -294,124 +296,90 @@
 }
 
 .app-header {
-  display: grid;
-  grid-template-columns: minmax(max-content, 1fr) minmax(max-content, 400px);
-  -moz-column-gap: 4rem;
-       column-gap: 4rem;
-  align-items: flex-end;
-  padding: 1vw 2.4vw;
-}
-
-.tabs {
   display: flex;
   justify-content: space-between;
-  color: var(--c-text-tertiary);
-  border-bottom: 1px solid #000;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f3eee9;
+  border-bottom: 1px solid #ddd;
 }
-.tabs a {
+.app-header .app-header-navigation {
+  display: flex;
+  align-items: center;
+}
+.app-header .app-header-navigation .tabs {
+  display: flex;
+  gap: 15px;
   position: relative;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  text-decoration: none;
-  display: inline-flex;
-  color: #595959;
-  overflow: hidden;
 }
-.tabs a::before {
+.app-header .app-header-navigation .tabs a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+.app-header .app-header-navigation .tabs a::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
+  width: 0;
   height: 2px;
-  background-color: #070F2B;
-  transform: translateX(-100%);
-  transition: transform 0.25s ease;
+  transition: width 0.4s ease, transform 0.4s ease;
+  transform-origin: left;
 }
-.tabs a.active, .tabs a:hover, .tabs a:focus {
-  color: #070F2B;
+.app-header .app-header-navigation .tabs.submenu {
+  display: flex;
 }
-.tabs a.active::before, .tabs a:hover::before, .tabs a:focus::before {
-  transform: translateX(0);
-}
-
-.app-header-actions {
+.app-header .app-header-actions {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 20px;
 }
-
-.user-profile {
+.app-header .app-header-actions .user-profile {
   display: flex;
   align-items: center;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  transition: 0.25s ease;
-}
-.user-profile:hover, .user-profile:focus {
-  color: #000;
-}
-.user-profile:hover span:last-child, .user-profile:focus span:last-child {
-  box-shadow: 0 0 0 4px #f8f4f0, 0 0 0 5px #595959;
-}
-.user-profile span:first-child {
-  display: flex;
-  font-size: 1.125rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #000;
-  font-weight: 300;
-  font-family: "Be Vietnam Pro", sans-serif;
-}
-.user-profile span:last-child {
-  transition: 0.25s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-left: 1.5rem;
-  flex-shrink: 0;
-}
-
-.app-header-actions-buttons {
-  display: flex;
-  border-left: 1px solid #000;
-  margin-left: 2rem;
-  padding-left: 2rem;
-}
-.app-header-actions-buttons > * + * {
-  margin-left: 1rem;
-}
-.app-header-actions-buttons .icon-button {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 0;
   background-color: transparent;
-  border: 1px solid #595959;
-  color: #595959;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border: none;
   cursor: pointer;
-  transition: 0.25s ease;
-  flex-shrink: 0;
+  font-size: 14px;
+  color: #333;
+  font-weight: 600;
+  transition: color 0.3s;
 }
-.app-header-actions-buttons .icon-button.large {
-  width: 42px;
-  height: 42px;
-  font-size: 1.25em;
+.app-header .app-header-actions .user-profile span:first-of-type {
+  margin-right: 10px;
 }
-.app-header-actions-buttons .icon-button i {
-  transition: 0.25s ease;
+.app-header .app-header-actions .user-profile img {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
 }
-.app-header-actions-buttons .icon-button:hover, .app-header-actions-buttons .icon-button:focus {
-  background-color: #EEEEEE;
-  box-shadow: 0 0 0 4px #f8f4f0, 0 0 0 5px #595959;
+.app-header .app-header-actions .user-profile:hover {
+  transform: scale();
+}
+.app-header .app-header-actions .app-header-actions-buttons {
+  display: flex;
+  gap: 10px;
+}
+.app-header .app-header-actions .app-header-actions-buttons .icon-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #666;
+  transition: color 0.3s;
+}
+.app-header .app-header-actions .app-header-actions-buttons .icon-button.large {
+  font-size: 28px;
+}
+.app-header .app-header-actions .app-header-actions-buttons .icon-button:hover {
+  color: #007bff;
+}
+.app-header .app-header-actions .app-header-actions-buttons .icon-button i {
+  pointer-events: none;
 }
 
 .home .hero {
@@ -2329,7 +2297,7 @@
 .dashboard-container .topbar {
   grid-column: 1/-1;
   height: 60px;
-  padding-left: 20vw;
+  padding-left: 18vw;
   box-sizing: border-box;
 }
 .dashboard-container .sidebar {

@@ -2,12 +2,14 @@
 @use "./../../helpers/variables" as v;
 
 .navigation {
-  width: 15vw;
+  width: 18vw;
   padding: 20px;
-  border-right: 1px solid map-get($map: v.$color, $key: "dark-gray");
+  border-right: 1px solid #ddd;
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: 100vh;
+  background-color: map-get($map: v.$color, $key: "dark-cream");
 
   .app-header-logo {
     .logo {
