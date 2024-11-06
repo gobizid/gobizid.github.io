@@ -1,9 +1,22 @@
 export default function sidebarTogle() {
-  const componentsToggle = document.querySelector(".components-toggle");
-  const componentsSubmenu = document.getElementById("components-submenu");
+  const menuItems = document.querySelectorAll("aside.navigation .menu-item");
+  if (menuItems) {
+    menuItems.forEach((menu) => {
+      menu.addEventListener("click", function (e) {
+        e.preventDefault();
+        const menuName = this.getAttribute("data-menu");
 
-  componentsToggle.addEventListener("click", function () {
-    componentsSubmenu.classList.toggle("active");
-    componentsToggle.classList.toggle("active");
-  });
+        document
+          .querySelectorAll(".app-header .app-header-navigation .submenu")
+          .forEach((submenu) => {
+            submenu.style.display = "none";
+          });
+
+        const activeSubmenu = document.querySelector(`.${menuName}-submenu`);
+        if (activeSubmenu) {
+          activeSubmenu.style.display = "flex";
+        }
+      });
+    });
+  }
 }

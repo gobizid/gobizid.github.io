@@ -5,6 +5,8 @@ import loadRegister from "/src/pages/register/register.js";
 import loadLoginQr from "/src/pages/login-qr/loginQr.js";
 import loadDashboard from "/src/pages/dashboard/dashboard.js";
 import loadProductDetail from "/src/pages/product-detail/productDetail.js";
+import loadManagementProduct from "./src/pages/management-product/managementProduct.js";
+import loadManagementProductCategories from "./src/pages/management-product/categories/categories.js";
 
 function loadPage(path) {
   const main = document.getElementById("main");
@@ -33,6 +35,12 @@ function loadPage(path) {
     case "/dashboard":
       pageUrl = "/src/pages/dashboard/dashboard.html";
       break;
+    case "/management-product":
+      pageUrl = "/src/pages/management-product/management-product.html";
+      break;
+    case "/management-product-categories":
+      pageUrl = "/src/pages/management-product/categories/categories.html";
+      break;
     // default:
     // pageUrl = "./pages/404.html";
     //   break;
@@ -58,6 +66,10 @@ function loadPage(path) {
           loadLoginQr();
         } else if (path == "/dashboard") {
           loadDashboard();
+        } else if (path == "/management-product") {
+          loadManagementProduct();
+        } else if (path == "/management-product-categories") {
+          loadManagementProductCategories();
         }
       })
       .catch((error) => {
