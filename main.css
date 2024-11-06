@@ -16,8 +16,7 @@
 .navbar .nav-logo img {
   width: 6vw;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .navbar .nav-logo span {
   font-family: "Grandstander", cursive;
@@ -255,8 +254,7 @@
 .navigation .app-header-logo .logo a img {
   width: 6vw;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .navigation .app-header-logo .logo a span {
   font-family: "Grandstander", cursive;
@@ -412,8 +410,7 @@
 .home .hero .swiper-wrapper .swiper-slide img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .home .hero .swiper .swiper-nav-prev,
 .home .hero .swiper .swiper-nav-next {
@@ -528,10 +525,8 @@
   border-top-right-radius: 0.7vw;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
 }
 .home .products-wrapper .menu {
   display: -webkit-box;
@@ -560,8 +555,7 @@
   .home .products {
     padding: 0 4.4vw 3.8vw;
     row-gap: 2.5vw;
-    -moz-column-gap: 2.25vw;
-         column-gap: 2.25vw;
+    column-gap: 2.25vw;
   }
   .home .products-wrapper {
     background-color: #fff;
@@ -878,14 +872,12 @@
   display: flex;
   animation: scroll 30s linear infinite;
   flex-shrink: 0; /* Agar gambar tidak mengecil */
-  width: -moz-max-content;
   width: max-content; /* Pastikan lebar slide mengikuti kontennya */
 }
 .home .partners .scrolling-logos .logo-container .logo-slide img {
   width: 10vw;
   height: 8vw;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   margin-left: 3.2vw;
   filter: grayscale(1);
   transition: filter 0.3s ease;
@@ -1061,7 +1053,6 @@
   display: grid;
   gap: 1.6vw;
   width: 20vw;
-  height: -moz-fit-content;
   height: fit-content;
   transition: transform 0.65s linear;
   transform: translateX(0);
@@ -1136,7 +1127,6 @@
   max-height: 0;
 }
 .catalog-filter .filter-categories-list .item {
-  width: -moz-fit-content;
   width: fit-content;
   border-radius: 10vw;
   color: #34a0a4;
@@ -1439,7 +1429,6 @@
   width: 100%;
 }
 .catalog-display .display-header {
-  width: -moz-fit-content;
   width: fit-content;
   padding: 0.6vw 1.6vw;
   border: 0.1vw solid #595959;
@@ -1580,8 +1569,7 @@
 .product-detail-image .swiper.swiper-big .swiper-wrapper .swiper-slide img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .product-detail-image .swiper.swiper-big .swiper-nav-prev,
 .product-detail-image .swiper.swiper-big .swiper-nav-next {
@@ -1641,8 +1629,7 @@
 .product-detail-image .swiper.swiper-small .swiper-wrapper .swiper-slide img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .product-detail-info {
   display: flex;
@@ -1663,8 +1650,7 @@
   display: grid;
   grid-template-areas: "final discount" "original discount";
   row-gap: 0.6vh;
-  -moz-column-gap: 1vw;
-       column-gap: 1vw;
+  column-gap: 1vw;
 }
 .product-detail-info .info-headers-prices .price-final {
   color: #ef8451;
@@ -1687,7 +1673,6 @@
   border-radius: 0.3vw;
   color: #fff;
   font-size: 1.1vw;
-  height: -moz-fit-content;
   height: fit-content;
   transform: rotate(25deg);
 }
@@ -1738,8 +1723,7 @@
 .product-detail-info .info-sizes .size-list {
   display: grid;
   grid-template-columns: 1fr auto;
-  -moz-column-gap: 6vw;
-       column-gap: 6vw;
+  column-gap: 6vw;
 }
 .product-detail-info .info-sizes .size-list-select {
   width: 100%;
@@ -1814,8 +1798,7 @@
 .wrapper-login .login-image img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .wrapper-login .login-title {
   font-size: 2.4vw;
@@ -2042,8 +2025,7 @@
 .wrapper-register .register-image img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .wrapper-register .register-title {
   font-size: 2.4vw;
@@ -2432,4 +2414,6 @@ html.lenis body {
 
 .lenis.lenis-smooth iframe {
   pointer-events: none;
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */
