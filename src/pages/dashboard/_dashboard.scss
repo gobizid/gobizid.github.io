@@ -9,6 +9,12 @@
   .topbar {
     grid-column: 1 / -1; 
     height: 60px;
+    padding-left: 18vw;
+    box-sizing: border-box;
+  }
+  
+  .sidebar{
+    margin-top: -5.7vw
   }
   .list {
     .user {
