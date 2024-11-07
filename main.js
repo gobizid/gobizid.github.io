@@ -3,7 +3,8 @@ import loadCatalog from "/src/pages/catalog/catalog.js";
 import loadLogin from "/src/pages/login/login.js";
 import loadRegister from "/src/pages/register/register.js";
 import loadLoginQr from "/src/pages/login-qr/loginQr.js";
-import loadDashboard from "/src/pages/dashboard/dashboard.js";
+import loadDashboard from "/src/pages/dashboard/dashboard/dashboard.js";
+import loadDashboardTable from "/src/pages/dashboard/product/tableProduct/product.js";
 import loadProductDetail from "/src/pages/product-detail/productDetail.js";
 import loadManagementProduct from "./src/pages/management-product/managementProduct.js";
 import loadManagementProductCategories from "./src/pages/management-product/categories/categories.js";
@@ -33,7 +34,10 @@ function loadPage(path) {
       pageUrl = "/src/pages/login-qr/login-qr.html";
       break;
     case "/dashboard":
-      pageUrl = "/src/pages/dashboard/dashboard.html";
+      pageUrl = "/src/pages/dashboard/dashboard/dashboard.html";
+      break;
+    case "/table-product":
+      pageUrl = "/src/pages/dashboard/product/tableProduct/dashboardProduct.html";
       break;
     case "/management-product":
       pageUrl = "/src/pages/management-product/management-product.html";
@@ -66,6 +70,8 @@ function loadPage(path) {
           loadLoginQr();
         } else if (path == "/dashboard") {
           loadDashboard();
+        } else if (path == "/table-product") {
+          loadDashboardTable();
         } else if (path == "/management-product") {
           loadManagementProduct();
         } else if (path == "/management-product-categories") {
