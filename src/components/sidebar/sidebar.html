@@ -1,20 +1,24 @@
 <aside class="navigation">
-  <div class="app-header-logo"> 
-    <div class="logo" >
-      <a href="/" class="nav-logo">
-        <img src="/assets/img/logos/logo-fix.png" alt="GoBiz Logo" />
-        <span>GoBiz</span>
-      </a>
-    </div>
+  <div class="navigation-logo">
+    <a href="/" class="nav-logo">
+      <img src="/assets/img/logos/logo-fix.png" alt="GoBiz Logo" />
+      <span>obiz</span>
+    </a>
+    <span class="material-symbols-outlined"> left_panel_close </span>
   </div>
+
   <div class="nav">
-    <a href="/dashboard">
+    <a href="/dashboard" data-menu="dashboard" class="menu-item to-link">
       <i class="ph ph-browsers"></i>
       <span>Dashboard</span>
     </a>
-    <a href="/table-product" data-menu="management-product" class="menu-item">
+    <a
+      href="/management-product"
+      data-menu="management-product"
+      class="menu-item to-link"
+    >
       <i class="ph ph-check-square"></i>
-      <span>Components</span>
+      <span>management Product</span>
     </a>
     <a class="logout" href="#">
       <i class="ph ph-sign-out"></i>

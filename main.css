@@ -231,39 +231,50 @@
 }
 .navigation {
   width: 18vw;
-  padding: 20px;
+  padding: 20px 20px;
   border-right: 1px solid #ddd;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  height: 103vh;
+  justify-content: flex-start;
+  flex-direction: column;
+  min-height: 100vh;
   background-color: #f3eee9;
 }
-.navigation .app-header-logo .logo {
+.navigation-logo {
   width: 100%;
-  height: auto;
-  padding: 2.4vw 3.4vw;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  border-bottom: #ddd solid 1px;
 }
-.navigation .app-header-logo .logo a {
-  display: grid;
-  place-items: center;
-  gap: 0.3vw;
+.navigation-logo a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0.2vw;
   text-decoration: none;
 }
-.navigation .app-header-logo .logo a img {
-  width: 6vw;
+.navigation-logo a img {
+  width: 2.6vw;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.navigation .app-header-logo .logo a span {
+.navigation-logo a span {
+  margin-top: 4px;
   font-family: "Grandstander", cursive;
-  font-size: 2.15vw;
+  font-size: 2.2vw;
+  line-height: 100%;
   font-weight: 200;
   color: #595959;
   text-transform: uppercase;
+}
+.navigation-logo .material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+  font-size: 25px;
 }
 .navigation .nav {
   list-style: none;
@@ -292,7 +303,7 @@
 }
 .navigation .nav a:hover, .navigation .nav a:focus {
   transform: translateX(4px);
-  color: #070F2B;
+  color: #070f2b;
 }
 
 .app-header {
@@ -608,7 +619,7 @@
   gap: 1.2vw;
 }
 .home .join .card1-content .card1 {
-  background-color: #070F2B;
+  background-color: #070f2b;
   border-radius: 1.6vw;
   padding: 2.4vw;
 }
@@ -660,7 +671,7 @@
   padding: 2.4vw;
 }
 .home .join .card1-content .card2 p {
-  color: #070F2B;
+  color: #070f2b;
 }
 .home .join .card1-content .card2 h1 {
   color: #fff;
@@ -668,9 +679,9 @@
   margin: 1vw 0;
 }
 .home .join .card1-content .card2 button {
-  border: 0.1vw solid #070F2B;
+  border: 0.1vw solid #070f2b;
   background-color: transparent;
-  color: #070F2B;
+  color: #070f2b;
   padding: 1.15vw;
   border-radius: 10vw;
   cursor: pointer;
@@ -683,7 +694,7 @@
 }
 .home .join .card1-content .card2 button::after {
   content: "";
-  background-color: #070F2B;
+  background-color: #070f2b;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -711,7 +722,7 @@
     gap: 1.8vw;
   }
   .home .join .card1-content .card1 {
-    background-color: #070F2B;
+    background-color: #070f2b;
     border-radius: 1.6vw;
     padding: 5.4vw 3.4vw;
   }
@@ -764,7 +775,7 @@
     padding: 5.4vw 3.4vw;
   }
   .home .join .card1-content .card2 p {
-    color: #070F2B;
+    color: #070f2b;
     font-size: 4.4vw;
   }
   .home .join .card1-content .card2 h1 {
@@ -773,9 +784,9 @@
     margin: 2.4vw 0;
   }
   .home .join .card1-content .card2 button {
-    border: 0.1vw solid #070F2B;
+    border: 0.1vw solid #070f2b;
     background-color: transparent;
-    color: #070F2B;
+    color: #070f2b;
     padding: 2.8vw;
     border-radius: 10vw;
     cursor: pointer;
@@ -788,7 +799,7 @@
   }
   .home .join .card1-content .card2 button::after {
     content: "";
-    background-color: #070F2B;
+    background-color: #070f2b;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -1421,7 +1432,7 @@
 }
 .catalog-filter .filter-price-list .container-price-display {
   grid-area: display;
-  color: #070F2B;
+  color: #070f2b;
   font-size: 1vw;
 }
 .catalog-filter .filter-price-list .container-price-display .min-price-display,
@@ -2303,6 +2314,54 @@
 .dashboard-container .sidebar {
   margin-top: -5.7vw;
 }
+
+.management-product {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+.management-product .topbar {
+  grid-column: 1/-1;
+  height: 60px;
+  padding-left: 18vw;
+  box-sizing: border-box;
+}
+.management-product .sidebar {
+  margin-top: -5.7vw;
+}
+
+.management-product-categories {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "sidebar topbar" "sidebar main";
+}
+.management-product-categories .topbar {
+  grid-area: topbar;
+}
+.management-product-categories .sidebar {
+  grid-area: sidebar;
+}
+.management-product-categories .content {
+  grid-area: main;
+}
+
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+.dashboard-container .topbar {
+  grid-column: 1/-1;
+  height: 60px;
+  padding-left: 18vw;
+  box-sizing: border-box;
+}
+.dashboard-container .sidebar {
+  margin-top: -5.7vw;
+}
 .dashboard-container .list .user .product-dashboard {
   margin: 1vw auto;
   width: 90%;
@@ -2343,7 +2402,7 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 8px;
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
   text-align: center;
   flex: 0 1 calc(20% - 15px);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -2354,11 +2413,11 @@
 }
 .dashboard-container .list .user .product-dashboard .product-item h2 {
   font-size: 1.1em;
-  color: #070F2B;
+  color: #070f2b;
 }
 .dashboard-container .list .user .product-dashboard .product-item p {
   font-size: 0.9em;
-  color: #070F2B;
+  color: #070f2b;
 }
 .dashboard-container .list .user .product-dashboard .product-item span {
   font-size: 0.8em;
@@ -2368,7 +2427,7 @@
   margin-top: 10px;
 }
 .dashboard-container .list .user .product-dashboard .product-item .button-group .btn {
-  background-color: #608BC1;
+  background-color: #608bc1;
   color: white;
   border: none;
   padding: 4px 8px;
@@ -2432,4 +2491,4 @@ html.lenis body {
 
 .lenis.lenis-smooth iframe {
   pointer-events: none;
-}/*# sourceMappingURL=main.css.map */
+}

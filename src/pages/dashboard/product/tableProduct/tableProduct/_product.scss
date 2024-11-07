@@ -1,11 +1,11 @@
-@use "./../../../helpers/mixins" as m;
-@use "./../../../helpers/variables" as v;
+@use "./../../../../../helpers/mixins" as m;
+@use "./../../../../../helpers/variables" as v;
 
 @mixin tableProduct() {
   .product-dashboard {
     margin: 1vw auto;
     width: 90%;
-    padding: .2vw;
+    padding: 0.2vw;
 
     .header-product {
       display: flex;
