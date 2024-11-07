@@ -1,21 +1,18 @@
-export default function sidebarTogle() {
-
+export default function sidebarToggle() {
   const menuItems = document.querySelectorAll("aside.navigation .menu-item");
+  
   if (menuItems) {
     menuItems.forEach((menu) => {
       menu.addEventListener("click", function (e) {
-        e.preventDefault();
         const menuName = this.getAttribute("data-menu");
 
-        document
-          .querySelectorAll(".app-header .app-header-navigation .submenu")
-          .forEach((submenu) => {
-            submenu.style.display = "none";
-          });
+        if (menuName === "management-product") {
+          e.preventDefault();
+          window.location.href = "/table-product";
 
-        const activeSubmenu = document.querySelector(`.${menuName}-submenu`);
-        if (activeSubmenu) {
-          activeSubmenu.style.display = "flex";
+          sessionStorage.setItem("activeSubmenu", "management-product-submenu");
+        } else {
+          console.log(`Navigasi ke ${menuName} tidak memiliki pengaturan khusus.`);
         }
       });
     });

@@ -15,7 +15,8 @@
 @use "./src/pages/register/register";
 @use "./src/pages/register/register-media";
 @use "./src/pages/login-qr/login-qr";
-@use "./src/pages/dashboard/dashboard";
+@use "./src/pages/dashboard/dashboard/dashboard";
+@use "./src/pages/dashboard/product/tableProduct/dashboardProduct";
 
 *,
 *::before,
