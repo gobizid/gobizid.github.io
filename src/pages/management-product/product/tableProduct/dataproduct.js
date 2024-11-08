@@ -1,7 +1,9 @@
 import formatRupiah from "/src/helpers/formatRupiah.js";
 
 export default function dataproduct() {
-  const productContainer = document.querySelector(".product-list");
+  const pricesDiscounts = document.querySelectorAll(
+    ".home .products .price, .home .products .discount"
+  );
 
   const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
@@ -18,60 +20,58 @@ export default function dataproduct() {
     .then(async (res) => {
       const status = res.status;
       const result = await res.json();
-
+      
+      console.log(dataproduct);
+      
       console.log(result);
       if (status === 200) {
+        const products = document.querySelector(".home .products");
+
         result.data.forEach((product) => {
-          const productItem = document.createElement("div");
-          productItem.classList.add("product-item");
+          const productsWrapper = document.createElement("div");
+          productsWrapper.classList.add("products-wrapper");
 
-          const img = document.createElement("img");
-          img.src = product.image || "https://via.placeholder.com/150"; // fallback if image is missing
-          img.alt = product.menu;
-          productItem.appendChild(img);
+          const imageClass = document.createElement("div");
+          imageClass.classList.add("image");
+          const image = document.createElement("img");
+          image.src = product.image;
+          image.alt = product.menu;
+          imageClass.appendChild(image);
 
-          const title = document.createElement("h2");
-          title.textContent = product.menu;
-          productItem.appendChild(title);
+          const nameClass = document.createElement("div");
+          nameClass.classList.add("menu");
+          nameClass.textContent = product.menu;
 
-          const description = document.createElement("p");
-          description.textContent = product.description || "Deskripsi tidak tersedia.";
-          productItem.appendChild(description);
+          const priceClass = document.createElement("div");
+          priceClass.classList.add("price");
+          priceClass.textContent = formatRupiah(product.price);
 
-          const price = document.createElement("div");
-          price.classList.add("price");
-          price.textContent = `Harga: ${formatRupiah(product.price)}`;
-          productItem.appendChild(price);
+          const discountClass = document.createElement("div");
+          discountClass.classList.add("discount");
+          discountClass.textContent = formatRupiah(product.diskon);
 
-          const discount = document.createElement("div");
-          discount.classList.add("discount");
-          discount.textContent = `Diskon: ${formatRupiah(product.diskon)}`;
-          productItem.appendChild(discount);
+          const ratingSoldClass = document.createElement("div");
+          ratingSoldClass.classList.add("rating-sold");
+          ratingSoldClass.textContent = `⭐${product.rating} | ${product.sold} terjual`;
 
-          const createdDate = document.createElement("span");
-          createdDate.innerHTML = `Tanggal Dibuat: <strong>${product.created_at || "N/A"}</strong>`;
-          productItem.appendChild(createdDate);
+          productsWrapper.appendChild(imageClass);
+          productsWrapper.appendChild(nameClass);
+          productsWrapper.appendChild(priceClass);
+          productsWrapper.appendChild(discountClass);
+          productsWrapper.appendChild(ratingSoldClass);
 
-          const buttonGroup = document.createElement("div");
-          buttonGroup.classList.add("button-group");
-
-          const editButton = document.createElement("button");
-          editButton.classList.add("btn", "edit");
-          editButton.textContent = "Edit";
-          buttonGroup.appendChild(editButton);
-
-          const deleteButton = document.createElement("button");
-          deleteButton.classList.add("btn", "delete");
-          deleteButton.textContent = "Delete";
-          buttonGroup.appendChild(deleteButton);
-
-          productItem.appendChild(buttonGroup);
-
-          productContainer.appendChild(productItem);
+          products.appendChild(productsWrapper);
         });
       } else {
         console.error("Failed to fetch products:", status);
       }
     })
     .catch((error) => console.error("Error:", error));
+
+  pricesDiscounts.forEach((el) => {
+    const value = parseFloat(el.textContent);
+    if (!isNaN(value)) {
+      el.textContent = formatRupiah(value);
+    }
+  });
 }
