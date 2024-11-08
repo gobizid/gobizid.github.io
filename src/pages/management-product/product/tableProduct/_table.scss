@@ -36,53 +36,61 @@
       grid-template-columns: repeat(auto-fit, minmax(12vw, 1fr));
       gap: 15px;
       overflow-y: auto;
-    }
 
-    .product-item {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 8px;
-      background-color: map-get($map: v.$color, $key: "light-cream");
-      text-align: center;
-      flex: 0 1 calc(20% - 15px);
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      .product-item {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 8px;
+        background-color: map-get($map: v.$color, $key: "light-cream");
+        // text-align: center;
+        flex: 0 1 calc(20% - 15px);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
-      img {
-        max-width: 100%;
-        border-radius: 5px;
-      }
-
-      h2 {
-        font-size: 1.1em;
-        color: map-get($map: v.$color, $key: "light-black");
-      }
-
-      p {
-        font-size: 0.9em;
-        color: map-get($map: v.$color, $key: "light-black");
-      }
-
-      span {
-        font-size: 0.8em;
-        color: map-get($map: v.$color, $key: "dark-gray");
-      }
-
-      .button-group {
-        margin-top: 10px;
-
-        .btn {
-          background-color: map-get($map: v.$color, $key: "edit");
-          color: white;
-          border: none;
-          padding: 4px 8px;
-          border-radius: 5px;
-          cursor: pointer;
-          margin: 0 3px;
-          font-size: 0.8em;
+        .image {
+          height: 30vh;
+    
+          img {
+            border-top-left-radius: 0.7vw;
+            border-top-right-radius: 0.7vw;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
         }
 
-        .btn.delete {
-          background-color: #dc3545;
+        h2 {
+          font-size: 1.1em;
+          color: map-get($map: v.$color, $key: "light-black");
+        }
+
+        p {
+          font-size: 0.9em;
+          color: map-get($map: v.$color, $key: "light-black");
+        }
+
+        span {
+          font-size: 0.8em;
+          color: map-get($map: v.$color, $key: "dark-gray");
+        }
+
+        .button-group {
+          margin-top: 10px;
+
+          .btn {
+            background-color: map-get($map: v.$color, $key: "edit");
+            color: white;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 3px;
+            font-size: 0.8em;
+          }
+
+          .btn.delete {
+            background-color: #dc3545;
+          }
         }
       }
     }
