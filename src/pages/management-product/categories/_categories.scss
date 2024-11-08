@@ -96,7 +96,7 @@
       width: 100%;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(11vw, 1fr));
-      gap: v.$py-content;
+      gap: 1.2vw;
       grid-auto-rows: 1fr;
 
       .item {

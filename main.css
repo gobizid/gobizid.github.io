@@ -304,6 +304,17 @@
   color: #070f2b;
 }
 
+@keyframes underline {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
 .app-header {
   display: flex;
   align-items: center;
@@ -332,7 +343,7 @@
   flex-direction: row;
   height: 11vh;
   gap: 6px;
-  color: #333;
+  color: #595959;
   text-decoration: none;
   padding: 0 0.6vw;
   position: relative;
@@ -395,45 +406,59 @@
   justify-content: center;
   flex-direction: row;
   gap: 20px;
+  height: 100%;
 }
 .app-header-actions .user-profile {
   display: flex;
   align-items: center;
-  background-color: transparent;
-  border: none;
+  justify-content: center;
+  flex-direction: row;
+  gap: 15px;
   cursor: pointer;
-  font-size: 14px;
-  color: #333;
-  font-weight: 600;
-  transition: color 0.3s;
-}
-.app-header-actions .user-profile span:first-of-type {
-  margin-right: 10px;
+  height: 100%;
+  color: #595959;
+  transition: color 0.4s ease-out;
+  padding: 0 0.6vw;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
 }
 .app-header-actions .user-profile img {
-  border-radius: 50%;
   width: 36px;
   height: 36px;
+  border-radius: 50%;
 }
-.app-header-actions .user-profile:hover {
-  transform: scale();
+.app-header-actions .user-profile::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.6s ease-out;
 }
-.app-header-actions .app-header-actions {
-  display: flex;
-  gap: 10px;
+.app-header-actions .user-profile:hover .material-symbols-outlined, .app-header-actions .user-profile:focus .material-symbols-outlined {
+  transition: all 0.4s ease-out;
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
 }
-.app-header-actions .app-header-actions .icon-button {
+.app-header-actions .user-profile:hover::before, .app-header-actions .user-profile:focus::before {
+  animation: underline 1.3s ease-out forwards;
+}
+.app-header-actions .icons-button {
   background-color: transparent;
   border: none;
   cursor: pointer;
   font-size: 24px;
-  color: #666;
+  color: #595959;
   transition: color 0.3s;
 }
-.app-header-actions .app-header-actions .icon-button:hover {
+.app-header-actions .icons-button:hover {
   color: #007bff;
 }
-.app-header-actions .app-header-actions .icon-button i {
+.app-header-actions .icons-button i {
   pointer-events: none;
 }
 
@@ -2557,7 +2582,7 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(11vw, 1fr));
-  gap: 2.1vw;
+  gap: 1.2vw;
   grid-auto-rows: 1fr;
 }
 .management-product-categories .content-main .item {
@@ -2714,4 +2739,4 @@ html.lenis body {
 
 .lenis.lenis-smooth iframe {
   pointer-events: none;
-}/*# sourceMappingURL=main.css.map */
+}
