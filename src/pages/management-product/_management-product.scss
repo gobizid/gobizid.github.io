@@ -1,6 +1,7 @@
 @use "../../helpers/mixins" as m;
 @use "../../helpers/variables" as v;
 @use "./product/tableProduct/table" as tableProduct;
+// @use "../home/products/products" as products;
 
 .management-product {
   width: 100%;

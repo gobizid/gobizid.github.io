@@ -11,6 +11,7 @@ import loadManagementProductCategoriesInsert from "/src/pages/management-product
 import loadManagementProductCategoriesUpdate from "/src/pages/management-product/categories/update/update.js";
 import loadMap from "/src/pages/map/map.js";
 
+
 function loadPage(path) {
   const main = document.getElementById("main");
   main.innerHTML = "";

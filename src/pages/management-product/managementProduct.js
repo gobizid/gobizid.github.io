@@ -1,6 +1,7 @@
 import loadComponent from "/src/helpers/loadComponent.js";
 import sidebarTogle from "/src/components/sidebar/sidebar.js";
 import smoothScroll from "/src/helpers/smoothScroll.js";
+import dataproduct from "./product/tableProduct/dataproduct";
 
 export default function loadManagementProductCategories() {
   const promises = [
@@ -16,6 +17,7 @@ export default function loadManagementProductCategories() {
     .then(() => {
       sidebarTogle();
       smoothScroll();
+      dataproduct();
     })
     .catch((error) => {
       console.error("Error loading components:", error);
