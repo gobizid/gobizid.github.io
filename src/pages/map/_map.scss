@@ -1,8 +1,7 @@
 @use "../../helpers/mixins" as m;
 @use "../../helpers/variables" as v;
-@use "./product/tableProduct/table" as tableProduct;
 
-.management-product {
+.map {
   width: 100%;
   display: grid;
   grid-template-columns: auto 1fr;
@@ -24,6 +23,13 @@
     padding: v.$py-content v.$px-layout;
     width: 100%;
     min-height: 100vh;
-    @include tableProduct.tableProduct();
+    border-radius: 0.4vw;
+
+    #content-map {
+      width: 100%;
+      height: 100%;
+      border-radius: 0.4vw;
+      border: 0.15vw solid map-get($map: v.$color, $key: "dark-gray");
+    }
   }
 }

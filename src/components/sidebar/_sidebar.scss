@@ -3,20 +3,19 @@
 
 .navigation {
   width: v.$width-sidebar;
-  padding: 20px 20px;
-  border-right: 1px solid #ddd;
+  padding: 0 v.$px-layout 20px;
+  border-right: 1.5px solid #ddd;
   @include m.flex($direction: column, $justify: flex-start);
-  min-height: 100vh;
-  background-color: map-get($map: v.$color, $key: "dark-cream");
+  height: 100%;
 
   &-logo {
     width: 100%;
-    padding-bottom: 20px;
+    height: v.$height-topbar;
     @include m.flex($justify: space-between);
-    border-bottom: #ddd solid 1px;
+    border-bottom: #ddd solid 1.5px;
 
     a {
-      @include m.flex();  
+      @include m.flex();
       gap: 0.2vw;
       text-decoration: none;
 
@@ -36,17 +35,16 @@
         text-transform: uppercase;
       }
     }
-
+    
     .material-symbols-outlined {
-      font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+      font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24;
       font-size: 25px;
+      cursor: pointer;
     }
   }
 
-  .nav {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  &-nav {
+    padding-top: 24px;
 
     a {
       display: flex;

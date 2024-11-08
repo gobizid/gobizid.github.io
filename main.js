@@ -3,11 +3,13 @@ import loadCatalog from "/src/pages/catalog/catalog.js";
 import loadLogin from "/src/pages/login/login.js";
 import loadRegister from "/src/pages/register/register.js";
 import loadLoginQr from "/src/pages/login-qr/loginQr.js";
-import loadDashboard from "/src/pages/dashboard/dashboard/dashboard.js";
-import loadDashboardTable from "/src/pages/dashboard/product/tableProduct/dashboardProduct.js";
+import loadDashboard from "/src/pages/dashboard/dashboard.js";
 import loadProductDetail from "/src/pages/product-detail/productDetail.js";
-import loadManagementProduct from "./src/pages/management-product/managementProduct.js";
-import loadManagementProductCategories from "./src/pages/management-product/categories/categories.js";
+import loadManagementProduct from "/src/pages/management-product/managementProduct.js";
+import loadManagementProductCategories from "/src/pages/management-product/categories/categories.js";
+import loadManagementProductCategoriesInsert from "/src/pages/management-product/categories/insert/insert.js";
+import loadManagementProductCategoriesUpdate from "/src/pages/management-product/categories/update/update.js";
+import loadMap from "/src/pages/map/map.js";
 
 function loadPage(path) {
   const main = document.getElementById("main");
@@ -34,19 +36,25 @@ function loadPage(path) {
       pageUrl = "/src/pages/login-qr/login-qr.html";
       break;
     case "/dashboard":
-      pageUrl = "/src/pages/dashboard/dashboard/dashboard.html";
-      break;
-    case "/table-product":
-      pageUrl = "/src/pages/dashboard/product/tableProduct/dashboardProduct.html";
+      pageUrl = "/src/pages/dashboard/dashboard.html";
       break;
     case "/management-product":
       pageUrl = "/src/pages/management-product/management-product.html";
       break;
-    case "/management-product-categories":
+    case "/management-product/categories":
       pageUrl = "/src/pages/management-product/categories/categories.html";
       break;
+    case "/management-product/categories-insert":
+      pageUrl = "/src/pages/management-product/categories/insert/insert.html";
+      break;
+    case "/management-product/categories-update":
+      pageUrl = "/src/pages/management-product/categories/update/update.html";
+      break;
+    case "/map":
+      pageUrl = "/src/pages/map/map.html";
+      break;
     // default:
-    // pageUrl = "./pages/404.html";
+    // pageUrl = "/pages/404.html";
     //   break;
   }
 
@@ -74,8 +82,14 @@ function loadPage(path) {
           loadDashboardTable();
         } else if (path == "/management-product") {
           loadManagementProduct();
-        } else if (path == "/management-product-categories") {
+        } else if (path == "/management-product/categories") {
           loadManagementProductCategories();
+        } else if (path == "/management-product/categories-insert") {
+          loadManagementProductCategoriesInsert();
+        } else if (path == "/management-product/categories-update") {
+          loadManagementProductCategoriesUpdate();
+        } else if (path == "/map") {
+          loadMap();
         }
       })
       .catch((error) => {

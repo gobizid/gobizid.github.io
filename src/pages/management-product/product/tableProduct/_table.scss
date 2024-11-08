@@ -1,10 +1,9 @@
-@use "./../../../../../helpers/mixins" as m;
-@use "./../../../../../helpers/variables" as v;
+@use "../../../../helpers/mixins" as m;
+@use "../../../../helpers/variables" as v;
 
 @mixin tableProduct() {
   .product-dashboard {
-    margin: 1vw auto;
-    width: 90%;
+    width: 100%;
     padding: 0.2vw;
 
     .header-product {
@@ -33,13 +32,10 @@
     }
 
     .product-list {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(12vw, 1fr));
       gap: 15px;
-      justify-content: flex-start;
-      max-height: 76vh;
       overflow-y: auto;
-      padding-right: 10px;
     }
 
     .product-item {
