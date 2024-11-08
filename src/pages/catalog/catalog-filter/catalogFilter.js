@@ -46,13 +46,13 @@ function getAllCateogories() {
     if (status === 200) {
       const categoriesList = document.querySelector(".filter-categories-list");
 
-      result.sort((a, b) => a.name.localeCompare(b.name));
+      result.sort((a, b) => a.name_category.localeCompare(b.name_category));
 
       if (categoriesList) {
         result.forEach((category) => {
           const categoryElement = document.createElement("div");
           categoryElement.classList.add("item");
-          categoryElement.textContent = category.name;
+          categoryElement.textContent = category.name_category;
           categoriesList.appendChild(categoryElement);
         });
       } else {
