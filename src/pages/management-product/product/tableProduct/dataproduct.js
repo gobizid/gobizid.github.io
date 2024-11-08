@@ -1,10 +1,5 @@
 import formatRupiah from "/src/helpers/formatRupiah.js";
 
-// Fungsi untuk menunggu DOM sepenuhnya dimuat sebelum menjalankan script
-document.addEventListener("DOMContentLoaded", function () {
-  dataproduct();
-});
-
 export default function dataproduct() {
   const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
