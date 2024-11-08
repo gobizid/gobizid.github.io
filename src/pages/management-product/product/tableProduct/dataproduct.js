@@ -27,7 +27,7 @@ export default function dataproduct() {
           // Loop untuk setiap produk yang ada di data API
           result.data.forEach((product) => {
             const productsWrapper = document.createElement("div");
-            productsWrapper.classList.add("products-wrapper");
+            productsWrapper.classList.add("product-list");
 
             const imageClass = document.createElement("div");
             imageClass.classList.add("image");
