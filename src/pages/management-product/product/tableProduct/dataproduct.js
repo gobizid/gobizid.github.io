@@ -1,10 +1,11 @@
 import formatRupiah from "/src/helpers/formatRupiah.js";
 
-export default function dataproduct() {
-  const pricesDiscounts = document.querySelectorAll(
-    ".home .products .price, .home .products .discount"
-  );
+// Fungsi untuk menunggu DOM sepenuhnya dimuat sebelum menjalankan script
+document.addEventListener("DOMContentLoaded", function () {
+  dataproduct();
+});
 
+export default function dataproduct() {
   const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
@@ -14,64 +15,66 @@ export default function dataproduct() {
   };
 
   fetch(
-    "https://asia-southeast2-awangga.cloudfunctions.net/jualin/menu",
+    "https://asia-southeast2-awangga.cloudfunctions.net/jualin/menu", 
     requestOptions
   )
     .then(async (res) => {
       const status = res.status;
       const result = await res.json();
-      
-      console.log(dataproduct);
-      
-      console.log(result);
+
+      console.log(result);  // Log untuk memeriksa data yang diterima
+
       if (status === 200) {
-        const products = document.querySelector(".home .products");
+        // Seleksi elemen .product-list
+        const products = document.querySelector(".product-dashboard .product-list");
 
-        result.data.forEach((product) => {
-          const productsWrapper = document.createElement("div");
-          productsWrapper.classList.add("products-wrapper");
+        if (products) {
+          // Loop untuk setiap produk yang ada di data API
+          result.data.forEach((product) => {
+            const productsWrapper = document.createElement("div");
+            productsWrapper.classList.add("products-wrapper");
 
-          const imageClass = document.createElement("div");
-          imageClass.classList.add("image");
-          const image = document.createElement("img");
-          image.src = product.image;
-          image.alt = product.menu;
-          imageClass.appendChild(image);
+            const imageClass = document.createElement("div");
+            imageClass.classList.add("image");
+            const image = document.createElement("img");
+            image.src = product.image;
+            image.alt = product.menu;
+            imageClass.appendChild(image);
 
-          const nameClass = document.createElement("div");
-          nameClass.classList.add("menu");
-          nameClass.textContent = product.menu;
+            const nameClass = document.createElement("div");
+            nameClass.classList.add("menu");
+            nameClass.textContent = product.menu;
 
-          const priceClass = document.createElement("div");
-          priceClass.classList.add("price");
-          priceClass.textContent = formatRupiah(product.price);
+            const priceClass = document.createElement("div");
+            priceClass.classList.add("price");
+            priceClass.textContent = formatRupiah(product.price);
 
-          const discountClass = document.createElement("div");
-          discountClass.classList.add("discount");
-          discountClass.textContent = formatRupiah(product.diskon);
+            const discountClass = document.createElement("div");
+            discountClass.classList.add("discount");
+            discountClass.textContent = formatRupiah(product.diskon);
 
-          const ratingSoldClass = document.createElement("div");
-          ratingSoldClass.classList.add("rating-sold");
-          ratingSoldClass.textContent = `⭐${product.rating} | ${product.sold} terjual`;
+            const ratingSoldClass = document.createElement("div");
+            ratingSoldClass.classList.add("rating-sold");
+            ratingSoldClass.textContent = `⭐${product.rating} | ${product.sold} terjual`;
 
-          productsWrapper.appendChild(imageClass);
-          productsWrapper.appendChild(nameClass);
-          productsWrapper.appendChild(priceClass);
-          productsWrapper.appendChild(discountClass);
-          productsWrapper.appendChild(ratingSoldClass);
+            // Menambahkan elemen ke wrapper
+            productsWrapper.appendChild(imageClass);
+            productsWrapper.appendChild(nameClass);
+            productsWrapper.appendChild(priceClass);
+            productsWrapper.appendChild(discountClass);
+            productsWrapper.appendChild(ratingSoldClass);
 
-          products.appendChild(productsWrapper);
-        });
+            // Menambahkan wrapper ke dalam .product-list
+            products.appendChild(productsWrapper);
+          });
+        } else {
+          console.error('Product list container tidak ditemukan!');
+        }
       } else {
-        console.error("Failed to fetch products:", status);
+        console.error("Gagal mengambil data produk:", status);
       }
     })
-    .catch((error) => console.error("Error:", error));
-
-  pricesDiscounts.forEach((el) => {
-    const value = parseFloat(el.textContent);
-    if (!isNaN(value)) {
-      el.textContent = formatRupiah(value);
-    }
-  });
+    .catch((error) => {
+      console.error("Error:", error);
+    });
 }
