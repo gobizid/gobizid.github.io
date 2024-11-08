@@ -1,7 +1,7 @@
 import loadComponent from "/src/helpers/loadComponent.js";
 import sidebarTogle from "/src/components/sidebar/sidebar.js";
 import smoothScroll from "/src/helpers/smoothScroll.js";
-import dataproduct from "./product/tableProduct/dataproduct";
+import dataproduct from "/src/pages/management-product/product/tableProduct/dataProduct.js"
 
 export default function loadManagementProductCategories() {
   const promises = [
